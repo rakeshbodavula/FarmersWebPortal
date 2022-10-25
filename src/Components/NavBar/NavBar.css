@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+:root{
+  /* --navGreenBG : #00e394; */
+  --navGreenBG : #00d68b;
+}
+
+/*<--------------------------Nav Bar -------------------------->*/
+
+nav {
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    height: 8vh;
+    /* background-color: #4731d4; */
+    position: fixed;
+    font-size: large;
+    letter-spacing: 1px;
+    background-color: #5c4ad3;
+    /* font-family: 'Cinzel', serif !important; */
+    /* background-color: #E45826; */
+    /* background: linear-gradient(to bottom, #006838 0%, #96cf24 100%); */
+  }
+  
+  .logo-title-div {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-size: 14px !important;
+    font-family: default;
+  }
+  
+  .logo-title-div a {
+    text-decoration: none;
+    /* color: #F7F7F7; */
+    /* color: #beff46; */
+    color: #ffff !important;
+    font-family: 'Red Hat Text', sans-serif;
+  }
+  
+  #farmer-logo {
+    height: 7vh;
+    width: 7vh;
+    border-radius: 50%;
+    margin: 10px 10px 5px 20px;
+    outline: solid 1px rgb(245, 121, 121);
+  }
+  
+  .nav {
+    text-decoration: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  
+  .nav ul {
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  .nav ul li {
+    display: inline-block;
+    margin: 4px;
+  }
+  
+  .nav ul li a {
+    letter-spacing: 1px;
+    font-size: 19px;
+    /* font-family: "Lobster Two", cursive; */
+    /* font-family: 'Cinzel', serif !important;  */
+    text-decoration: none;
+    /* color: #B5FFD9; */
+    border-radius: 5px;
+    padding: 4px 6px;
+    color: #ffff;
+  }
+  
+  .nav ul li a:hover:not(#loginUser),
+  .nav ul li a:active {
+    transition: 0.4s;
+    background-color: #616bf9;
+    color: #7bff00;
+  }
+  
+  #loginUser{
+    background-color: #643fb4e1;
+    border: solid 2px rgb(255,255,255);
+    border-radius: 10px;
+  }
+
+  .active-page{
+    background-color: #767ef5;
+    color: #7bff00 !important;
+  }
+  
+  .expandbtn {
+    font-size: 30px;
+    color: #ffff;
+    /* margin: 0 30px 0 0; */
+    cursor: pointer;
+    display: none;
+  }
+  
+  .contractbtn {
+    display: none;
+  }
+  
+  #check {
+    display: none;
+  }
+  
+  @media (max-width: 1100px) {
+    .title {
+      font-size: 24px;
+    }
+    .nav ul li a {
+      font-size: 15px;
+    }
+  }
+  
+  @media (max-width: 950px) {
+    .title {
+      font-size: 22px;
+    }
+    .expandbtn {
+      display: block;
+      cursor: pointer;
+    }
+  
+    .nav ul {
+      display: block;
+      position: fixed;
+      top: 8vh;
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+      left: 0;
+      left: -100%;
+      transition: 1s;
+      background-color: #96cf24;
+    }
+  
+    .nav ul li {
+      display: block;
+      margin: 40px 0;
+    }
+  
+    .nav ul li a {
+      /* width: max-content; */
+      font-size: 20px;
+      display: block;
+      font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+    }
+  
+    .nav ul li a:hover,
+    .nav ul li a:active {
+      color: red;
+      background: none;
+      font-weight: 900;
+      transition: 0.3s ease-out;
+      transform: scale(1.2);
+    }
+  
+    #check:checked ~ ul {
+      left: 0;
+    }
+  
+    #check:checked ~ .expandbtn {
+      display: none;
+    }
+  
+    #check:checked ~ .contractbtn {
+      display: block;
+      font-size: 30px;
+      color: #ffff;
+      /* margin: 0 30px 0 0; */
+      cursor: pointer;
+    }
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+  }
+  
+  
+  
+
+  .change-nav-scroll{
+      background-color: var(--navGreenBG);
+  }
