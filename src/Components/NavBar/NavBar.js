@@ -1,31 +1,26 @@
 import './NavBar.css'
+import { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 
-{/* <FontAwesomeIcon icon={solid('user-secret')} /> */}
+{/* <FontAwesomeIcon icon={solid('user-secret')} /> */ }
 
 
 const NavBar = () => {
-    const scrollController = () => {
+    useEffect(() => {
         // sticky nav bar
         window.onscroll = function () {
-            let offset = document.querySelector("header").offsetTop;
-            // if(window.pageYOffset > offset){
-            //     document.querySelector("header").classList.add("sticky")
-            // }else{
-            //     document.querySelector("header").classList.remove("sticky")
-            // }
-
+            let offset = document.querySelector("nav").offsetTop;
             if (window.scrollY > 1) {
-                document.querySelector('header').classList.remove("change-nav-scroll")
-                // document.querySelector('.nav-element').style.color="#ffff";
+                document.querySelector('nav').classList.remove("change-nav-scroll")
             } else {
-                document.querySelector('header').classList.add("change-nav-scroll")
+                document.querySelector('nav').classList.add("change-nav-scroll")
             }
         }
-    }
+    },[])
+
     return (
-        <nav className="change-nav-scroll" onLoad={scrollController}>
+        <nav className="change-nav-scroll">
             <div className="logo-title-div">
                 <p>
                     <img id="farmer-logo" src='/logo1.jpg' alt="Logo" />
@@ -35,10 +30,10 @@ const NavBar = () => {
             <div className="nav">
                 <input type="checkbox" id="check" />
                 <label htmlFor="check" className="expandbtn">
-                    <FontAwesomeIcon icon={solid('bars')}/>
+                    <FontAwesomeIcon icon={solid('bars')} />
                 </label>
                 <label htmlFor="check" className="contractbtn">
-                    <FontAwesomeIcon icon={solid('xmark')}/>
+                    <FontAwesomeIcon icon={solid('xmark')} />
                 </label>
                 <ul>
                     <li><a href="/CropSuggestion" className="nav-element CropSuggestion">Crops</a></li>
