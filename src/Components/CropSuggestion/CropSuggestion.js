@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import './CropSuggestion.css'
 
 const CropSuggestion = () => {
-    useEffect(() => {
-        document.querySelector('.CropSuggestion').classList.add('active-page')
-    }, [])
+    // useEffect(() => {
+    //     document.querySelector('.CropSuggestion').classList.add('active-page')
+    // }, [])
 
 
     function displayresult(e){
