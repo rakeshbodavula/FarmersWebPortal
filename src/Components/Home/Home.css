@@ -21,7 +21,7 @@
 .carousel1 {
     /* border: 1px solid black; */
     position: absolute;
-    top: 7.6%;
+    top: 7vh;
     width: 100%;
     height: 600px;
     background: #00d68b;

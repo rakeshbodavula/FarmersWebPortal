@@ -8,7 +8,7 @@
 
 body {
     overflow-x: hidden;
-    height: 92vh;
+    height: 93vh;
 }
 
 
@@ -16,8 +16,8 @@ body {
 
 .body {
     position: relative;
-    top: 8vh;
-    min-height: 92vh;
+    top: 7vh;
+    min-height: 93vh;
     padding: 10vh 0 0vh 0;
     background-image: url(/public/inputFormBG1.jpg);
     background-position: center;

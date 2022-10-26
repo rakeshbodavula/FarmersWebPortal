@@ -1,4 +1,5 @@
 import './NavBar.css'
+import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
@@ -25,7 +26,7 @@ const NavBar = () => {
                 <p>
                     <img id="farmer-logo" src='/logo1.jpg' alt="Logo" />
                 </p>
-                <h1><a href="/" className="title">Farmers Web Portal</a></h1>
+                <h1><Link to="/" className="title">Farmers Web Portal</Link></h1>
             </div>
             <div className="nav">
                 <input type="checkbox" id="check" />
@@ -36,14 +37,14 @@ const NavBar = () => {
                     <FontAwesomeIcon icon={solid('xmark')} />
                 </label>
                 <ul>
-                    <li><a href="/CropSuggestion" className="nav-element CropSuggestion">Crops</a></li>
-                    <li><a href="/discussions" className="nav-element discussions">Discussions</a></li>
-                    <li><a href="/ChatBot" className="nav-element ChatBot">Chat Bot</a></li>
-                    <li><a href="/Market" className="nav-element Market">Market</a></li>
-                    <li><a href="/Aboutuss" className="nav-element Aboutuss">About Us</a></li>
-                    <li><a href="/login" id="loginUser" className="nav-element">
+                    <li><Link to="/CropSuggestion" className="nav-element CropSuggestion">Crops</Link></li>
+                    <li><Link to="/discussions" className="nav-element discussions">Discussions</Link></li>
+                    <li><Link to="/ChatBot" className="nav-element ChatBot">Chat Bot</Link></li>
+                    <li><Link to="/Market" className="nav-element Market">Market</Link></li>
+                    <li><Link to="/Aboutuss" className="nav-element Aboutuss">About Us</Link></li>
+                    <li><Link to="/login" id="loginUser" className="nav-element">
                         User
-                    </a></li>
+                    </Link></li>
                 </ul>
             </div>
         </nav>
