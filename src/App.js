@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <NavBar></NavBar>
+        {/* <NavBar></NavBar> */}
         <Routes>
           <Route exact path='/CropSuggestion' element={<CropSuggestion/>}></Route>
           <Route exact path='/' element={<Home />}></Route>
