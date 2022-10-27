@@ -1,8 +1,8 @@
 import './NavBar.css'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 
 {/* <FontAwesomeIcon icon={solid('user-secret')} /> */ }
 
@@ -31,10 +31,10 @@ const NavBar = () => {
             <div className="nav">
                 <input type="checkbox" id="check" />
                 <label htmlFor="check" className="expandbtn">
-                    <FontAwesomeIcon icon={solid('bars')} />
+                    <i className='fa-solid fa-bars'></i>
                 </label>
                 <label htmlFor="check" className="contractbtn">
-                    <FontAwesomeIcon icon={solid('xmark')} />
+                    <i className='fa-solid fa-xmark'></i>
                 </label>
                 <ul>
                     <li><Link to="/CropSuggestion" className="nav-element CropSuggestion">Crops</Link></li>

@@ -652,20 +652,20 @@ body {
 /*****************************************************************/
 
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home_div ul {
+    list-style: none;
+}
 
 .footer-container {
     max-width: 1170px;
     margin: auto;
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-ul {
-    list-style: none;
-}
 
 .footer {
     background-color: #24262b;
