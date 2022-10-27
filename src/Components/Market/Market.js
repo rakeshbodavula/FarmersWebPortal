@@ -18,7 +18,7 @@ const Market = (props) => {
                         <label htmlFor="search-bar" className="fas fa-search"></label>
                     </button>
                 </form>
-                <Link to="/Cart"><i class="fa-solid fa-cart-shopping"></i> Cart</Link>
+                <Link to="/Cart"><i className="fa-solid fa-cart-shopping"></i> Cart</Link>
             </div>
 
 

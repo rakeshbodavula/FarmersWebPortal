@@ -12,6 +12,9 @@ import useFetch from './Hooks/useFetch';
 function App() {
   
     const {data:prod_data,isPending:prod_isPending,error:prod_error} = useFetch('http://localhost:2020/products')
+    if(prod_data){
+      prod_data.sort(()=>Math.random()-0.5)
+    }
     // const {data:crop_data,isPending:crop_isPending,error:crop_error} = useFetch('http://localhost:2020/crops')
   return (
     <Router>
