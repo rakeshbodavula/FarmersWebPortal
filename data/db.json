@@ -1,562 +1,602 @@
 {
   "products": [
     {
+      "_id":1,
       "category": "seeds",
       "name": "cotton",
       "mrp": 750,
       "price": 680,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "pooja cotton",
       "weight": 450,
       "stock": true,
-      "img1": "/Images/Product_Images/3001_img1.png",
-      "img2": "/Images/Product_Images/3001_img2.png",
+      "img1": "/Product_Images/3001_img1.png",
+      "img2": "/Product_Images/3001_img2.png",
       "description": "Plant Height: Tall Erect and open, slightly hairy medium size green leaves, internodal distance medium. Resistance to bollworms and sucking pests.",
       "expiry": "2023-8-26"
     },
     {
+      "_id":2,
       "category": "seeds",
       "name": "paddy",
       "mrp": 1040,
       "price": 980,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "27P31 Hybrid paddy",
       "weight": 3000,
       "stock": true,
-      "img1": "/Images/Product_Images/3002_img1.png",
-      "img2": "/Images/Product_Images/3002_img2.png",
+      "img1": "/Product_Images/3002_img1.png",
+      "img2": "/Product_Images/3002_img2.png",
       "description": "High Yielding Hybrid. Extremely effective in rain fed condition. Stress tolerant. It is a medium maturity hybrid (128 – 132 days).",
       "expiry": "2025-6-6"
     },
     {
+      "_id":3,
       "category": "seeds",
       "name": "Green Gram",
       "mrp": 12000,
       "price": 11500,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "Green world moong seeds",
       "weight": 12000,
       "stock": true,
-      "img1": "/Images/Product_Images/3005_img1.png",
-      "img2": "/Images/Product_Images/3005_img2.png",
+      "img1": "/Product_Images/3005_img1.png",
+      "img2": "/Product_Images/3005_img2.png",
       "description": "Green gram also known as moong is one of the main pulse crop of India. It is a rich source of Protein along with fibre and iron. It can be cultivated as Kharif as well as summer crop. It can be cultivated on wide range of soil. Gives best result when grown on well drained loamy to sandy-loam soils. Saline and water logged soils are not suitable for cultivation.",
       "expiry": "2023-3-6"
     },
     {
+      "_id":4,
       "category": "seeds",
       "name": "Jowar",
       "mrp": 790,
       "price": 700,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Sorghum Jowar",
       "weight": 3000,
       "stock": true,
-      "img1": "/Images/Product_Images/3004_img1.png",
-      "img2": "/Images/Product_Images/3004_img2.png",
+      "img1": "/Product_Images/3004_img1.png",
+      "img2": "/Product_Images/3004_img2.png",
       "description": "High Yield potential with Excellent uniformity. Medium bold & pearly white grains. Dual purpose hybrid.",
       "expiry": "2025-12-4"
     },
     {
+      "_id":5,
       "category": "seeds",
       "name": "Red Gram",
       "mrp": 120,
       "price": 110,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Green world moong seeds",
       "weight": 1000,
       "stock": true,
-      "img1": "/Images/Product_Images/3006_img1.png",
-      "img2": "/Images/Product_Images/3006_img2.png",
+      "img1": "/Product_Images/3006_img1.png",
+      "img2": "/Product_Images/3006_img2.png",
       "description": "Emphasizing on increased needs of the clients, we are offering Red Gram Seeds that is accessible at leading market rates. Our range is admired for longer shelf life.",
       "expiry": "2023-6-20"
     },
     {
+      "_id":6,
       "category": "seeds",
       "name": "maize",
       "mrp": 1750,
       "price": 1700,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "shine hybrid maize rise-303 seeds",
       "weight": 4000,
       "stock": true,
-      "img1": "/Images/Product_Images/3003_img1.png",
-      "img2": "/Images/Product_Images/3003_img2.png",
+      "img1": "/Product_Images/3003_img1.png",
+      "img2": "/Product_Images/3003_img2.png",
       "description": "GROWING CONDITION; Temperature: Maize is grown in temperatures between 18°C and 27°C during the day and around 14°C during the night. Rainfall: Maize is grown mostly in regions having annual rainfall between 60 cm to 110 cm.",
       "expiry": "2024-3-3"
     },
     {
+      "_id":7,
       "category": "seeds",
       "name": "Tobaco",
       "mrp": 89,
       "price": 80,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Aztectobacco seeds",
       "weight": 120,
       "stock": true,
-      "img1": "/Images/Product_Images/3008_img1.png",
-      "img2": "/Images/Product_Images/3008_img2.png",
-      "description": "Grows up to 6ft tall low nic ot ine smooth flavor ,great for ryo ciggs or pipe, would be an excellent mix with Turkish or k-burly plant out doors and flowers will bloom. Around mid august leaves will turn to a light yellowish color on end of leaves when ripe easy cure air cure in a barn or shed ALL OUR SEEDS ARE KEPT IN FREEZER FOR FRESHNESS SO PLEASE KEEP THEM IN FREEZER OR FRIDGE UNTIL READY TO PLANT.",
+      "img1": "/Product_Images/3008_img1.png",
+      "img2": "/Product_Images/3008_img2.png",
+      "description": "Grows up to 6ft tall low nic ot ine smooth flavor ,great for ryo ciggs or pipe, would be an excellent mix with Turkish or k-burly plant out doors and flowers will bloom. Around mid august leaves will turn to a light yellowish color on end of leaves when ripe easy cure air cure in a barn or shed ALL OUR SEEDS ARE KEPT IN FREEZER FOR FRESHNESS SO PLEASE KEEP THEM IN FREEZER OR FR_IDGE UNTIL READY TO PLANT.",
       "expiry": "2023-2-11"
     },
     {
+      "_id":8,
       "category": "seeds",
       "name": "Papaya",
       "mrp": 370,
       "price": 320,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "Red lady papaya",
       "weight": 240,
       "stock": true,
-      "img1": "/Images/Product_Images/3009_img1.png",
-      "img2": "/Images/Product_Images/3009_img2.png",
+      "img1": "/Product_Images/3009_img1.png",
+      "img2": "/Product_Images/3009_img2.png",
       "description": "Early, vigorous, productive, and tolerant to papaya ring spot virus. Plants begin to bear fruit at 60-80 cm height and have over 30 fruits per plant in each fruit-setting season. Fruits are short oblong on female plants and rather long- shaped on bisexual plants, weighing about 1.5-2 kg",
       "expiry": "2023-6-11"
     },
     {
+      "_id":9,
       "category": "seeds",
       "name": "Water melon",
       "mrp": 1300,
       "price": 1000,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Suprit 2 Water melon",
       "weight": 50,
       "stock": true,
-      "img1": "/Images/Product_Images/3010_img1.png",
-      "img2": "/Images/Product_Images/3010_img2.png",
+      "img1": "/Product_Images/3010_img1.png",
+      "img2": "/Product_Images/3010_img2.png",
       "description": "Vigorous, medium early and productive hybrid. Fruit is oblong-shaped and weighing 9-12 kg. Rind is light green with dark green strips. It has good shipping ability.",
       "expiry": "2025-3-24"
     },
     {
+      "_id":10,
       "category": "seeds",
       "name": "Apple",
       "mrp": 200,
       "price": 180,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "Azitec seeds",
       "weight": 1000,
       "stock": true,
-      "img1": "/Images/Product_Images/3011_img1.png",
-      "img2": "/Images/Product_Images/3011_img2.png",
+      "img1": "/Product_Images/3011_img1.png",
+      "img2": "/Product_Images/3011_img2.png",
       "description": "Matching up with the exact requirements of customers, we are involved in presenting a wide array of Apple Seeds.",
       "expiry": "2024-1-24"
     },
     {
+      "_id":11,
       "category": "seeds",
       "name": "Black Gram",
       "mrp": 850,
       "price": 800,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "SK Black gram seeds",
       "weight": 4000,
       "stock": true,
-      "img1": "/Images/Product_Images/3007_img1.png",
-      "img2": "/Images/Product_Images/3007_img2.png",
+      "img1": "/Product_Images/3007_img1.png",
+      "img2": "/Product_Images/3007_img2.png",
       "description": "Treat the seeds with 3 packets (600 g/ha) of Rhizobial culture CRU-7 + 3 packets (600 g/ha) of PGPR  and 3 packets(600 g/ha)  of Phosphobacteria developed at TNAU using rice kanji as binder.",
       "expiry": "2024-12-18"
     },
     {
+      "_id":12,
       "category": "seeds",
       "name": "Cucumber",
       "mrp": 6500,
       "price": 6300,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "Yuksel seeds",
       "weight": 2000,
       "stock": true,
-      "img1": "/Images/Product_Images/3013_img1.png",
-      "img2": "/Images/Product_Images/3013_img2.png",
+      "img1": "/Product_Images/3013_img1.png",
+      "img2": "/Product_Images/3013_img2.png",
       "description": "Parthenocarpic beit alpha hybrid. Cylindrical, glossy, medium green colour fruits. Semi-multi fruited on main stem. Bears 2-3 fruits per node. Intermediate Resistance to Powdery and Downy Mildew",
       "expiry": "2024-9-16"
     },
     {
+      "_id":13,
       "category": "seeds",
       "name": "Pampkin",
       "mrp": 360,
       "price": 340,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "VNR seeds",
       "weight": 50,
       "stock": true,
-      "img1": "/Images/Product_Images/3014_img1.png",
-      "img2": "/Images/Product_Images/3014_img2.png",
+      "img1": "/Product_Images/3014_img1.png",
+      "img2": "/Product_Images/3014_img2.png",
       "description": "This is a fast selling variety of Pumpkin from biggest brand of VNR Seeds Please contact customer service directly regarding any question or complaints. The number is given on the pack.",
       "expiry": "2024-1-17"
     },
     {
+      "_id":14,
       "category": "seeds",
       "name": "Cauliflower",
       "mrp": 550,
       "price": 520,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "Tokita seeds",
       "weight": 10,
       "stock": true,
-      "img1": "/Images/Product_Images/3015_img1.jpg",
-      "img2": "/Images/Product_Images/3015_img2.jpg",
+      "img1": "/Product_Images/3015_img1.jpg",
+      "img2": "/Product_Images/3015_img2.jpg",
       "description": "Sowing Season- Kharif & Rabbi & Summer. Growing Period- May-June & September-October & April-March. Harvesting Period-  August-September & November-December & July-August. Potential Yield Approx- 15 To 20 quintals. Colour Of The Fruit Flower -- White. Mode of sowing transplant in 21 to 25 days. Cauliflower needs very rich soil filled with organic matter, manure and fertilizers before planting. Soil well drained medium to black soil",
       "expiry": "2024-1-27"
     },
     {
+      "_id":15,
       "category": "seeds",
       "name": "Tomato",
       "mrp": 550,
       "price": 520,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Abhilash seeds",
       "weight": 3000,
       "stock": true,
-      "img1": "/Images/Product_Images/3016_img1.jpg",
-      "img2": "/Images/Product_Images/3016_img2.jpg",
+      "img1": "/Product_Images/3016_img1.jpg",
+      "img2": "/Product_Images/3016_img2.jpg",
       "description": "Tomato plants are generally much branched and spreading 60-180. It is a vegetable crop and its growing period is 90-150",
       "expiry": "2024-1-9"
     },
     {
+      "_id":16,
       "category": "seeds",
       "name": "Sponge guard",
       "mrp": 270,
       "price": 250,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "Aditi hybrid seeds",
       "weight": 3000,
       "stock": true,
-      "img1": "/Images/Product_Images/3017_img1.jpg",
-      "img2": "/Images/Product_Images/3017_img2.jpg",
+      "img1": "/Product_Images/3017_img1.jpg",
+      "img2": "/Product_Images/3017_img2.jpg",
       "description": "The sponge gaurd is a cylindrical fruit that grows in a climbing herbeshius vine",
       "expiry": "2024-12-19"
     },
     {
+      "_id":17,
       "category": "seeds",
       "name": "Pomegranate",
       "mrp": 175,
       "price": 160,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Anardhana brown seeds",
       "weight": 1000,
       "stock": true,
-      "img1": "/Images/Product_Images/3012_img1.png",
-      "img2": "/Images/Product_Images/3012_img2.png",
+      "img1": "/Product_Images/3012_img1.png",
+      "img2": "/Product_Images/3012_img2.png",
       "description": "Matching up with the exact requirements of customers, we are involved in presenting a wide array of pomogrenate Seeds.",
       "expiry": "2023-1-18"
     },
     {
+      "_id":18,
       "category": "seeds",
       "name": "Bitter gaurd",
       "mrp": 1500,
       "price": 1300,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "Nunhems seeds",
       "weight": 1000,
       "stock": true,
-      "img1": "/Images/Product_Images/3019_img1.jpg",
-      "img2": "/Images/Product_Images/3019_img2.jpg",
+      "img1": "/Product_Images/3019_img1.jpg",
+      "img2": "/Product_Images/3019_img2.jpg",
       "description": "A small fruited type where fruits are around 15cms long 0.2kg in weight usual dark green and very bitter",
       "expiry": "2024-3-26"
     },
     {
+      "_id":19,
       "category": "seeds",
       "name": "Hot pepper",
       "mrp": 320,
       "price": 300,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Ananya hybrid seeds",
       "weight": 100,
       "stock": true,
-      "img1": "/Images/Product_Images/3020_img1.jpg",
-      "img2": "/Images/Product_Images/3020_img2.jpg",
+      "img1": "/Product_Images/3020_img1.jpg",
+      "img2": "/Product_Images/3020_img2.jpg",
       "description": "pepper is a dried unripe fruit grown in the plant called piper nigrum",
       "expiry": "2024-7-15"
     },
     {
+      "_id":20,
       "category": "fertilizers",
       "name": "Gromer Magnesium Sulphate",
       "mrp": 550,
       "price": 520,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "Gromer fertilizers",
       "weight": 5000,
       "stock": true,
-      "img1": "/Images/Product_Images/3021_img1.jpg",
-      "img2": "/Images/Product_Images/3021_img2.jpg",
+      "img1": "/Product_Images/3021_img1.jpg",
+      "img2": "/Product_Images/3021_img2.jpg",
       "description": "Gromor Magnesium Sulphate is a soluble fertilizer by Coromandel International Ltd. It plays an important role in respiration and enzyme activation in respiration and enzyme activation in the plant. It is an important component of the magnesium chlorophyll molecule. Magnesium increases the greenness,  yield, and quality of crops. It also increases the activity of photosynthesis.",
       "expiry": "2025-3-26"
     },
     {
+      "_id":21,
       "category": "fertilizers",
       "name": "Biovita, seed weed extract",
       "mrp": 600,
       "price": 550,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Biovita fertilizers",
       "weight": 1000,
       "stock": true,
-      "img1": "/Images/Product_Images/3022_img1.jpg",
-      "img2": "/Images/Product_Images/3022_img2.jpg",
+      "img1": "/Product_Images/3022_img1.jpg",
+      "img2": "/Product_Images/3022_img2.jpg",
       "description": "Biovita is a fertilizer by PI Industries. This product helps to grow plants roots and develops healthy roots. Simultaneously, it helps the plant to absorb essential nutrients and absorb moisture from the soil, thereby increasing production.",
       "expiry": "2023-1-26"
     },
     {
+      "_id":22,
       "category": "fertilizers",
       "name": "AgriPro Plant Nutrient",
       "mrp": 900,
       "price": 850,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "agriPro",
       "weight": 1000,
       "stock": true,
-      "img1": "/Images/Product_Images/3023_img1.jpg",
-      "img2": "/Images/Product_Images/3023_img2.jpg",
+      "img1": "/Product_Images/3023_img1.jpg",
+      "img2": "/Product_Images/3023_img2.jpg",
       "description": "agriPRO is a plant nutrient by Aries Agro Pvt Ltd. It is used for the replenishment of nutrients in all vegetables, fruit crops, and other crops. It replenishes various micronutrients in plants and increases production.",
       "expiry": "2024-6-28"
     },
     {
+      "_id":23,
       "category": "fertilizers",
       "name": "Agromin Gold, Micronutrient",
       "mrp": 300,
       "price": 200,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Agromin Gold",
       "weight": 450,
       "stock": true,
-      "img1": "/Images/Product_Images/3024_img1.jpg",
-      "img2": "/Images/Product_Images/3024_img2.jpg",
+      "img1": "/Product_Images/3024_img1.jpg",
+      "img2": "/Product_Images/3024_img2.jpg",
       "description": "Agromin Gold is a micronutrient by Aries Agro Pvt. Ltd. It is a mixture of micronutrients whose main function is to replenish the microelements in all the crops and to increase production and quality. It helps to maintain nutrient balance by correcting the deficiency of micronutrients in the plant",
       "expiry": "2025-8-28"
     },
     {
+      "_id":24,
       "category": "seeds",
       "name": "Snake guard",
       "mrp": 350,
       "price": 320,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "NFS seeds",
       "weight": 500,
       "stock": true,
-      "img1": "/Images/Product_Images/3018_img1.jpg",
-      "img2": "/Images/Product_Images/3018_img2.jpg",
+      "img1": "/Product_Images/3018_img1.jpg",
+      "img2": "/Product_Images/3018_img2.jpg",
       "description": "The snake guard is an anual plant with forked tendrils and kidney or heart shaped seeds",
       "expiry": "2025-9-7"
     },
     {
+      "_id":25,
       "category": "fertilizers",
       "name": "Root Health, Bio Fertilizer",
       "mrp": 450,
       "price": 430,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Root Bio fertilizers",
       "weight": 1350,
       "stock": true,
-      "img1": "/Images/Product_Images/3027_img1.png",
-      "img2": "/Images/Product_Images/3027_img2.png",
+      "img1": "/Product_Images/3027_img1.png",
+      "img2": "/Product_Images/3027_img2.png",
       "description": "Root Health is a biofertilizer by International Panaacea Ltd. Root growth-promoting rhizobacteria are available in liquid formulations and act as root growth enhancers. It produces biochemical substances which help in white root development in various crops. As a result, plants are able to take up good quantity plant nutrients from the soil, which results in the enhanced overall health of the plant",
       "expiry": "2023-4-5"
     },
     {
+      "_id":26,
       "category": "fertilizers",
       "name": "Gromor spray NPK 19-19-19",
       "mrp": 120,
       "price": 99,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "Gromor Company",
       "weight": 1000,
       "stock": true,
-      "img1": "/Images/Product_Images/3026_img1.png",
-      "img2": "/Images/Product_Images/3026_img2.png",
+      "img1": "/Product_Images/3026_img1.png",
+      "img2": "/Product_Images/3026_img2.png",
       "description": "Gromor Spray NPK 19-19-19 is a soluble fertilizer by Coromandel International Ltd. Phosphorus and potash are found in the primary amount in it. It is used in all crops to make phosphorus and potash. It is mainly used for spraying on leaves.",
       "expiry": "2023-9-1"
     },
     {
+      "_id":27,
       "category": "fertilizers",
       "name": "5G plant promoter",
       "mrp": 1350,
       "price": 1250,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "5G plant growth",
       "weight": 1540,
       "stock": true,
-      "img1": "/Images/Product_Images/3028_img1.png",
-      "img2": "/Images/Product_Images/3028_img2.png",
+      "img1": "/Product_Images/3028_img1.png",
+      "img2": "/Product_Images/3028_img2.png",
       "description": "5 G, is a plant growth promoter by International Panaacea Ltd. It contains Humic & Fulvic acid. It helps to plant natural growth and development, anti-stress. It enhances leaf size, color, flowering & fruiting of the plant also increases yield with larger & better fruit quality. It is used in All vegetables, fruits, cereals crops.",
       "expiry": "2025-8-19"
     },
     {
+      "_id":28,
       "category": "fertilizers",
       "name": "Zetol Storm Chili 15-15-13",
       "mrp": 330,
       "price": 300,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Zetol strom",
       "weight": 1000,
       "stock": true,
-      "img1": "/Images/Product_Images/3029_img1.png",
-      "img2": "/Images/Product_Images/3029_img2.png",
+      "img1": "/Product_Images/3029_img1.png",
+      "img2": "/Product_Images/3029_img2.png",
       "description": "Zetol Strom Chili I 15-15-13 (Vegetative & Flowering formula) is a fertilizer by Fertis India Pvt. Ltd. It prevents leaf senescence and enhances nutrient absorption. It improves flowering and reduces flower dropping. It provides a balanced ratio of nutrients to plants and fulfills the nutrient deficiencies.",
       "expiry": "2025-9-19"
     },
     {
+      "_id":29,
       "category": "fertilizers",
       "name": "Enviiro Moly, Mix Nutrient",
       "mrp": 300,
       "price": 280,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "Enviiro moly",
       "weight": 680,
       "stock": true,
-      "img1": "/Images/Product_Images/3030_img1.png",
-      "img2": "/Images/Product_Images/3030_img2.png",
+      "img1": "/Product_Images/3030_img1.png",
+      "img2": "/Product_Images/3030_img2.png",
       "description": "Enviiro Moly is a mixed nutrient by Crop Star India Pvt. Ltd. It is a micronutrients mixture of affective nutritious components which are beneficial in the optimum growth of crops at all stages. It contains balanced nutritious components. It is a micronutrients mixture fertilizer that can be used for most crops.",
       "expiry": "2024-10-9"
     },
     {
+      "_id":30,
       "category": "pesticides",
       "name": "Doctor Earth",
       "mrp": 200,
       "price": 180,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Iffco urban",
       "weight": 100,
       "stock": true,
-      "img1": "/Images/Product_Images/3032_img1.jpg",
-      "img2": "/Images/Product_Images/3032_img2.jpg",
+      "img1": "/Product_Images/3032_img1.jpg",
+      "img2": "/Product_Images/3032_img2.jpg",
       "description": "Natural biological protection from all types of soil-borne diseases such as Wilt, White Mold, Root Rot, Damping-off, etc.. Enriches soil with natural and beneficial anti-fungal, anti-bacterial and anti-nematicidal microbes. 100% Water Soluble. Can be used along with any organic/ inorganic soil, manure or fertilizer. Safe to earthworms and other beneficial microbes. Suitable for Indoor/Outdoor Plants, flowers, Kitchen Garden, Trees, Lawns, etc.",
       "expiry": "2024-5-28"
     },
     {
+      "_id":31,
       "category": "pesticides",
       "name": "Neem oil spray",
       "mrp": 300,
       "price": 280,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "B Natural",
       "weight": 780,
       "stock": true,
-      "img1": "/Images/Product_Images/3031_img1.jpg",
-      "img2": "/Images/Product_Images/3031_img2.jpg",
+      "img1": "/Product_Images/3031_img1.jpg",
+      "img2": "/Product_Images/3031_img2.jpg",
       "description": "100% Pure Neem oil for plants Acts as pesticide for plants home garden & fungicide for plants. Recommended For organic Farming & gardening safe for indoor and outdoor plants. Best gardening gifts For garden lovers to keep their garden free from pesticides and insecticides for indoor/outdoor use on fruits, vegetables, nuts, herbs, spices, roses, houseplants, flowers, trees, lawns and shrubs.It is an herbal insecticide used in agricultural sprayers, farming and gardening, How to make ready spray (Usage guide) 1.Cold pressed oil is concentrated form of neem oil it needs to be diluted before using on plants 2.add 3-5 ml max oil in 1 ltr of warm water mix it well till get emultion form 3.Put this mixture in spray bottle adjust fine spray setting , & spray the mixture on plant leaves from down side to upper side till leaves wet properly 4. First take trial on 2-3 leaves then apply on whole plants",
       "expiry": "2024-11-23"
     },
     {
+      "_id":32,
       "category": "fertilizers",
       "name": "Folibar, Micronutrient",
       "mrp": 320,
       "price": 290,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Folibar",
       "weight": 1000,
       "stock": true,
-      "img1": "/Images/Product_Images/3025_img1.png",
-      "img2": "/Images/Product_Images/3025_img2.png",
+      "img1": "/Product_Images/3025_img1.png",
+      "img2": "/Product_Images/3025_img2.png",
       "description": "Folibor is a micronutrient by Coromandel International Ltd. It is used in all fruits, vegetables, and other crops by spraying. This leads to a deficiency of boron in plants, which leads to an increase in the number of flowers and fruits. It is also essential for improving quality.",
       "expiry": "2023-12-9"
     },
     {
+      "_id":33,
       "category": "pesticides",
       "name": "Worm fight",
       "mrp": 200,
       "price": 150,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Worm organic",
       "weight": 299,
       "stock": true,
-      "img1": "/Images/Product_Images/3034_img1.jpg",
-      "img2": "/Images/Product_Images/3034_img2.jpg",
+      "img1": "/Product_Images/3034_img1.jpg",
+      "img2": "/Product_Images/3034_img2.jpg",
       "description": "100 % Organic And Premium Grade Concentrate, , A Safe Atlternative To Chemical Pesticide. Contents : Aloe Vera,Cymbopogon Citratus,Azadirachta Indica,Melitta Pinnata,Allium Sativum, Acetic Acid,Curcuma Longa. It Is 100% Safe And No Chemicals Added. Uses : It Is Effective In Controlling Black Spot, Powdery Mildew,Anthracnose And Rust Fungi. It Is Also Effective Against Mealy Bug, Beet Armyworm, Aphids, Cabbage Worm, Thrips, Whiteflies, Mites,Fungus Gnats, Beetles, Moth Larvae, Mushroom Flies, Leafminers, Caterpillars, Locust, Nematodes And The Japanese Beetle. It Can Be Used As A Household Pesticide For Ant, Bedbug, Cockroach, Housefly, Sand Fly, Snail. Can Be Used For : All Crops Vegetable, Flower Gardens, Orchards, Turf Grass, Fruits (Horticulture), Hydrophonics, Green House Crops ,Indoor Plants, Outdoor Plants Etc. It Is 100% Organic And Safe / No Chemicals Added.Best Suitable For Peoples Who Loves Organic Farming/Safe Organic Methods In Agriculture & Farming. Direction For Use : Mix 15-20Ml Of Worm Fight Into A Litre Of Water And Spray On The Plants. If The Infection Is Severe Repeat The Spray Once Or Twice At A Week Interval.Suitable For Drip, Folliar Spray & Drenching. (Water Soluble : Just Mix With Water And Apply , Safe & Easy To Use, And Perfect For All Indoor And Outdoor Plants.)",
       "expiry": "2024-2-4"
     },
     {
+      "_id":34,
       "category": "pesticides",
       "name": "Imida Insecticide",
       "mrp": 1000,
       "price": 700,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "Imida Systematic",
       "weight": 900,
       "stock": true,
-      "img1": "/Images/Product_Images/3035_img1.jpg",
-      "img2": "/Images/Product_Images/3035_img2.jpg",
+      "img1": "/Product_Images/3035_img1.jpg",
+      "img2": "/Product_Images/3035_img2.jpg",
       "description": "Insecticide Imidacloprid 30.5% SC. Preventive - Preservative and Curative Termite Control. Easy to use",
       "expiry": "2025-8-23"
     },
     {
+      "_id":35,
       "category": "pesticides",
       "name": "Trustbasket organic",
       "mrp": 340,
       "price": 300,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "Trustbasket",
       "weight": 600,
       "stock": true,
-      "img1": "/Images/Product_Images/3038_img1.jpg",
-      "img2": "/Images/Product_Images/3038_img2.jpg",
+      "img1": "/Product_Images/3038_img1.jpg",
+      "img2": "/Product_Images/3038_img2.jpg",
       "description": "Package Contents:1 Concentrated All Purpose Organic Pest Controller highly effective when used as a preventive application has repellent and antifeedant properties against plant insects has ovicidal (kills the insect egg) and larvicidal(kills the caterpillar) properties",
       "expiry": "2025-11-23"
     },
     {
+      "_id":36,
       "category": "pesticides",
       "name": "Utkarsh sudoz",
       "mrp": 450,
       "price": 400,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Utkarsh Solutions",
       "weight": 500,
       "stock": true,
-      "img1": "/Images/Product_Images/3036_img1.jpg",
-      "img2": "/Images/Product_Images/3036_img2.jpg",
+      "img1": "/Product_Images/3036_img1.jpg",
+      "img2": "/Product_Images/3036_img2.jpg",
       "description": "Sudoz-P is a Pseudomonas florescence bacterium formulated in an inert carier material like talc and similar other natural product.it is effective against wide variety of seed and soil borne plant pathogenic fungi.it helps to protect Rice, chilly, Banana, Tomato, Chickpea, Sesame, Groundnut, and Sugarcane from fungus. Drenching Application: 5gm. of the product in 1 lit. Water applied over the crops by drenching. Soil Treatment: 1.5 to 2 kg. of the product mixed with 25 kg. Farm yard manure applied to the soil prior to sowing or post sowing. Dose : 1-3 kg/Acre.; Country of origin : India, Color Name: White",
       "expiry": "2025-6-2"
     },
     {
+      "_id":37,
       "category": "pesticides",
       "name": "Protect Plus",
       "mrp": 330,
       "price": 300,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Iffco urban",
       "weight": 100,
       "stock": true,
-      "img1": "/Images/Product_Images/3037_img1.jpg",
-      "img2": "/Images/Product_Images/3037_img2.jpg",
+      "img1": "/Product_Images/3037_img1.jpg",
+      "img2": "/Product_Images/3037_img2.jpg",
       "description": "QUALITY- Natural protection from Pests and Diseases. HOW IT WORKS- Increases Resistance from Soil Based Pathogens like nematodes and fungus. HOW IT HELPS- Increases Plant Immunity. BENIFITS- Safe for earthworms, bacteria and other beneficial micro-organisms. NUTRIENTS- Slow release of essential nutrients.",
       "expiry": "2024-6-19"
     },
     {
+      "_id":38,
       "category": "pesticides",
       "name": "Green Beauveria",
       "mrp": 600,
       "price": 560,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "Beauverial",
       "weight": 1130,
       "stock": true,
-      "img1": "/Images/Product_Images/3033_img1.jpg",
-      "img2": "/Images/Product_Images/3033_img2.jpg",
+      "img1": "/Product_Images/3033_img1.jpg",
+      "img2": "/Product_Images/3033_img2.jpg",
       "description": "Green Beauveria is a biopesticide containing the white muscardine fungus. Green Beauveria is widely used for control of crop pests such as locusts, thrips, White flies, aphids, Caterpillars, Weevils, Grass hoppers, Ants, Colorado Potato beetle etc. It can be used for control of western flower thrips infestation in chilli. Penetrates the cuticle and colonizes inside the target pest. Compatible with several chemical insecticides. Field Crops- Cotton, Paddy, Sorghum, Sunflower, Groundnut, Potato etc.. Fruit Crops- Grapes, Guava,Sapota, Citrus, Mango, Pomegranate, Custard Apple, Vegetable crops- Tomato, Chilly, Brinjal, Lady's Finger etc. Dosage: Foliar Spray - Green Beaveria 50-100ml/10 litre of water or 1-1.5 litre in 200-300 litres of water per acre.",
       "expiry": "2025-8-25"
     },
     {
+      "_id":39,
       "category": "pesticides",
       "name": "Gaigen sap",
       "mrp": 400,
       "price": 300,
-      "sellerId": 8001,
+      "seller_Id": 8001,
       "manufacturer": "Gaigen Naturals",
       "weight": 800,
       "stock": true,
-      "img1": "/Images/Product_Images/3039_img1.jpg",
-      "img2": "/Images/Product_Images/3039_img2.jpg",
-      "description": "A simple-to-use and easy-to-apply solution for the urban gardeners. All they need to do is shake it, spray it and watch their gardens flourish. Natural, Biodegradable, Odourless, Non-residual, Safe for Environment, Humans & Pets. This product works on Whiteflies, Aphids, Mealybugs, Thrips & Mites. Can be used in small & medium sized gardens. Ideal for use in terrace gardens. This product protects your plants against Leaf curling, Yellowing, Growth of black sooty mould fungus on leaves, Premature falling of leaves and flower buds, General wilting and stunting, Deformed fruits, Honeydew secretions caused by mealybugs, aphids and whiteflies.",
+      "img1": "/Product_Images/3039_img1.jpg",
+      "img2": "/Product_Images/3039_img2.jpg",
+      "description": "A simple-to-use and easy-to-apply solution for the urban gardeners. All they need to do is shake it, spray it and watch their gardens flourish. Natural, Biodegradable, Odourless, Non-residual, Safe for Environment, Humans & Pets. This product works on Whiteflies, Aphids, Mealybugs, Thrips & Mites. Can be used in small & medium sized gardens. _Ideal for use in terrace gardens. This product protects your plants against Leaf curling, Yellowing, Growth of black sooty mould fungus on leaves, Premature falling of leaves and flower buds, General wilting and stunting, Deformed fruits, Honeydew secretions caused by mealybugs, aphids and whiteflies.",
       "expiry": "2023-10-6"
     },
     {
+      "_id":40,
       "category": "pesticides",
       "name": "Zaena Soilin",
       "mrp": 400,
       "price": 380,
-      "sellerId": 8002,
+      "seller_Id": 8002,
       "manufacturer": "Zaena BioNatural",
       "weight": 680,
       "stock": true,
-      "img1": "/Images/Product_Images/3040_img1.jpg",
-      "img2": "/Images/Product_Images/3040_img2.jpg",
+      "img1": "/Product_Images/3040_img1.jpg",
+      "img2": "/Product_Images/3040_img2.jpg",
       "description": "There are wide range of pests that would like nothing more than to ruin the look and health of your crops. But with one simple step, you can keep your crop looking healthy and growing strong. WHERE TO USE: For use on lawns or grounds, in plants intended for aesthetic purposes or climate modification and being grown in interior plantscapes.he natural and effective alternative to chemical pesticides, and have no detrimental effect on non-target species such as ladybugs, earth worms and other helpful garden insects. This makes nematode use for insect pest control safe and environmentally friendly. WHEN TO USE: For best results, apply in cool weather (65 to 80 °F) or in early morning or late evening hours. Treat new fire ant mounds as they appear. Refer to the label for timing of application for specific species. Kills pre-adult fleas in the yard, and pet run areas and soil. It's most effective against flea larvae and caterpillars in lawns, garden soil, and under trees where larvae pupate.They are effective against some plant parasitic nematodes, particularly root-knot nematodes.",
       "expiry": "2023-1-13"
     }
@@ -577,7 +617,7 @@
       "profit": 13000,
       "brief": "Cotton is vastly cultivated in AP",
       "info": "Cotton plant is a shrub and is widely cultivated in over 90 countries for its fiber and secondly for seeds. About 2,5% of world cropland is planted with cotton. It is an angiosperm, dicotyledonous plant, which belongs to the family of Malvaceae. It is native to Asia and Africa.Cotton is a seed-hair fiber made mostly of cellulose. The fibers are composed of about 87 to 90 percent cellulose (a carbohydrate plant substance), 5 to 8 percent water, and 4 to 6 percent natural impurities.\nCotton is a soft, fluffy staple fiber that grows in a boll, or protective case, around the seeds of the cotton plants of the genus Gossypium in the mallow family Malvaceae. The fiber is almost pure cellulose, and can contain minor percentages of waxes, fats, pectins, and water. Under natural conditions, the cotton bolls will increase the dispersal of the seeds.\nThe plant is a shrub native to tropical and subtropical regions around the world, including the Americas, Africa, Egypt and India. The greatest diversity of wild cotton species is found in Mexico, followed by Australia and Africa.[1] Cotton was independently domesticated in the Old and New Worlds.\nThe fiber is most often spun into yarn or thread and used to make a soft, breathable, and durable textile. The use of cotton for fabric is known to date to prehistoric times; fragments of cotton fabric dated to the fifth millennium BC have been found in the Indus Valley Civilization, as well as fabric remnants dated back to 6000 BC in Peru. Although cultivated since antiquity, it was the invention of the cotton gin that lowered the cost of production that led to its widespread use, and it is the most widely used natural fiber cloth in clothing today.",
-      "img": "/Images/Crop_Images/cotton.webp"
+      "img": "/Crop_Images/cotton.webp"
     },
     {
       "_id": {
@@ -591,7 +631,7 @@
       "profit": 20000,
       "brief": "Wheat is mainly cultivated in UP,Punjab. ",
       "info": "Wheat includes any agricultural cereal grass of the genus Triticum in the grass family Poaceae. Wheat is one of the top three cereal crops in terms of global production, along with maize and rice; together wheat, maize, and rice provide over half of the global requirement of calories and protein (Biodiversity International 2007). Wheat can grow in a wide range of climates; though, it grows most favorably in temperate climates and is susceptible to disease in very hot and humid zones.",
-      "img": "/Images/Crop_Images/wheat.jpg"
+      "img": "/Crop_Images/wheat.jpg"
     },
     {
       "_id": {
@@ -605,7 +645,7 @@
       "profit": 300000,
       "brief": "Rice is mainly cultivated in West Bengal. ",
       "info": "Rice is a main staple in more than 100 countries worldwide. [1] In some households, rice is included with more than one meal a day. This starchy high-calorie grain is generally low cost, making it accessible to all and a vital base of many diets. Each country showcases a rice specialty to reflect local spices and taste preferences: risotto in Italy, paella in Spain, jambalaya in the southern U.S., coconut rice in Colombia, steamed rice in China, rice and beans in Mexico, and sweet rice in Portugal, to name a few.",
-      "img": "/Images/Crop_Images/rice.jpg"
+      "img": "/Crop_Images/rice.jpg"
     },
     {
       "_id": {
@@ -619,7 +659,7 @@
       "profit": 250000,
       "brief": "Potato is vastly cultivated in  Utter Pradesh",
       "info": "Potatoes are underground tubers that grow on the roots of the potato plant, Solanum tuberosum.\n\nThis plant is from the nightshade family and related to tomatoes and tobacco. Native to South America, potatoes were brought to Europe in the 16th century and are now grown in countless varieties worldwide.\n\nThey’re generally eaten boiled, baked, or fried and frequently served as a side dish or snack. Common potato-based foods and food products include french fries, potato chips, and potato flour.",
-      "img": "/Images/Crop_Images/potato.jpg"
+      "img": "/Crop_Images/potato.jpg"
     },
     {
       "_id": {
@@ -633,7 +673,7 @@
       "profit": 195000,
       "brief": "Pulses is vastly cultivated in Madhya Pradesh.",
       "info": "Pulses are the edible seeds of plants in the legume family. Pulses grow in pods and come in a variety of shapes, sizes and colors. The United Nations Food and Agriculture Organization (FAO) recognizes 11 types of pulses: dry beans, dry broad beans, dry peas, chickpeas, cow peas, pigeon peas, lentils, Bambara beans, vetches, lupins and pulses nes (not elsewhere specified – minor pulses that don’t fall into one of the other categories).",
-      "img": "/Images/Crop_Images/pulses.jpg"
+      "img": "/Crop_Images/pulses.jpg"
     },
     {
       "_id": {
@@ -647,7 +687,7 @@
       "profit": 48000,
       "brief": "Millets is vastly cultivated in Karnataka, AP.",
       "info": "The practice of consuming millets as part of the daily diet is not new to India. “Millets had been the major staple food in central India, southern India and hilly regions of Uttarakhand for centuries till the time of the Green Revolution. After the advent of high-yielding varieties of rice and wheat during the 1970s, millets got sidelined from our food basket,\" says Vilas A. Tonapi, director of the Indian Institute of Millets Research in Hyderabad. The reason for this is lack of awareness about the nutritional benefits, the not-so-sumptuous taste and the tag of “a poor man’s food\". “Also, government pushed only rice and wheat in the subsidized public distribution system, rendering the cultivation of millets uneconomical",
-      "img": "/Images/Crop_Images/millets.jpg"
+      "img": "/Crop_Images/millets.jpg"
     },
     {
       "_id": {
@@ -661,7 +701,7 @@
       "profit": 15000,
       "brief": "Ground Nut is vastly cultivated in Gujarat.",
       "info": "Groundnut, also known as peanut and pignut is one of the best sources of protein. Consuming groundnut is very beneficial for our health.\nPeanuts contain vitamin E, magnesium, foliate, copper and arginine. Studies reveal that peanuts can even be useful for weight loss and reduce the risk of cardiovascular disease.",
-      "img": "/Images/Crop_Images/groundnut.jpg"
+      "img": "/Crop_Images/groundnut.jpg"
     },
     {
       "_id": {
@@ -675,7 +715,7 @@
       "profit": 20000,
       "brief": "Wheat is mainly cultivated in UP,Punjab. ",
       "info": "Wheat includes any agricultural cereal grass of the genus Triticum in the grass family Poaceae. Wheat is one of the top three cereal crops in terms of global production, along with maize and rice; together wheat, maize, and rice provide over half of the global requirement of calories and protein (Biodiversity International 2007). Wheat can grow in a wide range of climates; though, it grows most favorably in temperate climates and is susceptible to disease in very hot and humid zones.",
-      "img": "/Images/Crop_Images/wheat.jpg"
+      "img": "/Crop_Images/wheat.jpg"
     },
     {
       "_id": {
@@ -689,7 +729,7 @@
       "profit": 48000,
       "brief": "Millets is vastly cultivated in Karnataka, AP.",
       "info": "The practice of consuming millets as part of the daily diet is not new to India. “Millets had been the major staple food in central India, southern India and hilly regions of Uttarakhand for centuries till the time of the Green Revolution. After the advent of high-yielding varieties of rice and wheat during the 1970s, millets got sidelined from our food basket,\" says Vilas A. Tonapi, director of the Indian Institute of Millets Research in Hyderabad. The reason for this is lack of awareness about the nutritional benefits, the not-so-sumptuous taste and the tag of “a poor man’s food\". “Also, government pushed only rice and wheat in the subsidized public distribution system, rendering the cultivation of millets uneconomical",
-      "img": "/Images/Crop_Images/millets.jpg"
+      "img": "/Crop_Images/millets.jpg"
     },
     {
       "_id": {
@@ -703,7 +743,7 @@
       "profit": 15000,
       "brief": "Ground Nut is vastly cultivated in Gujarat.",
       "info": " Groundnut, also known as peanut and pignut is one of the best sources of protein. Consuming groundnut is very beneficial for our health.\n Groundnut, also known as peanut and pignut is one of the best sources of protein. Consuming groundnut is very beneficial for our health especially in winters.\n\nPeanuts contain vitamin E, magnesium, foliate, copper and arginine. Studies reveal that peanuts can even be useful for weight loss and reduce the risk of cardiovascular disease.",
-      "img": "/Images/Crop_Images/groundnut.jpg"
+      "img": "/Crop_Images/groundnut.jpg"
     },
     {
       "_id": {
@@ -717,7 +757,7 @@
       "profit": 15000,
       "brief": "Sugarcane is vastly cultuivated in Uttar Pradesh ",
       "info": "Sugarcane (Saccharum officinarum) family Gramineae (Poaceae) is widely grown crop in India. It provides employment to over a million people directly or indirectly besides contributing significantly to the national exchequer. Sugarcane growing countries of the world lay between the latitude 36.7° north and 31.0° south of the equator extending from tropical to subtropical zones. Sugar cane originated in New Guinea where it has been known for thousands of years. Sugar cane plants spread along human migration routes to Asia and the Indian subcontinent. Here it cross-bred with some wild sugar cane relatives to produce the commercial sugar cane we know today.Cultivation of sugarcane in India dates back to the Vedic period. The earliest mention of sugarcane cultivation is found in Indian writings of the period 1400 to 1000 B.C. It is now widely accepted that India is the original home of Saccharum species. Saccharum barberi and Polynesian group of island especially New Guinea is the centre of origin of S. officinarum. It belongs to family Gramineae (Poaceae), class monocotyledons and order glumaceae sub family panicoidae, tribe Andripogoneae and sub tribe saccharininea. The cultivated canes belong to two main groups: (a) thin, hardy north Indian types S.barberi and S.Sinense and (b) thick, juicy noble canes Saccharum officinarum. Highly prized cane is S. officinarum",
-      "img": "/Images/Crop_Images/sugarcane.jpg"
+      "img": "/Crop_Images/sugarcane.jpg"
     },
     {
       "_id": {
@@ -731,7 +771,7 @@
       "profit": 19000,
       "brief": "Sun flower is vastly cultivated in Andhra Pradesh.",
       "info": "Sunflower is the common name for any of the plants of the genus Helianthus of the flowering plant family Asteraceae (known as the aster, daisy, or sunflower family). It also commonly is used specifically in reference to the annual plant Helianthus annuus, the common sunflower, which is characterized by a long stem and a large flowering head (inflorescence) with large seeds. The term sunflower also refers to this plant's seed-like fruit (commonly but incorrectly called the seeds) or the encased, edible, true seeds.\n\nThe adaptation that allows sunflowers to advance their own individual purpose of reproduction, the \"flower head,\" also contributes larger value for the ecosystem and for humans. Ecologically, sunflowers are copious nectar producers, providing food for pollinating bees, while the seeds and leaves provide food for such animals as birds, insects, and squirrels.",
-      "img": "/Images/Crop_Images/sunflower.jpg"
+      "img": "/Crop_Images/sunflower.jpg"
     },
     {
       "_id": {
@@ -745,7 +785,7 @@
       "profit": 53400,
       "brief": "Water Melon is vastly cultivated in Maharashtra",
       "info": "Watermelon is rich in an amino acid called citrulline that may help move blood through your body and can lower your blood pressure. Your heart also enjoys the perks of all the lycopene watermelon contains. Studies show that it may lower your risk of heart attacks. Of course, your whole lifestyle affects your heart health. So make sure you also work out, don’t smoke, limit saturated fat, and keep up with your doctor’s advice.Watermelon has a natural pigment called beta-cryptoxanthin that may protect your joints from inflammation. Some studies show that over time, it could make you less likely to get rheumatoid arthritis.",
-      "img": "/Images/Crop_Images/watermelon.jpg"
+      "img": "/Crop_Images/watermelon.jpg"
     },
     {
       "_id": {
@@ -759,7 +799,7 @@
       "profit": 103400,
       "brief": "Cucumber is vastly cultivated in West Bengal..",
       "info": "Cucumbers have a mild, refreshing taste and a high water content. They can help relieve dehydration and are pleasant to eat in hot weather. People eat cucumber as a savory food, but it is a fruit. It also features in some beauty products.\n\nThe cucumber is a member of the Cucurbitaceae family. Other members of the family include squash and different kinds of melon, including bitter melon. Cucumbers provide various nutrients but are low in calories, fat, cholesterol, and sodium.",
-      "img": "/Images/Crop_Images/cucumber.jpg"
+      "img": "/Crop_Images/cucumber.jpg"
     },
     {
       "_id": {
@@ -773,7 +813,7 @@
       "profit": 250000,
       "brief": "Potato is vastly cultivated in  Utter Pradesh",
       "info": "Potatoes are underground tubers that grow on the roots of the potato plant, Solanum tuberosum.\n\nThis plant is from the nightshade family and related to tomatoes and tobacco. Native to South America, potatoes were brought to Europe in the 16th century and are now grown in countless varieties worldwide.\n\nThey’re generally eaten boiled, baked, or fried and frequently served as a side dish or snack. Common potato-based foods and food products include french fries, potato chips, and potato flour.",
-      "img": "/Images/Crop_Images/potato.jpg"
+      "img": "/Crop_Images/potato.jpg"
     },
     {
       "_id": {
@@ -787,7 +827,7 @@
       "profit": 25000,
       "brief": "Tomato is vastly cultivated in  Bihar.",
       "info": "Tomato is the most widely cultivated crop in India. Tomato is a very important vegetable crop regarding both income and nutrition. Tomatoes are predominantly summer crops, but it can be cultivated throughout the year. In its fruit contain vitamins like 'A' and 'C' and antioxidant in abundance quantity.Tomato is the most widely cultivated crop in India. Tomato is a very important vegetable crop regarding both income and nutrition. Tomatoes are predominantly summer crops, but it can be cultivated throughout the year.\n\nIn its fruit contain vitamins like ‘A’ and ‘C’ and antioxidant in abundance quantity. Due to the unique properties contained in its fruit, tomato demand remains almost the same throughout the year.\n\nTomatoes are also used as fresh fruits, and they are cooked and cooked in pickles, chutneys, soups, ketchup, sauces, etc.",
-      "img": "/Images/Crop_Images/tomato.jpg"
+      "img": "/Crop_Images/tomato.jpg"
     },
     {
       "_id": {
@@ -801,7 +841,7 @@
       "profit": 92500,
       "brief": "Corn is vastly cultivated in AP.",
       "info": "Maize is popularly known as “corn” is one of the most versatile emerging cash crops having wider adaptability under varied climatic conditions. It is called the queen of cereals globally. In India, maize or corn is the third most important food cash crops after wheat & rice.The maize is cultivated throughout the year in all states of the country for various purposes including grain, fodder, green cobs, sweet corn, baby corn, pop corn in peri-urban areas. The predominant maize growing states that contributes more than 80 % of the total maize production are Andhra Pradesh (20.9 %), Karnataka (16.5 %), Rajasthan (9.9 %), Maharashtra (9.1 %), Bihar (8.9 %), Uttar Pradesh (6.1 %), Madhya Pradesh (5.7 %), Himachal Pradesh (4.4 %). Apart from these states maize is also grown in Jammu and Kashmir and North-Eastern states. Hence, the maize has emerged as important crop in the non-traditional regions i.e. peninsular India as the state like Andhra Pradesh which ranks 5th in area (0.79 m ha) has recorded the highest production (4.14 m t) and productivity (5.26 t ha-1 ) in the country although the productivity in some of the districts of Andhra Pradesh is more or equal to the USA.",
-      "img": "/Images/Crop_Images/corn.jpg"
+      "img": "/Crop_Images/corn.jpg"
     },
     {
       "_id": {
@@ -815,7 +855,7 @@
       "profit": 26500,
       "brief": "Carrot is vastly cultivated in Haryana.",
       "info": "Carrot is a cool season crop and when grown at 15°C to 20°C will develop a good colour. The carrot crop needs deep loose loamy soil. It requires a pH ranging from 6.0 to 7.0 for higher production. Season. Hills: At elevation above 1500 metres, Carrot can be grown throughout the year under assured irrigation.For good root development carrot required deep, loose loamy soils. Heavy soils as well as very loose soils are not suitable for carrot cultivation. For optimum yield pH of soil should be in range of 5.5 to 7 (pH of 6.5 is ideal for good yield).After sowing, apply first irrigation, it will help in good germination. Depending upon soil type and climate, apply remaining irrigations at interval of 6-7 days in summer and 10-12 days interval in winter month. Overall carrot required three to four irrigations. Avoid excessive irrigation as it will leads misshape of roots and numerous hair growth. Stop irrigation two to three weeks before harvesting, It will help in increase in sweetness and taste of carrot.",
-      "img": "/Images/Crop_Images/carrot.jpg"
+      "img": "/Crop_Images/carrot.jpg"
     },
     {
       "_id": {
@@ -828,8 +868,8 @@
       "waterReq": 90000,
       "profit": 46500,
       "brief": "Radish is vastly cultivated in Himachal Pradesh.",
-      "info": "Radish, edible root vegetable belongs to family of \"Cruciferae\" and its origin is in Mediterranean. It is crop of tropical and temperate region. It is a quick growing annual or biannual herb. Its edible roots are having different color from white to red. West Bengal, Bihar, Uttar Pradesh, Karnataka, Punjab and Assam are major radish growing states. Radish is good source of vitamin B6, Calcium, copper, magnesium and riboflavin. Also it is rich in ascorbic acid, folic acid and potassium.It can be grown on all type of soils but give best result when grown on light friable, sandy loam soil. Avoid heavy or compact soils as it produce rough, malformed roots. Ideal pH of soil for good growth is 5.5 to 6.8.Plough land thoroughly and make land weed and clods free. Add well decomposed cow dung of 5-10ton/acre and mix well in soils at time of land preparation. Avoid use of undecomposed or free cowdung as it will leads to forking of fleshy roots.",
-      "img": "/Images/Crop_Images/radish.jpg"
+      "info": "Radish, edible root vegetable belongs to family of \"Cruciferae\" and its origin is in Mediterranean. It is crop of tropical and temperate region. It is a quick growing annual or biannual herb. Its edible roots are having different color from white to red. West Bengal, Bihar, Uttar Pradesh, Karnataka, Punjab and Assam are major radish growing states. Radish is good source of vitamin B6, Calcium, copper, magnesium and riboflavin. Also it is rich in ascorbic acid, folic acid and potassium.It can be grown on all type of soils but give best result when grown on light friable, sandy loam soil. Avoid heavy or compact soils as it produce rough, malformed roots. _Ideal pH of soil for good growth is 5.5 to 6.8.Plough land thoroughly and make land weed and clods free. Add well decomposed cow dung of 5-10ton/acre and mix well in soils at time of land preparation. Avoid use of undecomposed or free cowdung as it will leads to forking of fleshy roots.",
+      "img": "/Crop_Images/radish.jpg"
     },
     {
       "_id": {
@@ -843,7 +883,7 @@
       "profit": 300000,
       "brief": "Rice is mainly cultivated in West Bengal. ",
       "info": "Rice is a main staple in more than 100 countries worldwide. [1] In some households, rice is included with more than one meal a day. This starchy high-calorie grain is generally low cost, making it accessible to all and a vital base of many diets. Each country showcases a rice specialty to reflect local spices and taste preferences: risotto in Italy, paella in Spain, jambalaya in the southern U.S., coconut rice in Colombia, steamed rice in China, rice and beans in Mexico, and sweet rice in Portugal, to name a few.",
-      "img": "/Images/Crop_Images/rice.jpg"
+      "img": "/Crop_Images/rice.jpg"
     },
     {
       "_id": {
@@ -857,7 +897,7 @@
       "profit": 20000,
       "brief": "Wheat is mainly cultivated in UP,Punjab. ",
       "info": "Wheat includes any agricultural cereal grass of the genus Triticum in the grass family Poaceae. Wheat is one of the top three cereal crops in terms of global production, along with maize and rice; together wheat, maize, and rice provide over half of the global requirement of calories and protein (Biodiversity International 2007). Wheat can grow in a wide range of climates; though, it grows most favorably in temperate climates and is susceptible to disease in very hot and humid zones.",
-      "img": "/Images/Crop_Images/wheat.jpg"
+      "img": "/Crop_Images/wheat.jpg"
     },
     {
       "_id": {
@@ -871,7 +911,7 @@
       "profit": 15000,
       "brief": "Sugarcane is vastly cultuivated in Uttar Pradesh ",
       "info": "Sugarcane (Saccharum officinarum) family Gramineae (Poaceae) is widely grown crop in India. It provides employment to over a million people directly or indirectly besides contributing significantly to the national exchequer. Sugarcane growing countries of the world lay between the latitude 36.7° north and 31.0° south of the equator extending from tropical to subtropical zones. Sugar cane originated in New Guinea where it has been known for thousands of years. Sugar cane plants spread along human migration routes to Asia and the Indian subcontinent. Here it cross-bred with some wild sugar cane relatives to produce the commercial sugar cane we know today.Cultivation of sugarcane in India dates back to the Vedic period. The earliest mention of sugarcane cultivation is found in Indian writings of the period 1400 to 1000 B.C. It is now widely accepted that India is the original home of Saccharum species. Saccharum barberi and Polynesian group of island especially New Guinea is the centre of origin of S. officinarum. It belongs to family Gramineae (Poaceae), class monocotyledons and order glumaceae sub family panicoidae, tribe Andripogoneae and sub tribe saccharininea. The cultivated canes belong to two main groups: (a) thin, hardy north Indian types S.barberi and S.Sinense and (b) thick, juicy noble canes Saccharum officinarum. Highly prized cane is S. officinarum",
-      "img": "/Images/Crop_Images/sugarcane.jpg"
+      "img": "/Crop_Images/sugarcane.jpg"
     },
     {
       "_id": {
@@ -885,7 +925,7 @@
       "profit": 255000,
       "brief": "Tobaccco is vastly cultuivated in Andhra Pradesh ",
       "info": "Tobacco seeds are scattered onto the surface of the soil, as their germination is activated by light. In colonial Virginia, seedbeds were fertilized with wood ash or animal manure (frequently powdered horse manure). Seedbeds were then covered with branches to protect the young plants from frost damage, and the plants were left alone until around April.Tobacco can be harvested in several ways. In the oldest method, the entire plant is harvested at once by cutting off the stalk at the ground with a sickle. In the nineteenth century, bright tobacco began to be harvested by pulling individual leaves off the stalk as they ripened. As the plants grow, they usually require topping and suckering. \"Topping\" is the removal of the tobacco flowers while \"suckering\" is the pruning out of leaves that are otherwise unproductive. Both procedures ensure that as much of the plant's energy as possible focuses on producing the large leaves that are harvested and sold. \"Cropping\", \"Pulling\", and \"Priming\" are terms for removing mature leaves from tobacco plants. Leaves are cropped as they ripen, from the bottom to the top of the stalk.",
-      "img": "/Images/Crop_Images/tobacco.jpg"
+      "img": "/Crop_Images/tobacco.jpg"
     },
     {
       "_id": {
@@ -899,7 +939,7 @@
       "profit": 30000,
       "brief": "Jute is mainly cultivated in Andhra Pradesh. ",
       "info": "Jute is one of the most important natural fibers after cotton in terms of cultivation and usage. Cultivation is dependent on the climate, season, and soil. Almost 85% of the world's jute cultivation is concentrated in the Ganges Delta.\n\nThis fertile geographic region is shared by both Bangladesh and India (mainly West Bengal). China also has a dominating place in jute cultivation. On a smaller scale, Thailand, Myanmar (Burma), Pakistan, Nepal, and Bhutan also cultivate jute.To grow jute, farmers scatter the seeds on cultivated soil. When the plants are about 15–20 cm tall, they are thinned out. About four months after planting, harvesting begins. The plants are usually harvested after they flower, before the flowers go to seed. The stalks are cut off close to the ground, tied into bundles and soaked in water for about 20 days. This process softens the tissues and breaks the hard [pectin] bond between the bast and [Jute hurd] (inner woody fibers) and permits the fibres to be separated. The fibres are then stripped from the stalks in long strands and washed in clear, running water. Then they are hung up or spread on thatched roofs to dry. After 2–3 days of drying, the fibres are tied into bundles. The suitable climate for growing jute is a warm and wet climate, which is offered by the monsoon climate during the fall season, immediately followed by summer. Temperatures ranging to more than 25 °C and relative humidity of 70%–90% are favorable for successful cultivation. Jute requires 160–200 cm of rainfall yearly with extra needed during the sowing period. River basins, alluvial or loamy soils with a pH range between 4.8 and 5.8 are best for jute cultivation. Jute cultivation in red soils may require high dosage of manure. Plain land or gentle slope or low land is ideal for jute cultivation. Since the jute seeds are small in size, land should be finely tilled, which can be done by careful ploughing.",
-      "img": "/Images/Crop_Images/jute.jpg"
+      "img": "/Crop_Images/jute.jpg"
     },
     {
       "_id": {
@@ -913,7 +953,7 @@
       "profit": 36000,
       "brief": "Maize is mainly cultivated in Andhra Pradesh. ",
       "info": "Maize is popularly known as “corn” is one of the most versatile emerging cash crops having wider adaptability under varied climatic conditions. It is called the queen of cereals globally. In India, maize or corn is the third most important food cash crops after wheat & rice.The maize is cultivated throughout the year in all states of the country for various purposes including grain, fodder, green cobs, sweet corn, baby corn, pop corn in peri-urban areas. The predominant maize growing states that contributes more than 80 % of the total maize production are Andhra Pradesh (20.9 %), Karnataka (16.5 %), Rajasthan (9.9 %), Maharashtra (9.1 %), Bihar (8.9 %), Uttar Pradesh (6.1 %), Madhya Pradesh (5.7 %), Himachal Pradesh (4.4 %). Apart from these states maize is also grown in Jammu and Kashmir and North-Eastern states. Hence, the maize has emerged as important crop in the non-traditional regions i.e. peninsular India as the state like Andhra Pradesh which ranks 5th in area (0.79 m ha) has recorded the highest production (4.14 m t) and productivity (5.26 t ha-1 ) in the country although the productivity in some of the districts of Andhra Pradesh is more or equal to the USA.",
-      "img": "/Images/Crop_Images/corn.jpg"
+      "img": "/Crop_Images/corn.jpg"
     },
     {
       "_id": {
@@ -927,7 +967,7 @@
       "profit": 53400,
       "brief": "Water Melon is vastly cultivated in Maharashtra",
       "info": "Watermelon is rich in an amino acid called citrulline that may help move blood through your body and can lower your blood pressure. Your heart also enjoys the perks of all the lycopene watermelon contains. Studies show that it may lower your risk of heart attacks. Of course, your whole lifestyle affects your heart health. So make sure you also work out, don’t smoke, limit saturated fat, and keep up with your doctor’s advice.Watermelon has a natural pigment called beta-cryptoxanthin that may protect your joints from inflammation. Some studies show that over time, it could make you less likely to get rheumatoid arthritis.",
-      "img": "/Images/Crop_Images/watermelon.jpg"
+      "img": "/Crop_Images/watermelon.jpg"
     },
     {
       "_id": {
@@ -941,7 +981,7 @@
       "profit": 300000,
       "brief": "Rice is mainly cultivated in West Bengal. ",
       "info": "Rice is a main staple in more than 100 countries worldwide. [1] In some households, rice is included with more than one meal a day. This starchy high-calorie grain is generally low cost, making it accessible to all and a vital base of many diets. Each country showcases a rice specialty to reflect local spices and taste preferences: risotto in Italy, paella in Spain, jambalaya in the southern U.S., coconut rice in Colombia, steamed rice in China, rice and beans in Mexico, and sweet rice in Portugal, to name a few.",
-      "img": "/Images/Crop_Images/rice.jpg"
+      "img": "/Crop_Images/rice.jpg"
     }
   ]
 }

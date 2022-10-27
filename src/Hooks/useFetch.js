@@ -14,12 +14,12 @@ const useFetch = (url) => {
                 return res.json()
             })
             .then(data => {
-                setTimeout(()=>{
+                // setTimeout(()=>{
 
                     setIsPending(false)
                     setError(null)
                     setData(data)
-                },2000)
+                // },2000)
             })
             .catch(error => {
                 setIsPending(false)

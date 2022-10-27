@@ -150,8 +150,6 @@ const Home = () => {
                 </div>
             </div>
 
-
-
             <footer className="footer ">
                 <div className="footer-container ">
                     <div className="row ">
@@ -194,6 +192,7 @@ const Home = () => {
                     </div>
                 </div>
             </footer>
+
         </div>
     );
 }
