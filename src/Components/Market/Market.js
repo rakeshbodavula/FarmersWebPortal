@@ -2,9 +2,7 @@ import { Link } from "react-router-dom";
 
 import './Market.css'
 const Market = (props) => {
-    // const { product_data } = props
 
-    // const { data, isPending, error } = product_data
     const { data, isPending, error } = props
 
 
@@ -18,7 +16,7 @@ const Market = (props) => {
                         <label htmlFor="search-bar" className="fas fa-search"></label>
                     </button>
                 </form>
-                <Link to="/Cart"><i className="fa-solid fa-cart-shopping"></i> Cart</Link>
+                <Link to="/Cart" className="cart_heading"><i className="fa-solid fa-cart-shopping"></i> Cart</Link>
             </div>
 
 
@@ -123,7 +121,7 @@ const Market = (props) => {
 
 
 
-            <footer className="market_footer ">
+            <footer className="market_footer">
                 <div className="market_footer-container ">
                     <div className="market_row ">
                         <div className="market_footer-col ">

@@ -7,7 +7,7 @@
     --black: #2c2c54;
 }
 
-.market_body > * {
+.market_body>* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,6 +18,10 @@
     transition: all 0.2s linear;
 }
 
+.market_body .search .logo,.market_body .search .cart_heading{
+    font-size: calc(1.8vh + 0.8vw);
+}
+
 
 .search {
     padding: 0 4vw;
@@ -25,7 +29,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: #d1cfce;
-    height: 6vh;
+    height: 5.5vh;
 }
 
 .search a {
@@ -36,13 +40,13 @@
 }
 
 #search-bar {
-    width: 20vw;
+    width: fit-content;
     height: 4vh;
     padding: 8px 5px;
     margin-right: 0.5vw;
 }
 
-.search_shop_btn{
+.search_shop_btn {
     border: none;
     background: none;
 }
@@ -60,12 +64,12 @@
     cursor: pointer;
 }
 
-market_body > *::selection {
+market_body>*::selection {
     background: var(--green);
     color: #fff;
 }
 
-html{
+html {
     font-size: 62%;
     overflow-x: hidden;
     scroll-padding-top: 6.5rem;
@@ -74,11 +78,13 @@ html{
 
 .market_body {
     font-family: "Nunito", sans-serif;
-    position: relative;
+    position: absolute;
     top: 7vh;
 }
 
-.home,.category,.product {
+.home,
+.category,
+.product {
     padding: 4rem 9%;
 }
 
@@ -181,7 +187,7 @@ html{
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10000;
+    z-index: 100;
 }
 
 .header-2 .navbar a {
@@ -410,7 +416,7 @@ html{
     text-align: center;
 }
 
-.product .box-container .box a{
+.product .box-container .box a {
     text-decoration: none;
 }
 
@@ -627,7 +633,9 @@ html{
         padding: 2rem;
     }
 
-    .home,.category,.product {
+    .home,
+    .category,
+    .product {
         padding: 2rem;
     }
 }
@@ -739,7 +747,7 @@ html{
     flex-wrap: wrap;
 }
 
-.market_body > ul {
+.market_body>ul {
     list-style: none;
 }
 
@@ -755,6 +763,7 @@ html{
 
 .market_footer-col h4 {
     font-size: 18px;
+    font-size: calc(1.8vh + 0.4vw);
     color: #ffffff;
     text-transform: capitalize;
     margin-bottom: 35px;
@@ -773,12 +782,16 @@ html{
     width: 50px;
 }
 
+.market_footer-col ul{
+    list-style: none;
+}
+
 .market_footer-col ul li:not(:last-child) {
     margin-bottom: 10px;
 }
 
 .market_footer-col ul li a {
-    font-size: 16px;
+    font-size: calc(1.5vh + 0.5vw);
     text-transform: capitalize;
     color: #ffffff;
     text-decoration: none;
@@ -787,21 +800,15 @@ html{
     display: block;
     transition: all 0.3s ease;
     text-align: left;
-    padding-left: 80px;
+    padding-left: 3vw;
 }
 
-#market_footer-col-online-shop ul li a {
-    padding-left: 100px;
-}
 
 .market_footer-col ul li a:hover {
     color: #ffffff;
-    padding-left: 88px;
+    padding-left: 2.8vw;
 }
 
-#market_footer-col-online-shop ul li a:hover {
-    padding-left: 108px;
-}
 
 .market_footer-col .social-links a {
     display: inline-block;
@@ -856,6 +863,6 @@ html{
     width: 100%;
 }
 
-.market_body > input[type="submit"]:hover {
+.market_body>input[type="submit"]:hover {
     background-color: #2c2c54;
 }
