@@ -4,6 +4,7 @@
     /* background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%); */
     /* background-image: linear-gradient(180deg, #6fb451 10%, #31a33d 100%); */
     background-image: linear-gradient(180deg, #00d68f 10%, #31a33d 100%);
+    /* background-image: linear-gradient(180deg, #00cd67b7 10%, #63A4FF 100%); */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -28,7 +29,7 @@
     align-items: stretch;
     justify-content: space-between;
     /* box-shadow: 0 0 20px 6px #090b6f85; */
-    box-shadow: 0 0 20px 6px #24b761ad;
+    /* box-shadow: 0 0 20px 6px #24b761ad; */
 }
 
 /* @media (max-width: 980px) {
@@ -170,3 +171,12 @@
     transition: 0.3s linear;
     transform: scale(1.1);
 } */
+
+
+.history{
+    font-size: calc(2vh + 1vw);
+    /* text-decoration: none; */
+    color: #fff;
+    position: relative;
+    top: 6vh;
+}

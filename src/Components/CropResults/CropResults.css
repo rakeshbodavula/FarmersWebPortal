@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* <----------------------------------- output details ---------------------------------------------> */
+
+.output {
+    /* background-color: #181b6b; */
+    /* background-image: url("../Images/inputFormBG1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; */
+
+    background-color: #7300ff98;
+    color: #ffff;
+    min-height: 92vh;
+    position: relative;
+    top: 8vh;
+}
+
+.output h1 {
+    font-size: medium;
+    line-height: 1.3;
+    /* color: #1eff00; */
+    color: #ffffff;
+}
+
+.output p {
+    font-size: 85%;
+}
+
+/* .toggle-result {
+      display: none;
+    } */
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* grid-template-columns: repeat(4, 1fr); */
+    width: fit-content;
+    text-align: center;
+    align-items: center;
+    /* margin-left: 8vw; */
+    width: 80%;
+    margin: auto;
+    margin-top: 5vh;
+}
+
+.card {
+    background-color: transparent;
+    width: 150px;
+    height: 180px;
+    border: 1px solid #f1f1f1;
+    margin-bottom: 5vh;
+    perspective: 1000px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.col {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid #f1f1f1; */
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .col {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.front {
+    background-color: rgb(218, 206, 206);
+    color: black;
+}
+
+.front h1 {
+    color: #000;
+}
+
+.back {
+    background-color: #a04eff;
+    background-color: rgb(66, 101, 238);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.back p {
+    padding-top: 15px;
+    font-size: medium;
+}
+
+.col img {
+    width: 150px;
+    height: 150px
+        /* padding: 5px 0; */
+}
+
+
+.result-h1 {
+    font-size: 26px !important;
+}

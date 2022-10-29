@@ -1,8 +1,10 @@
-import { useEffect } from 'react';
+import { createSearchParams, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './CropSuggestion.css'
 
-const CropSuggestion = () => {
+const CropSuggestion = (props) => {
+    const navigate = useNavigate()
     // useEffect(() => {
     //     document.querySelector('.CropSuggestion').classNameList.add('active-page')
     // }, [])
@@ -12,16 +14,24 @@ const CropSuggestion = () => {
         e.preventDefault()
         let soilType = document.querySelector("#soiltype").value;
         let season = document.querySelector("#season").value;
-        let investrange = document.querySelector("#investrange").value;
+        let investment = document.querySelector("#investment").value;
+        let waterReq = document.querySelector('input[type="radio"]:checked').id
 
-        if (soilType !== "none" && season !== "none" && investrange !== "none") {
-            console.log('Crop Input taken successfully ')
-            return true
+        if (soilType !== "none" && season !== "none" && investment !== "none") {
+            const data = {soilType,season,investment,waterReq}
+            props.onSearch(data)
+            // return true
+            const params = {soilType,season,investment,waterReq}
+            navigate({
+                pathname:'/cropResults',
+                search : `?${createSearchParams(params)}`
+            })
         }
         else {
             alert("Enter all fields")
-            return false
+            // return false
         }
+
     }
 
     return (
@@ -31,7 +41,7 @@ const CropSuggestion = () => {
                     <div className="CropSuggestion_overlay">
                         <h1>Crop Suggestions</h1>
                         <p>Faced a Disaster?<br /> Don't worry find suitable crops according to your situation. <br />Enter the required inputs and get a list of personalised crops for your needs</p>
-
+                        <Link to='/cropSuggestionHistory' className='history'>Recents</Link>
                     </div>
                 </div>
 
@@ -41,7 +51,7 @@ const CropSuggestion = () => {
                         <h1>Get Crops Personalised for you!</h1>
                         {/* <p id="main_para">Enter the required inputs and get a list of personalised crops for your needs</p> */}
 
-                        <form onSubmit={displayresult} action="/cropResults" method="post">
+                        <form onSubmit={displayresult}>
                             <p>Soil Type: &nbsp;
                                 <select name="soilType" id="soiltype" required>
                                     <option value="none">Select the Soil</option>
@@ -60,7 +70,7 @@ const CropSuggestion = () => {
                                 </select>
                             </p>
                             <p>Investment:&nbsp;
-                                <select name="investment" id="investrange" required>
+                                <select name="investment" id="investment" required>
                                     <option value="none">Select the range</option>
                                     <option value="10000">Less than 10k</option>
                                     <option value="90000">Less than 90k</option>
@@ -70,7 +80,7 @@ const CropSuggestion = () => {
                             <p>Water Availability: &nbsp;
                                 <input type="radio" name="water" id="High" required />
                                 <label htmlFor="water"> High </label>
-                                <input type="radio" name="water" id="water" />
+                                <input type="radio" name="water" id="medium" />
                                 <label htmlFor="water"> Medium </label>
                                 <input type="radio" name="water" id="Low" />
                                 <label htmlFor="water"> Low </label>
