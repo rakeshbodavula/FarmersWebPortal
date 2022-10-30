@@ -1,6 +1,43 @@
-.CropSuggestionHistory_body .hist{
-    background-color: rgb(229, 85, 113);
-    padding: 2vh 2vw;
-    border: 1px solid #000;
-    margin: 2px auto;
+.CropSuggestionHistory_body .hist {
+
+/* background-color: whitesmoke; */
+display: inline-block;
+border-radius: 10px;
+text-align: center;
+padding: 2vh 2vw;
+/* border: 1px solid #000; */
+margin: 25px;
+width: 350px;
+height: 200px;
+font-family: "Courier New", Courier, monospace;
+
+}
+.CropSuggestionHistory_body #crop_suggestion_history {
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: x-large;
+}
+.background_image{
+  /* -webkit-filter: blur(30px); */
+  filter:blur(5px);
+}
+
+.CropSuggestionHistory_Link{
+  text-decoration: none;
+}
+
+.CropSuggestionHistory_body table{
+  
+  border-collapse:collapse;
+  width: 100%;
+ padding: 0.5px;
+ background-color: azure;
+ border-radius: 15px;
+}
+.CropSuggestionHistory_body td{
+  font-size: medium;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  white-space:nowrap;
+  
+  padding: 12px;
+  
 }
