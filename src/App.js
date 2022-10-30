@@ -10,6 +10,8 @@ import ProductPage from './Components/ProductPage/ProductPage';
 import useFetch from './Hooks/useFetch';
 import CropSuggestionHistory from './Components/CropSuggestion/CropSuggestionHistory';
 import CropResults from './Components/CropResults/CropResults';
+import CheckoutPage from './Components/CheckoutPage/CheckoutPage';
+import TransactionStatus from './Components/TransactioStatus/TransactionStatus';
 
 function App() {
   const [history,setHistory] = useState([])
@@ -32,6 +34,7 @@ function App() {
       <div className="App">
         <NavBar></NavBar>
         <Routes>
+          <Route exact path='/checkoutpage' element={<CheckoutPage/>}></Route>
           <Route exact path='/cropResults' element={<CropResults crop_data={crop_data}/>}></Route>
           <Route exact path='/CropSuggestionHistory' element={<CropSuggestionHistory history={history}/>}></Route>
           <Route exact path='/productpage/:id' element={<ProductPage/>}></Route>

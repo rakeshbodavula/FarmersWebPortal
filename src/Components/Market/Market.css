@@ -7,7 +7,7 @@
     --black: #2c2c54;
 }
 
-.market_body>* {
+.market_body> * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -36,7 +36,7 @@
     list-style: none;
     text-decoration: none;
     color: #000;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 #search-bar {
@@ -64,17 +64,17 @@
     cursor: pointer;
 }
 
-market_body>*::selection {
+.market_body>*::selection {
     background: var(--green);
     color: #fff;
 }
 
-html {
+/* html {
     font-size: 62%;
     overflow-x: hidden;
     scroll-padding-top: 6.5rem;
     scroll-behavior: smooth;
-}
+} */
 
 .market_body {
     font-family: "Nunito", sans-serif;
@@ -85,7 +85,7 @@ html {
 .home,
 .category,
 .product {
-    padding: 4rem 9%;
+    padding: 3rem 3%;
 }
 
 .shop_btn {
@@ -114,7 +114,7 @@ html {
     color: var(--black);
     text-transform: uppercase;
     padding: 10vh;
-    font-size: 3.5rem;
+    font-size: 3rem;
     padding-bottom: 2rem;
 }
 
@@ -160,7 +160,7 @@ html {
 .header-1 .search-box-container label {
     height: 100%;
     width: 8rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 5rem;
     color: #fff;
     background: var(--green);
@@ -309,17 +309,17 @@ html {
 }
 
 .category .box-container .box img {
-    width: 20rem;
-    margin: 0.5rem 0;
+    width: 21rem;
+    margin: 0.1rem 0;
 }
 
 .category .box-container .box h3 {
-    font-size: 3.5rem;
+    font-size: 2rem;
     color: var(--black);
 }
 
 .category .box-container .box p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #666;
     padding: 0.5rem 0;
 }
@@ -335,9 +335,9 @@ html {
 }
 
 .product .box-container .box {
-    flex: 1 1 30rem;
+    flex: 1 1 25rem;
     text-align: center;
-    padding: 2rem;
+    padding: 0.6rem;
     border: 0.1rem solid rgba(0, 0, 0, 0.3);
     border-radius: 0.5rem;
     overflow: hidden;
@@ -345,7 +345,7 @@ html {
 }
 
 .product .box-container .box img {
-    height: 20rem;
+    height: 12rem;
 }
 
 .product .box-container .box .discount {
@@ -358,45 +358,21 @@ html {
     font-size: 2rem;
 }
 
-/* .product .box-container .box .icons{
-  position: absolute;
-  top:.5rem; right:-6rem;
-} */
 
-/* .product .box-container .box:hover .icons{
-  right:1rem;
-} */
-
-/* .product .box-container .box .icons a{
-  display: block;
-  height:4.5rem;
-  width:4.5rem;
-  line-height: 4.5rem;
-  font-size: 1.7rem;
-  color:var(--black);
-  background:rgba(0,0,0,.05);
-  border-radius: 50%;
-  margin-top: .7rem;
-} */
-
-/* .product .box-container .box .icons a:hover{
-  background:var(--green);
-  color:#fff;
-} */
 
 .product .box-container .box h3 {
     color: var(--black);
-    font-size: 2.5rem;
+    font-size: 1.7rem;
 }
 
 .product .box-container .box .stars i {
-    padding: 1rem 0.1rem;
-    font-size: 1.7rem;
+    padding: 0.7rem 0.1rem;
+    font-size: 1.4rem;
     color: gold;
 }
 
 .product .box-container .box .price {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: #333;
     padding: 0.5rem 0;
 }
@@ -412,7 +388,7 @@ html {
     align-items: center;
     justify-content: center;
     padding-top: 1rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
     text-align: center;
 }
 
@@ -423,21 +399,26 @@ html {
 .product .box-container .box .quantity span {
     text-align: center;
     padding: 0 0.7rem;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
 }
 
 .product .box-container .box .quantity input {
     text-align: center;
     border: 0.1rem solid rgba(0, 0, 0, 0.3);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bolder;
     color: var(--black);
-    padding: 0.5rem;
+    padding: 0.2rem 0.5rem;
     background: rgba(0, 0, 0, 0.05);
 }
 
 .product .box-container .box .shop_btn {
     display: block;
+    width: 60%;
+    text-align: center;
+    position: relative;
+    left : 20%;
+    font-size: 1.3rem;
 }
 
 /* 
@@ -569,6 +550,7 @@ html {
 .market_footer .box-container .box {
     padding: 1rem 0;
     flex: 1 1 25rem;
+    text-align: center;
 }
 
 .market_footer .box-container .box .share a {
@@ -580,7 +562,7 @@ html {
 }
 
 .market_footer .box-container .box h3 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--black);
 }
 
@@ -620,11 +602,11 @@ html {
 
 /* media queries  */
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
     html {
         font-size: 55%;
     }
-}
+} */
 
 @media (max-width: 991px) {
 
@@ -699,9 +681,9 @@ html {
 }
 
 @media (max-width: 450px) {
-    html {
+    /* html {
         font-size: 50%;
-    }
+    } */
 
     .heading {
         font-size: 3rem;
@@ -857,10 +839,10 @@ html {
     background: var(--green);
     color: #fff;
     padding: 0.8rem 3rem;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     text-align: center;
     cursor: pointer;
-    width: 100%;
+    width: 60%;
 }
 
 .market_body>input[type="submit"]:hover {
