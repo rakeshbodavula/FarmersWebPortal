@@ -26,7 +26,7 @@ const CropResults = ({ crop_data }) => {
 
                 {searchData && searchData.length > 0 && searchData.map(crop => (
                     <div className="card" key={Math.random()}>
-                        <Link to={"/croppage/" + crop._id} target="_blank">
+                        <Link to={"/croppage/" + crop._id}>
                             <div className="col">
                                 <div className="front">
                                     <img src={crop.img} alt="" />

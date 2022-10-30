@@ -1,23 +1,49 @@
 import React from 'react';
 import './CheckoutPage.css';
+import { useState } from 'react'
+import {useNavigate} from 'react-router-dom'
 
-function CheckoutPage() {
+function CheckoutPage(props) {
+  const navigate = useNavigate()
+  
+  const initialFormState = {
+    fname:"",
+    street : "",
+    phone : "",
+    credit : 0
+  }
+  
+  const [formData, setFormData] = useState(initialFormState)
+  const inputChangeHandler = (e) => {
+    setFormData((prev)=>({
+      ...prev,
+      [e.target.name] : e.target.value
+    }));
+  }
+
+  const submitHandler = (e)=>{
+    e.preventDefault()
+    props.onBuyCheckout(formData)
+    navigate('/transaction')
+  }
+
   return (
+
     <div className="checkout_body">
 
       <div className="checkout_container">
         <div className="checkout_title">
           <h2>FarmCart Checkout</h2>
         </div>
-        <div className="d-flex"> 
+        <div className="d-flex">
           <form action="" method="">
             <label>
               <span className="fname">First Name <span className="required">*</span></span>
-              <input type="text" name="fname" />
+              <input type="text" name="fname" onChange={inputChangeHandler}/>
             </label>
             <label>
               <span className="lname">Last Name <span className="required">*</span></span>
-              <input type="text" name="lname" />
+              <input type="text" name="lname"/>
             </label>
             <label>
               <span>Company Name (Optional)</span>
@@ -25,7 +51,7 @@ function CheckoutPage() {
             </label>
             <label>
               <span>Country <span className="required">*</span></span>
-              <select name="selection">
+              <select name="selection" >
                 <option value="select">Select a country...</option>
                 <option value="AFG">Afghanistan</option>
                 <option value="ALA">Åland Islands</option>
@@ -280,15 +306,15 @@ function CheckoutPage() {
             </label>
             <label>
               <span>Street Address <span className="required">*</span></span>
-              <input type="text" name="houseadd" placeholder="House number and street name" required />
+              <input type="text" name="street" onChange={inputChangeHandler} placeholder="House number and street name" required />
             </label>
             <label>
               <span>&nbsp;</span>
-              <input type="text" name="apartment" placeholder="Apartment, suite, unit etc. (optional)" />
+              <input type="text" name="apartment"  placeholder="Apartment, suite, unit etc. (optional)" />
             </label>
             <label>
               <span>Town / City <span className="required">*</span></span>
-              <input type="text" name="city" />
+              <input type="text" name="city"  />
             </label>
             <label>
               <span>State / County <span className="required">*</span></span>
@@ -296,21 +322,21 @@ function CheckoutPage() {
             </label>
             <label>
               <span>Postcode / ZIP <span className="required">*</span></span>
-              <input type="text" name="city" />
+              <input type="text" name="city"/>
             </label>
             <label>
               <span>Phone <span className="required">*</span></span>
-              <input type="tel" name="city" />
+              <input type="tel" name="phone" onChange={inputChangeHandler}/>
             </label>
             <label>
-              <span>Email Address <span className="required">*</span></span>
-              <input type="email" name="city" />
+              <span>Credit Card Number <span className="required">*</span></span>
+              <input type="number" name="credit" onChange={inputChangeHandler}/>
             </label>
           </form>
           <div className="Yorder">
             <table>
               <tr>
-                <th colspan="2">Your Order</th>
+                <th colSpan="2">Your Order</th>
               </tr>
               <tr>
                 <td>Product Name x 2(Qty)</td>
@@ -326,7 +352,7 @@ function CheckoutPage() {
               </tr>
             </table><br />
             <div>
-              <input type="radio" name="dbt" value="dbt" checked /> Direct Bank Transfer
+              <input type="radio" name="dbt" value="dbt" defaultChecked /> Direct Bank Transfer
             </div>
             <p>
               Make your payment directly into our bank account. Please use your Order ID as the payment reference.
@@ -339,7 +365,7 @@ function CheckoutPage() {
                 <img src="https://www.logolynx.com/images/logolynx/c3/c36093ca9fb6c250f74d319550acac4d.jpeg" alt="" width="50" />
               </span>
             </div>
-            <button type="button" className='checkout_button'>Place Order</button>
+            <button type="button" className='checkout_button' onClick={submitHandler}>Place Order</button>
           </div>
         </div>
       </div>

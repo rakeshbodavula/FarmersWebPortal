@@ -11,14 +11,19 @@ import useFetch from './Hooks/useFetch';
 import CropSuggestionHistory from './Components/CropSuggestion/CropSuggestionHistory';
 import CropResults from './Components/CropResults/CropResults';
 import CheckoutPage from './Components/CheckoutPage/CheckoutPage';
-import TransactionStatus from './Components/TransactioStatus/TransactionStatus';
+import TransactionStatus from './Components/TransactionStatus/TransactionStatus';
 
 function App() {
+  const [buyDetails,setBuyDetails] = useState(null)
   const [history,setHistory] = useState([])
     const CropSuggestionHistoryHandler = (item)=>{
       setHistory((prev)=>{
         return [...prev,item]
       })
+    }
+
+    const onBuyCheckoutHandler = (obj) =>{
+      setBuyDetails(obj)
     }
   
     const {data,isPending:prod_isPending,error:prod_error} = useFetch('http://localhost:2020/products')
@@ -34,7 +39,8 @@ function App() {
       <div className="App">
         <NavBar></NavBar>
         <Routes>
-          <Route exact path='/checkoutpage' element={<CheckoutPage/>}></Route>
+          <Route exact path='/transaction' element={buyDetails && <TransactionStatus data={buyDetails}/>}></Route>
+          <Route exact path='/checkoutpage' element={<CheckoutPage onBuyCheckout={onBuyCheckoutHandler}/>}></Route>
           <Route exact path='/cropResults' element={<CropResults crop_data={crop_data}/>}></Route>
           <Route exact path='/CropSuggestionHistory' element={<CropSuggestionHistory history={history}/>}></Route>
           <Route exact path='/productpage/:id' element={<ProductPage/>}></Route>
