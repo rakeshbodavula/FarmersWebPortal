@@ -8,17 +8,16 @@
 
 .output {
     /* background-color: #181b6b; */
-    /* background-image: url("../Images/inputFormBG1.jpg");
+    background-image: url("/public/Crop_Images/cropresultsbackground.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed; */
-
-    background-color: #7300ff98;
+    background-attachment: fixed;
+    /* background-color: #7300ff98; */
     color: #ffff;
-    min-height: 92vh;
+    min-height: 100vh;
     position: relative;
-    top: 8vh;
+    top: 7vh;
 }
 
 .output h1 {
@@ -38,7 +37,7 @@
 
 .row {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     /* grid-template-columns: repeat(4, 1fr); */
     width: fit-content;
     text-align: center;
@@ -51,13 +50,14 @@
 
 .card {
     background-color: transparent;
-    width: 150px;
-    height: 180px;
+    width: 250px;
+    height: 250px;
     border: 1px solid #f1f1f1;
     margin-bottom: 5vh;
     perspective: 1000px;
     border-radius: 5px;
     overflow: hidden;
+    display: inline-block;
 }
 
 .col {
@@ -84,7 +84,8 @@
 }
 
 .front {
-    background-color: rgb(218, 206, 206);
+    /* background-color: rgb(218, 206, 206); */
+    background-color: #00d68b;
     color: black;
 }
 
@@ -93,20 +94,22 @@
 }
 
 .back {
-    background-color: #a04eff;
-    background-color: rgb(66, 101, 238);
-    color: white;
+    /* background-color: #a04eff; */
+    background-color: white; 
+    /* background-color: rgb(66, 101, 238); */
+    color: black;
     transform: rotateY(180deg);
 }
 
 .back p {
     padding-top: 15px;
     font-size: medium;
+    /* align-items: justify; */
 }
 
 .col img {
-    width: 150px;
-    height: 150px
+    width: 250px;
+    height: 210px
         /* padding: 5px 0; */
 }
 

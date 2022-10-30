@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
-
+import {useEffect} from "react";
+import Aos from 'aos'
+import "aos/dist/aos.css"
 import './Market.css'
 const Market = (props) => {
 
     const { data, isPending, error } = props
-
-
+    useEffect(()=>{
+        Aos.init({duration:1500});
+    },[])
     return (
         <div className="market_body">
             <div className="search">
@@ -40,19 +43,19 @@ const Market = (props) => {
                 <h1 className="heading">shop by <span>category</span></h1>
 
                 <div className="box-container">
-                    <div className="box">
+                    <div data-aos='zoom-in-right' className="box">
                         <h3>Seeds</h3>
                         <p>upto 50% off</p>
                         <img src="/Market_Images/seeds1.webp" alt="" />
                         <Link to="/search/seeds" className="shop_btn">shop now</Link>
                     </div>
-                    <div className="box">
+                    <div data-aos='zoom-in-up' className="box">
                         <h3>Fertilizers</h3>
                         <p>upto 44% off</p>
                         <img src="/Market_Images/fertiliser1.jpg" alt="" />
                         <Link to="/search/fertilizers" className="shop_btn">shop now</Link>
                     </div>
-                    <div className="box">
+                    <div data-aos='zoom-in-left' className="box">
                         <h3>Pesticides</h3>
                         <p>upto 35% off</p>
                         <img src="/Market_Images/fertiliser2.jpg" alt="" />
@@ -72,7 +75,7 @@ const Market = (props) => {
                     {error && <h1>error</h1>}
                     {isPending && <h1 style={{fontSize:"30px"}}>Loading .......</h1>}
                     {data && data.map(prod => (
-                        <div className="box" key={Math.random()}>
+                        <div data-aos='zoom-in-up' className="box" key={Math.random()}>
                             <span className="discount" style={{ fontSize: "14px" }}>
                                 {(((prod.mrp - prod.price) / prod.mrp) * 100).toFixed(1)}<br />Off
                             </span>

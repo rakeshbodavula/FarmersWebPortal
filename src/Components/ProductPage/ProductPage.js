@@ -1,9 +1,17 @@
-import { useParams } from 'react-router-dom';
-import useFetch from '../../Hooks/useFetch';
+import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import useFetch from '../../Hooks/useFetch'
 import './ProductPage.css'
+import Aos from 'aos'
+import "aos/dist/aos.css"
 
-const ProductPage = () => {
-    // const [prod, setProd] = useState(null)
+
+
+export default function ProductPage() {
+    useEffect(() => {
+        Aos.init({ duration: 1000 });
+    }, [])
+
     const { data, isPending, error } = useFetch('http://localhost:2020/products')
     const { id } = useParams()
     let prod = null
@@ -12,64 +20,47 @@ const ProductPage = () => {
         prod = prod[0]
     }
 
+
     return (
-        <div className="product_page_body">
+        <>
+            {isPending && <h1>Loading ......</h1>}
+            {error && <h2>{error}</h2>}
             {prod &&
-                <div>
-                    <div className="product_page_heading">
-                        <h1 align="center"><u>{prod.name}</u></h1>
-                    </div>
+                <div className='productpage'>
+                    <img id='productpagegradient' src="/productpagebackground.jpg" alt=''></img>
+                    <div data-aos='zoom-in-right' ><img className='productimage' src={prod.img1} alt=''></img></div>
 
-                    <div className="top-div">
-                        <div className="top-left">
-                            <img src={prod.img1} width="450" height="430" />
+                    <div data-aos='zoom-in-left' className='productpagedoc'>
+
+                        <div className='productpageheading'>
+                            <center><u><h1>{prod.name}</h1></u></center>
                         </div>
-                        <div className="top-right">
-                            <h2><b><u>Description</u></b></h2><br />
+                        <div>
+                            <table className='productpagetable'>
+                                <tr>
+                                    <td width='300px' height='50px'>MRP</td>
+                                    <td width='300px'>Rs. {prod.mrp}</td>
+
+                                </tr>
+                                <tr>
+                                    <td height='50px'>Quantity</td>
+                                    <td>{prod.weight} kg</td>
+
+                                </tr>
+                                <tr>
+                                    <td height='50px'>Manufacturer</td>
+                                    <td>{prod.manufacturer}</td>
+
+                                </tr>
+                            </table>
+                        </div>
+                        <div className='productpagedescription'>
+                            <h2 style={{ fontFamily: "Arial" }}><b><u>Description</u></b></h2>
                             <p>{prod.description}</p>
-                        </div>
-                    </div>
-
-                    <div className="down-div">
-                        <div className="down-left">
-                            <div className="keys">
-                                <h2>
-                                    <b>
-                                        MRP<br /><br />
-                                        Quantity<br /><br />
-                                        Crop<br /><br />
-                                        Manufacturer<br /><br />
-                                        Expiry<br /><br />
-                                    </b>
-                                </h2>
-                            </div>
-                            <div className="colon">
-                                <h2><br />
-                                    :<br /><br />
-                                    :<br /><br />
-                                    :<br /><br />
-                                    :<br /><br />
-                                    :<br /><br />
-                                </h2>
-                            </div>
-                            <div className="values">
-                                <h2>
-                                    {prod.mrp}<br /><br />
-                                    {prod.weight}<br /><br />
-                                    {prod.name}<br /><br />
-                                    {prod.manufacturer}<br /><br />
-                                    {prod.expiry}<br /><br />
-                                </h2>
-                            </div>
-                        </div>
-                        <div className="down-right">
-                            <img src={prod.img2} width="450" height="430" />
                         </div>
                     </div>
                 </div>
             }
-        </div>
-    );
+        </>
+    )
 }
-
-export default ProductPage;
