@@ -9,11 +9,15 @@
     "aos": "^3.0.0-beta.6",
     "babel-plugin-macros": "^3.1.0",
     "concurrently": "^7.5.0",
+    "formik": "^2.2.9",
+    "node-modules": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "styled-components": "^5.3.6",
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",
