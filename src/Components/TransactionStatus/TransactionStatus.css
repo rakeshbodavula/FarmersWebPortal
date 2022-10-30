@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700');
 
-body {
+/* body {
   background: whitesmoke;
   width: 100%;
   font-family: 'Raleway', sans-serif;
   letter-spacing: 2px;
-}
+} */
+/* .transaction .transaction1-container .heading-3{
+  font-family: 'Raleway', sans-serif;
+
+} */
 
 .no-gutters {
   padding-left: 0;
@@ -16,14 +20,16 @@ body {
   font-size: 15px;
   font-weight: 700;
   padding-bottom: 20px;
+  font-family: 'Raleway', sans-serif;
 }
 
-.app-container {
+.transaction-container {
   margin-left:430px;
   width: 635px;
   height: 430px;
   background: white;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+  font-family: 'Raleway', sans-serif;
 }
 
 
@@ -54,20 +60,21 @@ body {
   text-transform: uppercase;
 }
 
-.item-price {
+/* .item-price {
   font-size: 25px;
   font-weight: 700;
   color: #0b8a6d;
-}
+} */
 
-.checkout {
+/* .checkout {
   height: 430px;
   background: #2f2c33;
   color: white;
-}
+} */
 
-.checkout-container {
+.transaction1-container {
   padding: 35px 25px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .input {
@@ -92,28 +99,31 @@ body {
   font-size: 14px;
   background: 0;
   border: 0;
-  /* margin-top: 10px; */
+  margin-top: 10px;
+  
 }
 
-.input input:focus {
+
+/* .input input:focus {
   outline: 0;
-}
+} */
 
 .input-field {
   border: 1px solid #78757c;
   border-radius: 5px;
   position: relative;
   margin-top: 10px;
+  
 }
 
-.input-field img {
+/* .input-field img {
   width: 25px;
   height: auto;
   position: absolute;
   right: 0;
   top: 5px;
   
-}
+} */
 
 /* Removes form Controls  */
 input[type=number]::-webkit-inner-spin-button, 
@@ -132,9 +142,9 @@ input[type=month]::-webkit-inner-spin-button {
 input[type=month]::-webkit-calendar-picker-indicator {
     -webkit-appearance: none;
     display: none;
-}
+} */
 
-.checkout-btn {
+.transaction-btn {
   background: linear-gradient(0deg, #019875, #029875);
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
   border: 0;
@@ -156,4 +166,22 @@ input[type=month]::-webkit-calendar-picker-indicator {
   justify-content: center;
   margin:150px   ;
   /* box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5); */
+}
+/* .transaction_btn{
+  
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+} */
+.transaction_btn button{
+  font-size: 20px;
+  margin: 0 20px;
+
+}
+.transaction_btn button:hover{
+  background-color: lightgreen;
 }
