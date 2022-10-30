@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "both" : "concurrently \"npm start\" \"npx json-server --watch ./data/db.json --port 2020\" "
+    "both": "concurrently \"npm start\" \"npx json-server --watch ./data/db.json --port 2020\" "
   },
   "eslintConfig": {
     "extends": [

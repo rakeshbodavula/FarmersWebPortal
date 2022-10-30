@@ -606,9 +606,7 @@
   
   "crops": [
     {
-      "_id": {
-        "$oid": "626670bde69d03a81dbfa668"
-      },
+      "_id" : 111,
       "name": "Cotton",
       "soilType": "Red",
       "season": ["Kharif"],
@@ -620,9 +618,7 @@
       "img": "/Crop_Images/cotton.webp"
     },
     {
-      "_id": {
-        "$oid": "6266c07a8551054ee309ad15"
-      },
+      "_id" : 112,
       "name": "Wheat",
       "soilType": "Red",
       "season": ["Rabi"],
@@ -634,9 +630,7 @@
       "img": "/Crop_Images/wheat.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266c0ec8551054ee309ad16"
-      },
+      "_id" : 113,
       "name": "Rice",
       "soilType": "Red",
       "season": ["Kharif", "Rabi"],
@@ -648,9 +642,7 @@
       "img": "/Crop_Images/rice.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266c14b8551054ee309ad17"
-      },
+      "_id" : 114,
       "name": "Potato",
       "soilType": "Red",
       "season": ["Kharif", "Rabi"],
@@ -662,9 +654,7 @@
       "img": "/Crop_Images/potato.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266c1eb8551054ee309ad18"
-      },
+      "_id" : 115,
       "name": "Pulses",
       "soilType": "Red",
       "season": ["Kharif", "Rabi", "Zaid"],
@@ -676,9 +666,7 @@
       "img": "/Crop_Images/pulses.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266c24a8551054ee309ad19"
-      },
+      "_id" : 116,
       "name": "Millets",
       "soilType": "Red",
       "season": ["Kharif"],
@@ -690,9 +678,7 @@
       "img": "/Crop_Images/millets.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266c2fd8551054ee309ad1a"
-      },
+      "_id" : 117,
       "name": "Ground Nut",
       "soilType": "Red",
       "season": ["Kharif", "Rabi"],
@@ -704,9 +690,7 @@
       "img": "/Crop_Images/groundnut.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266c6abd0917af88b3756e1"
-      },
+      "_id" : 118,
       "name": "Wheat",
       "soilType": "Black",
       "season": ["Rabi"],
@@ -718,9 +702,7 @@
       "img": "/Crop_Images/wheat.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266c6c2d0917af88b3756e2"
-      },
+      "_id" : 119,
       "name": "Millets",
       "soilType": "Black",
       "season": ["Kharif"],
@@ -732,9 +714,7 @@
       "img": "/Crop_Images/millets.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266c6d9d0917af88b3756e3"
-      },
+      "_id" : 120,
       "name": "Ground Nut",
       "soilType": "Black",
       "season": ["Kharif", "Rabi"],
@@ -746,9 +726,7 @@
       "img": "/Crop_Images/groundnut.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266c6f1d0917af88b3756e4"
-      },
+      "_id" : 121,
       "name": "Sugarcane",
       "soilType": "Black",
       "season": ["Kharif", "Rabi"],
@@ -760,9 +738,7 @@
       "img": "/Crop_Images/sugarcane.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266c781d0917af88b3756e5"
-      },
+      "_id" : 122,
       "name": "Sun flower",
       "soilType": "Black",
       "season": ["Kharif", "Rabi"],
@@ -774,9 +750,7 @@
       "img": "/Crop_Images/sunflower.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266cc5bd0917af88b3756e7"
-      },
+      "_id" : 123,
       "name": "Water Melon",
       "soilType": "Sandy",
       "season": ["Zaid"],
@@ -788,9 +762,7 @@
       "img": "/Crop_Images/watermelon.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266cd4fd0917af88b3756e9"
-      },
+      "_id" : 124,
       "name": "Cucumber",
       "soilType": "Sandy",
       "season": ["Zaid", "Kharif"],
@@ -802,9 +774,7 @@
       "img": "/Crop_Images/cucumber.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266ce5dd0917af88b3756ea"
-      },
+      "_id" : 125,
       "name": "Potato",
       "soilType": "Sandy",
       "season": ["Kharif", "Rabi"],
@@ -816,9 +786,7 @@
       "img": "/Crop_Images/potato.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266cea3d0917af88b3756ec"
-      },
+      "_id" : 126,
       "name": "Tomato",
       "soilType": "Sandy",
       "season": ["Zaid"],
@@ -830,9 +798,7 @@
       "img": "/Crop_Images/tomato.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266cf26d0917af88b3756ed"
-      },
+      "_id" : 127,
       "name": "Corn",
       "soilType": "Sandy",
       "season": ["Kharif"],
@@ -844,9 +810,7 @@
       "img": "/Crop_Images/corn.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266cfa8d0917af88b3756ee"
-      },
+      "_id" : 128,
       "name": "Carrot",
       "soilType": "Sandy",
       "season": ["Kharif", "Rabi"],
@@ -858,9 +822,7 @@
       "img": "/Crop_Images/carrot.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266d038d0917af88b3756ef"
-      },
+      "_id" : 129,
       "name": "Radish",
       "soilType": "Sandy",
       "season": ["Zaid", "Rabi"],
@@ -872,9 +834,7 @@
       "img": "/Crop_Images/radish.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266d11cd0917af88b3756f1"
-      },
+      "_id" : 130,
       "name": "Rice",
       "soilType": "Alluvial",
       "season": ["Kharif", "Rabi"],
@@ -886,9 +846,7 @@
       "img": "/Crop_Images/rice.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266d174d0917af88b3756f2"
-      },
+      "_id" : 131,
       "name": "Wheat",
       "soilType": "Alluvial",
       "season": ["Rabi"],
@@ -900,9 +858,7 @@
       "img": "/Crop_Images/wheat.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266d19ad0917af88b3756f3"
-      },
+      "_id" : 132,
       "name": "Sugarcane",
       "soilType": "Alluvial",
       "season": ["Kharif", "Rabi", "Zaid"],
@@ -914,9 +870,7 @@
       "img": "/Crop_Images/sugarcane.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266d1f7233e7d5b0795c8f2"
-      },
+      "_id" : 133,
       "name": "Tobacco",
       "soilType": "Alluvial",
       "season": ["Kharif", "Rabi", "Zaid"],
@@ -928,9 +882,7 @@
       "img": "/Crop_Images/tobacco.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266d260233e7d5b0795c8f3"
-      },
+      "_id" : 134,
       "name": "Jute",
       "soilType": "Alluvial",
       "season": ["Kharif", "Rabi"],
@@ -942,9 +894,7 @@
       "img": "/Crop_Images/jute.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266d338233e7d5b0795c8f4"
-      },
+      "_id" : 135,
       "name": "Maize",
       "soilType": "Alluvial",
       "season": ["Rabi", "Kharif"],
@@ -956,9 +906,7 @@
       "img": "/Crop_Images/corn.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266d76e233e7d5b0795c8f6"
-      },
+      "_id" : 136,
       "name": "Water Melon",
       "soilType": "Alluvial",
       "season": ["Zaid"],
@@ -970,9 +918,7 @@
       "img": "/Crop_Images/watermelon.jpg"
     },
     {
-      "_id": {
-        "$oid": "6266da61233e7d5b0795c8f8"
-      },
+      "_id" : 137,
       "name": "Rice",
       "soilType": "Alluvial",
       "season": ["Kharif", "Rabi"],

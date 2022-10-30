@@ -11,6 +11,7 @@ import useFetch from './Hooks/useFetch';
 import CropSuggestionHistory from './Components/CropSuggestion/CropSuggestionHistory';
 import CropResults from './Components/CropResults/CropResults';
 import CheckoutPage from './Components/CheckoutPage/CheckoutPage';
+import CropPage from './Components/CropPage/CropPage'
 import TransactionStatus from './Components/TransactioStatus/TransactionStatus';
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route exact path='/cropResults' element={<CropResults crop_data={crop_data}/>}></Route>
           <Route exact path='/CropSuggestionHistory' element={<CropSuggestionHistory history={history}/>}></Route>
           <Route exact path='/productpage/:id' element={<ProductPage/>}></Route>
+          <Route exact path='/croppage/:id' element={<CropPage/>}></Route>
           <Route exact path = '/search/fertilizers/' element={!prod_isPending && <Market data={data.filter(x=>x.category==="fertilizers")} isPending={prod_isPending} error={prod_error}/>}></Route>
           <Route exact path = '/search/seeds/' element={!prod_isPending && <Market data={data.filter(x=>x.category==="seeds")} isPending={prod_isPending} error={prod_error}/>}></Route>
           <Route exact path = '/search/pesticides/' element={!prod_isPending && <Market data={data.filter(x=>x.category==="pesticides")} isPending={prod_isPending} error={prod_error}/>}></Route>
