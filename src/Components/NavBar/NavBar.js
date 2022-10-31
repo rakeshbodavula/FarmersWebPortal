@@ -41,7 +41,7 @@ const NavBar = () => {
                     <li><Link to="/discussions" className="nav-element discussions">Discussions</Link></li>
                     <li><Link to="/ChatBot" className="nav-element ChatBot">Chat Bot</Link></li>
                     <li><Link to="/Market" className="nav-element Market">Market</Link></li>
-                    <li><Link to="/Aboutuss" className="nav-element Aboutuss">About Us</Link></li>
+                    <li><Link to="/Aboutus" className="nav-element Aboutuss">About Us</Link></li>
                     <li><Link to="/login" id="loginUser" className="nav-element">
                         User
                     </Link></li>

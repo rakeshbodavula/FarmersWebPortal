@@ -79,7 +79,7 @@ const Market = (props) => {
                             <span className="discount" style={{ fontSize: "14px" }}>
                                 {(((prod.mrp - prod.price) / prod.mrp) * 100).toFixed(1)}<br />Off
                             </span>
-                            <Link to={"/productpage/" + prod._id} target="_blank">
+                            <Link to={"/productpage/" + prod._id}>
                                 <img src={prod.img1} alt="" />
                                 <h3>{prod.name}</h3>
                             </Link>

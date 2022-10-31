@@ -1,0 +1,103 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fcedda;
+} */
+
+/*<------------------------------- body ----------------------------------------------> */
+
+.chatbot {
+    background: #fcedda;
+    padding: 10vh 0 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    /* position: relative; */
+    /* top: 7vh; */
+}
+
+.chatbot-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatbot-box {
+  display: inline-flex;
+  text-align: center;
+  /* width: 100vw; */
+}
+
+.chatbot-box ul {
+  margin: auto;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+  /* background-color: blue; */
+}
+
+@keyframes sliding {
+  100% {
+    top: -360px;
+  }
+  /* 75%{
+    top: -135px;
+  }
+  50%{
+    top: -90px;
+  }
+  25%{
+    top: -45px;
+  }
+  0%{
+    top: 0;
+  } */
+}
+
+.chatbot-box ul li {
+  text-transform: uppercase;
+  list-style: none;
+  font-size: 60px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  /* font-weight: 600; */
+  position: relative;
+  top: 0;
+  color: #ee4e34;
+  animation: sliding 14s steps(4) infinite;
+}
+
+.chatbot-box ul li span {
+  position: relative;
+  z-index: 2;
+}
+
+.chatbot-box ul li span::after {
+  /* z-index: -1; */
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-left: 2px solid #ee4e34;
+  background-color: #fcedda;
+  animation: typing 3.5s steps(20) infinite;
+}
+
+@keyframes typing {
+  100% {
+    left: 100%;
+    margin: 0 -35px 0 35px;
+  }
+}
+
+.earthworm-img {
+  width: 50%;
+  height: auto;
+}
