@@ -2,7 +2,8 @@ const jwt = require("jsonwebtoken");
 const Seller = require("../model/seller");
 const User = require('../model/user')
 require('dotenv').config()
-const JWT_Secret = process.env.JWT_Secret
+// const JWT_Secret = process.env.JWT_Secret
+const JWT_Secret = 'FSD2'
 
 const checkUser = (req,res,next)=>{
     let token = req.cookies.jwt_user
@@ -15,13 +16,13 @@ const checkUser = (req,res,next)=>{
                 res.locals.user = {username : 'Guest'}
                 next()
             }else{
-                let seller = await Seller.findOne({username : decodedToken.username}).lean()
+                let seller = await Seller.findOne({email : decodedToken.email}).lean()
                 if(seller){
                     // seller.username = seller.username[0]
                     res.locals.user = seller
                     next()
                 }else{
-                    let user = await User.findOne({username : decodedToken.username})
+                    let user = await User.findOne({email : decodedToken.email})
                     // user.username = user.username[0]
                     res.locals.user=user
                     next()

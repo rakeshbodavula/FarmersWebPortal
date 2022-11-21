@@ -7,7 +7,7 @@ const CropSuggestion = (props) => {
     const navigate = useNavigate()
     // useEffect(() => {
     //     document.querySelector('.CropSuggestion').classNameList.add('active-page')
-    // }, [])
+    // },[])
 
 
     function displayresult(e) {

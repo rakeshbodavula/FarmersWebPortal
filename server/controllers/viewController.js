@@ -5,7 +5,8 @@ const Crop = require('../model/crop')
 const mongodb = require('mongodb')
 const ObjectID = mongodb.ObjectId
 require('dotenv').config()
-const JWT_Secret = process.env.JWT_Secret
+// const JWT_Secret = process.env.JWT_Secret
+const JWT_Secret = 'FSD2'
 
 
 
@@ -62,14 +63,16 @@ module.exports.checkoutpage_get = (req, res) => {
     res.render('checkoutpage')
 }
 
-module.exports.adminportal_get = async (req, res) => {
-    if (req.cookies.jwt_seller) {
-        let seller = { username: "" }
-        result = jwt.verify(req.cookies.jwt_seller, JWT_Secret)
+module.exports.adminportal_post = async (req, res) => {
+    // if (req.cookies.jwt_seller) {
+        // let seller = { username: "" }
+        // result = jwt.verify(req.cookies.jwt_seller, JWT_Secret)
         // seller = await Seller.findOne({username : result.username})
-        seller = await Seller.findOne({ _id: new ObjectID(result.id) }).lean()
+        // console.log(req.body)
+        const seller = await Seller.findOne({ email:req.body.email }).lean()
         if(!seller){
-            return res.redirect('/404');
+            // return res.redirect('/404');
+            return res.json({msg:'err'})
         }
         const products = await Product.find({sellerId : seller._id}).lean()
         const seeds = products.filter(prod => prod.category === 'seeds').length
@@ -77,9 +80,10 @@ module.exports.adminportal_get = async (req, res) => {
         const pesticides = products.filter(prod => prod.category === 'pesticides').length
         const total = seeds+fertilizers+pesticides
         const data = {seeds,fertilizers,pesticides,total}
-        return res.render('AdminPortal', { data,seller,products})
-    }
-    res.redirect('/404')
+        // return res.render('AdminPortal', { data,seller,products})
+        return res.json({data,products})
+    // }
+    // res.redirect('/404')
 }
 
 

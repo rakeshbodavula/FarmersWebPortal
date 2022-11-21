@@ -12,7 +12,7 @@ const SearchResults = ({ data }) => {
     data = data.filter(x => x.name.toLowerCase().trim().includes(name.toLowerCase().trim()))
     useEffect(() => {
         Aos.init({ duration: 1500 });
-    }, [])
+    },[])
 
 
     const addToCartHandler = async (prod) => {

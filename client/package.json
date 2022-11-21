@@ -25,13 +25,12 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "client": "react-scripts start",
+    "start" : "react-scripts start",
     "server": "nodemon ../server/server",
-    "start": "concurrently \"npm run client\" \"npm run server\"",
+    "both": "concurrently \"npm run start\" \"npm run server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "both": "concurrently \"npm start\" \"npx json-server --watch ./data/db.json --port 2020\" "
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

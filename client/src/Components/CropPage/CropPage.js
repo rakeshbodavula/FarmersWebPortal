@@ -7,7 +7,7 @@ import "aos/dist/aos.css"
 export default function CropPage({data}) {
     useEffect(() => {
         Aos.init({ duration: 1000 });
-    }, [])
+    },[])
 
     // const { data, isPending, error } = useFetch('http://localhost:2020/crops')
     const { id } = useParams()

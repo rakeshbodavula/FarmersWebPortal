@@ -10,7 +10,7 @@ import "aos/dist/aos.css"
 export default function ProductPage({data}) {
     useEffect(() => {
         Aos.init({ duration: 1000 });
-    }, [])
+    },[])
 
     // const { data, isPending, error } = useFetch('http://localhost:2020/products')
 

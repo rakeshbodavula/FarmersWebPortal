@@ -42,7 +42,7 @@ const Market = (props) => {
     const { data } = props
     useEffect(() => {
         Aos.init({ duration: 1500 });
-    }, [])
+    },[])
     return (
         <div className="market_body">
             <div id="prompt">Item Added To Cart !</div>

@@ -7,7 +7,7 @@ const Cart = () => {
 
     useEffect(() => {
         getCartData()
-    }, [])
+    },[])
 
     const getCartData = () => {
         fetch('http://localhost:9999/Cart')
@@ -48,11 +48,11 @@ const Cart = () => {
                                     <h4 className="product-price">₹ {item.price}
                                     </h4>
                                     <p className="product-quantity">Qnt: <input defaultValue={item.quantity} name="quantity" /></p>
-                                    <form className="product-remove" onSubmit={(e) => e.preventDefault()}>
+                                    {/* <form className="product-remove" onSubmit={(e) => e.preventDefault()}> */}
                                         <input type="text" name="id" defaultValue={item.prod_id} hidden />
-                                        <button className="delete_item" onClick={() => onDeleteHandler(item._id)}><i className="fa fa-trash"
-                                            aria-hidden="true"></i>Delete</button>
-                                    </form>
+                                        <button className="delete_item product-remove" onClick={() => onDeleteHandler(item._id)}><i className="fa fa-trash"
+                                            aria-hidden="true"></i></button>
+                                    {/* </form> */}
                                 </div>
                             </div>
                         ))}
@@ -105,7 +105,6 @@ const CartWrapper = styled.div`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition : 0.4s;
 }
 
 
@@ -129,12 +128,17 @@ const CartWrapper = styled.div`
     flex: 0.75;
 }
 
+.product{
+    transition : 0.4s;
+
+}
+
 .product {
     display: flex;
     width: 100%;
     height: 200px;
     overflow: hidden;
-    border: 1px solid silver;
+    border: 2px solid silver;
     margin-bottom: 20px;
 }
 
@@ -164,14 +168,24 @@ const CartWrapper = styled.div`
     margin-bottom: 20px;
 }
 
+
+.fa {
+    margin-right: 5px;
+}
+
 .product-remove {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    padding: 10px 10px;
+    padding: 10px;
     background-color: green;
     cursor: pointer;
     border-radius: 5px;
+    transform : scale(1.2);
+    border: none;
+    color: #fff;
+    // font-size: large;
+    cursor: pointer;
 }
 
 .product-remove:hover{
@@ -191,16 +205,10 @@ const CartWrapper = styled.div`
     text-align: center;
 }
 
-.fa {
-    margin-right: 5px;
-}
 
-.delete_item{
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: large;
-    cursor: pointer;
+.delete_item .fa{
+    margin : 0;
+    padding : 0;
 }
 
 .cart-total {

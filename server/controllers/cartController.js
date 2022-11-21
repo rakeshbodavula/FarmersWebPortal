@@ -1,6 +1,7 @@
 const Cart = require('../model/cart')
 require('dotenv').config()
-const JWT_Secret = process.env.JWT_Secret
+// const JWT_Secret = process.env.JWT_Secret
+const JWT_Secret = 'FSD2'
 const jwt = require('jsonwebtoken')
 
 

@@ -1,9 +1,9 @@
-import {useState} from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const Signuppage = () => {
+const Signuppage = (props) => {
   const navigate = useNavigate()
   const [details, setDetails] = useState({})
 
@@ -18,84 +18,91 @@ const Signuppage = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(details),
     })
-      .then(res => {
-        if (res.ok) {
-          navigate('/login')
-        }
-      })
-      .catch(err =>{
+    .then(res => res.json())
+    .then(result => {
+      if(result.msg ==='err'){
         navigate('/signup')
-        console.log(err)
+      }
+      else{
+        // props.onUserLogin(details.name)
+        // localStorage.setItem('username',details.email.slice(0,details.email.indexOf('@')))
+        localStorage.setItem('email', details.email)
+        navigate('/adminportal')
+      }
+    })
+      .catch(err => {
+        navigate('/signup')
+        console.log(err)  
       })
   }
 
-    return (
-        <>
-            {/* <GlobalStyle /> */}
-            <Wrapper>
-                <div className="login-container">
-                    <div className="loginform">
-                        <div className="loginform-container">
-                            <div className="loginform-left">
-                                <h1 className="loginform-title">Welcome!</h1>
-                                <p className="loginform-desc">To the Farmers Web Portal!!!!!!!!</p>
-                                <form onSubmit={(e) => e.preventDefault()}>
-                                    <div className="input-block">
-                                        <label htmlFor="name" className="input-label">Name</label>
-                                        <input type="name" autoComplete="off" name="name" id="name" placeholder="Name" onChange={handleChange} />
-                                        {/* {touched.name && errors.name ? (
+  return (
+    <>
+      {/* <GlobalStyle /> */}
+      <Wrapper>
+        <div className="login-container">
+          <div className="loginform">
+            <div className="loginform-container">
+              <div className="loginform-left">
+                <h1 className="loginform-title">Welcome!</h1>
+                <p className="loginform-desc">To the Farmers Web Portal!!!!!!!!</p>
+                <form onSubmit={(e) => e.preventDefault()}>
+                  <div className="input-block">
+                    <label htmlFor="name" className="input-label">Name</label>
+                    <input type="name" autoComplete="off" name="name" id="name" placeholder="Name" onChange={handleChange} />
+                    {/* {touched.name && errors.name ? (
                                             <p className="form-error">{errors.name}</p>
                                         ) : null} */}
-                                    </div>
-                                    <div className="input-block">
-                                        <label htmlFor="email" className="input-label">Email</label>
-                                        <input type="email" autoComplete="off" name="email" id="email" placeholder="Email"  onChange={handleChange} />
-                                        {/* {errors.email && touched.email ? (
+                  </div>
+                  <div className="input-block">
+                    <label htmlFor="email" className="input-label">Email</label>
+                    <input type="email" autoComplete="off" name="email" id="email" placeholder="Email" onChange={handleChange} />
+                    {/* {errors.email && touched.email ? (
                                             <p className="form-error">{errors.email}</p>
                                         ) : null} */}
-                                    </div>
-                                    <div className="input-block">
-                                        <label htmlFor="password" className="input-label">
-                                            Password
-                                        </label>
-                                        <input type="password" autoComplete="off" name="password" id="password" placeholder="Password"  onChange={handleChange} />
-                                        {/* {errors.password && touched.password ? (
+                  </div>
+                  <div className="input-block">
+                    <label htmlFor="password" className="input-label">
+                      Password
+                    </label>
+                    <input type="password" autoComplete="off" name="password" id="password" placeholder="Password" onChange={handleChange} />
+                    {/* {errors.password && touched.password ? (
                                             <p className="form-error">{errors.password}</p>
                                         ) : null} */}
-                                    </div>
-                                    <div className="input-block">
-                                        <label htmlFor="confirm_password" className="input-label"> Confirm Password</label>
-                                        <input type="password" autoComplete="off" name="confirm_password" id="confirm_password" placeholder="Confirm Password"  onChange={handleChange} />
-                                        {/* {errors.confirm_password && touched.confirm_password ? (
+                  </div>
+                  <div className="input-block">
+                    <label htmlFor="confirm_password" className="input-label"> Confirm Password</label>
+                    <input type="password" autoComplete="off" name="confirm_password" id="confirm_password" placeholder="Confirm Password" onChange={handleChange} />
+                    {/* {errors.confirm_password && touched.confirm_password ? (
                                             <p className="form-error">{errors.confirm_password}</p>
                                         ) : null} */}
-                                    </div>
-                                    <div className="loginform-buttons">
-                                        {/* <Link href="./Loginpage.js" className="aaa">
-                                            Want to register using Gmail?
+                  </div>
+                  <div className="loginform-buttons">
+                    {/* <Link href="./Loginpage.js" className="aaa">
+                                            Want to signup using Gmail?
                                         </Link> */}
-                                        <button className="input-button" onClick={onRegisterHandler}>Register</button>
-                                    </div>
-                                    <div className="">
-                                        <Link href=""><i id='icon' className="fab fa-facebook-f fa-2x px-5 mr-5"></i></Link>
-                                        <Link href=""><i id='icon' className="fab fa-twitter fa-2x"></i></Link>
-                                        <Link href=""><i id='icon' className="fab fa-instagram fa-2x px-5 mr-5"></i></Link>
-                                        <Link href=""><i id='icon' className="fab fa-linkedin-in fa-2x"></i></Link>
-                                    </div>
-                                </form>
-                                <p className="sign-up">
-                                    Already have an account? <Link to="/Loginpage">Sign In now</Link>
-                                </p>
-                            </div>
-                            <div className="loginform-right">
-                                <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dfd2ec5a01006fd8c4d7592a381d3776&auto=format&fit=crop&w=1000&q=80" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </Wrapper>
-        </>
-    );
+                    <button className="input-button" onClick={onRegisterHandler}>Register</button>
+                  </div>
+                  <div className="">
+                    <Link href=""><i id='icon' className="fab fa-facebook-f fa-2x px-5 mr-5"></i></Link>
+                    <Link href=""><i id='icon' className="fab fa-twitter fa-2x"></i></Link>
+                    <Link href=""><i id='icon' className="fab fa-instagram fa-2x px-5 mr-5"></i></Link>
+                    <Link href=""><i id='icon' className="fab fa-linkedin-in fa-2x"></i></Link>
+                  </div>
+                </form>
+                <p className="sign-up">
+                  Already have an account? <Link to="/Loginpage">Sign In now</Link>
+                </p>
+              </div>
+              <div className="loginform-right">
+                <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dfd2ec5a01006fd8c4d7592a381d3776&auto=format&fit=crop&w=1000&q=80" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </Wrapper>
+    </>
+  );
 };
 
 const Wrapper = styled.section`

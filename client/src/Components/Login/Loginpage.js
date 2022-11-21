@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 
-const SignUp = () => {
+const SignUp = (props) => {
   const navigate = useNavigate()
   const [details, setDetails] = useState({})
 
@@ -18,19 +18,25 @@ const SignUp = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(details),
     })
-      .then(res => {
-        if (res.ok) {
-          if (res.json().msg === 'seller') {
-            // navigate('/adminportal')
-            navigate('/')
-          }
-          else if(res.json().msg === 'user'){
-            // navigate('/dashboard')
-            navigate('/')
-          }
+      .then(res => res.json())
+      .then(result => {
+        if (result.msg === 'seller') {
+          // props.onUserLogin(details.email.slice(0,details.email.indexOf('@')))
+          localStorage.setItem('email', details.email)
+          navigate('/adminportal')
+        }
+        else if (result.msg === 'user') {
+          localStorage.setItem('email', details.email)
+          // console.log(details)
+          // props.onUserLogin(details.email.slice(0,details.email.indexOf('@')))
+          // props.onUserLogin(details.name)
+          navigate('/')
+        }
+        else {
+          navigate('/login')
         }
       })
-      .catch(err =>{
+      .catch(err => {
         navigate('/login')
         console.log(err)
       })
@@ -76,7 +82,7 @@ const SignUp = () => {
 
                 </form>
                 <p className="sign-up">
-                  Don't have an account? <Link to="/Signuppage">Sign Up now</Link>
+                  Don't have an account? <Link to="/signup">Sign Up now</Link>
                 </p>
               </div>
               <div className="loginform-right">
