@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom"
+import { Link, redirect } from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 
 const SignUp = (props) => {
   const navigate = useNavigate()
   const [details, setDetails] = useState({})
+
+  useEffect(()=>{
+    if(localStorage.getItem('email')){
+      navigate('/adminportal')
+    }
+  },[])
 
   const handleChange = (e) => {
     setDetails((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -45,53 +51,55 @@ const SignUp = (props) => {
   return (
     <>
       {/* <GlobalStyle /> */}
-      <Wrapper>
-        <div className="login-container">
-          <div className="loginform">
-            <div className="loginform-container">
-              <div className="loginform-left">
-                <h1 className="loginform-title">Welcome!</h1>
-                <p className="loginform-desc">To the Farmers Web Portal!!!</p>
-                <form onSubmit={(e) => e.preventDefault()}>
-                  <div className="input-block">
-                    <label htmlFor="email" className="input-label">Email</label>
-                    <input type="email" autoComplete="off" name="email" id="email" placeholder="Email" onChange={handleChange} />
-                    {/* {errors.email && touched.email ? (
+      {!localStorage.getItem('email') &&
+        <Wrapper>
+          <div className="login-container">
+            <div className="loginform">
+              <div className="loginform-container">
+                <div className="loginform-left">
+                  <h1 className="loginform-title">Welcome!</h1>
+                  <p className="loginform-desc">To the Farmers Web Portal!!!</p>
+                  <form onSubmit={(e) => e.preventDefault()}>
+                    <div className="input-block">
+                      <label htmlFor="email" className="input-label">Email</label>
+                      <input type="email" autoComplete="off" name="email" id="email" placeholder="Email" onChange={handleChange} />
+                      {/* {errors.email && touched.email ? (
                       <p className="form-error">{errors.email}</p>
                     ) : null} */}
-                  </div>
+                    </div>
 
-                  <div className="input-block">
-                    <label htmlFor="password" className="input-label">Password</label>
-                    <input type="password" autoComplete="off" name="password" id="password" placeholder="Password" onChange={handleChange} />
-                    {/* {errors.password && touched.password ? (
+                    <div className="input-block">
+                      <label htmlFor="password" className="input-label">Password</label>
+                      <input type="password" autoComplete="off" name="password" id="password" placeholder="Password" onChange={handleChange} />
+                      {/* {errors.password && touched.password ? (
                       <p className="form-error">{errors.password}</p>
                     ) : null} */}
-                  </div>
+                    </div>
 
-                  <div className="loginform-buttons">
-                    <button className="input-button" onClick={onLoginHandler}>Login</button>
-                  </div>
+                    <div className="loginform-buttons">
+                      <button className="input-button" onClick={onLoginHandler}>Login</button>
+                    </div>
 
-                  <div className="">
-                    <Link to=""><i id='icon' className="fab fa-facebook-f fa-2x px-5 mr-5"></i></Link>
-                    <Link to=""><i id='icon' className="fab fa-twitter fa-2x"></i></Link>
-                    <Link to=""><i id='icon' className="fab fa-instagram fa-2x px-5 mr-5"></i></Link>
-                    <Link to=""><i id='icon' className="fab fa-linkedin-in fa-2x"></i></Link>
-                  </div>
+                    <div className="">
+                      <Link to=""><i id='icon' className="fab fa-facebook-f fa-2x px-5 mr-5"></i></Link>
+                      <Link to=""><i id='icon' className="fab fa-twitter fa-2x"></i></Link>
+                      <Link to=""><i id='icon' className="fab fa-instagram fa-2x px-5 mr-5"></i></Link>
+                      <Link to=""><i id='icon' className="fab fa-linkedin-in fa-2x"></i></Link>
+                    </div>
 
-                </form>
-                <p className="sign-up">
-                  Don't have an account? <Link to="/signup">Sign Up now</Link>
-                </p>
-              </div>
-              <div className="loginform-right">
-                <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dfd2ec5a01006fd8c4d7592a381d3776&auto=format&fit=crop&w=1000&q=80" alt="" />
+                  </form>
+                  <p className="sign-up">
+                    Don't have an account? <Link to="/signup">Sign Up now</Link>
+                  </p>
+                </div>
+                <div className="loginform-right">
+                  <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dfd2ec5a01006fd8c4d7592a381d3776&auto=format&fit=crop&w=1000&q=80" alt="" />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </Wrapper>
+        </Wrapper>
+      }
     </>
   );
 };

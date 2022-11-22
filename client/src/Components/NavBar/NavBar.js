@@ -21,7 +21,7 @@ const NavBar = () => {
                 document.querySelector('nav').classList.add("change-nav-scroll")
             }
         }
-    })
+    },[])
 
     return (
         <nav className="change-nav-scroll">

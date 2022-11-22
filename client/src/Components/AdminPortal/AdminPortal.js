@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const AdminPortal = (props) => {
     const navigate = useNavigate()
@@ -13,78 +14,74 @@ const AdminPortal = (props) => {
         fetch('http://localhost:9999/adminportal', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({email : seller}),
+            body: JSON.stringify({ email: seller }),
         })
             .then(res => res.json())
             .then(result => {
-                if(result.msg==='err'){
+                if (result.msg === 'err') {
                     navigate('/')
                 }
                 setData(result.data)
                 setProducts(result.products)
             })
             .catch(err => console.log(err))
-    })
 
-    const onLogoutHandler = () =>{
+    }, [])
+
+
+    
+    
+    const onLogoutHandler = () => {
         localStorage.removeItem('email')
-        // console.log('Logout')
-        navigate('/login')
+        console.log('Logout')
+        navigate("/login")
     }
 
+    const graph = () => {
+        // if (data && products) {
 
-
-    // let $sections = $('section');
-    // $(window).scroll(function () {
-    //     let currentScroll = $(this).scrollTop();
-    //     let $currentSection
-    //     $sections.each(function () {
-    //         let divPosition = $(this).offset().top;
-    //         if (divPosition - 100 < currentScroll) {
-    //             $currentSection = $(this);
-    //         }
-    //         if ($currentSection) {
-    //             let id = $currentSection.attr('id');
-    //             $('a').removeClassName('active');
-    //             $("[to='#" + id + "']").addClassName('active');
-    //         }
-    //     })
-
-
-    function preventBack() {
-        window.history.forward();
+        const colors1 = ['orangered', 'rgb(119, 53, 225)', 'rgb(255, 3, 255)', 'royalblue']
+        const colors2 = ['rgb(253, 200, 181)', 'rgb(207, 177, 255)', 'rgb(255, 192, 250)', 'rgb(173, 173, 255)']
+        for (let i = 0; i < 4; i++) {
+            const dataBar = document.querySelector(`.circular-progress_${i}`)
+            const valContainer = document.querySelector(`.value-container_${i}`)
+            
+            let initialData = 0;
+            // const finalData = document.querySelector(`.input_${i}`).value;
+            let finalData;
+            if (i == 0) {
+                finalData = data.seeds
+            }
+            else if (i == 1) {
+                finalData = data.fertilizers
+            }
+            else if (i == 2) {
+                finalData = data.pesticides
+            } else {
+                finalData = data.total
+            }
+            // const finalData = 57
+            const speed = 50;
+            // const maxData = document.querySelector('.input_3').value
+            const maxData = data.total
+            const totalDeg = (360 / maxData)
+            
+            let progress = setInterval(() => {
+                initialData++;
+                valContainer.textContent = initialData;
+                dataBar.style.background = `conic-gradient(${colors1[i]} ${initialData * totalDeg}deg,${colors2[i]} ${initialData * totalDeg}deg)`;
+                if (initialData === finalData) {
+                    clearInterval(progress)
+                }
+            }, speed)
+        }
+        // }
     }
-
-    setTimeout(preventBack, 0);
-
-    // window.onunload = function () { null };
-    // if (data && products) {
-
-    //     const colors1 = ['orangered', 'rgb(119, 53, 225)', 'rgb(255, 3, 255)', 'royalblue']
-    //     const colors2 = ['rgb(253, 200, 181)', 'rgb(207, 177, 255)', 'rgb(255, 192, 250)', 'rgb(173, 173, 255)']
-    //     for (let i = 0; i < 4; i++) {
-    //         const dataBar = document.querySelector(`.circular-progress_${i}`)
-    //         const valContainer = document.querySelector(`.value-container_${i}`)
-
-    //         let initialData = 0;
-    //         const finalData = +document.querySelector(`.input_${i}`).value;
-    //         // const finalData = 57
-    //         const speed = 80;
-    //         const maxData = document.querySelector('.input_3').value
-    //         const totalDeg = (360 / maxData)
-
-    //         let progress = setInterval(() => {
-    //             initialData++;
-    //             valContainer.textContent = `${initialData}`;
-    //             dataBar.style.background = `conic-gradient(${colors1[i]} ${initialData * totalDeg}deg,${colors2[i]} ${initialData * totalDeg}deg)`;
-    //             if (initialData === finalData) {
-    //                 clearInterval(progress)
-    //             }
-    //         }, speed)
-
-    //     }
-    // }
-
+    useEffect(() => {
+        {data && products && graph()}
+    },[data])
+    
+    // useEffect(graph, [])
 
     return (
         <AdminPortalWrapper>
@@ -94,25 +91,25 @@ const AdminPortal = (props) => {
                     <aside>
                         <div className="logo-details">
                             {/* <img src="Images/logo1.jpg" alt=""/> */}
-                            <span className="logo_name"><Link to="/">Admin Portal</Link></span>
+                            <span className="logo_name"><Link>Admin Portal</Link></span>
                         </div>
 
                         <ul className="nav-links">
 
-                            <li><Link to="#dashboard_section" className="active">
+                            <li><AnchorLink href="#dashboard_section" className="active">
                                 <i className='bx bx-grid-alt'></i>
                                 <span className="links_name">Dashboard</span>
-                            </Link></li>
+                            </AnchorLink></li>
 
-                            <li><Link to="#products_section">
+                            <li><AnchorLink href="#products_section">
                                 <i className='bx bx-box'></i>
                                 <span className="links_name">Products</span>
-                            </Link></li>
+                            </AnchorLink></li>
 
-                            <li><Link to="#account_section">
+                            <li><AnchorLink href="#account_section">
                                 <i className='bx bx-cog'></i>
                                 <span className="links_name">Account</span>
-                            </Link></li>
+                            </AnchorLink></li>
 
                             <li className="log_out"><Link onClick={onLogoutHandler}>
                                 <i className='bx bx-log-out'></i>
@@ -190,7 +187,7 @@ const AdminPortal = (props) => {
                                         <span className="discount">
                                             {(((prod.mrp - prod.price) / prod.mrp) * 100).toFixed(1)}%<br />
                                         </span>
-                                        <Link to={"/productpage/" + prod._id} target="_blank">
+                                        <Link to={"/productpage/" + prod._id}>
                                             <img src={prod.img1} alt="" />
                                             <h3>{prod.name}</h3>
                                         </Link>
@@ -221,7 +218,7 @@ const AdminPortal = (props) => {
 
                         </section>
 
-                        <button className="goTop_btn"><Link to="#dashboard_section">Back to Top</Link></button>
+                        <button className="goTop_btn"><AnchorLink href="#dashboard_section">Back to Top</AnchorLink></button>
 
                     </div>
 
@@ -244,7 +241,7 @@ const AdminPortalWrapper = styled.div`
 
 
 :root {
-    --aside_width: 20vw;
+    : 20vw;
     --logo_div_height: 12vh;
     --aside_ul_height: calc(100vh - var(--logo_div_height));
 
@@ -261,7 +258,7 @@ aside {
     background-color: rgb(38, 151, 255);
     float: left;
     height: 100vh;
-    width: var(--aside_width);
+    width: var();
     width : 20vw;
     position: fixed;
     /* padding: 10px; */
@@ -348,8 +345,8 @@ aside li i {
 
 nav,.main_details_container {
     position: relative;
-    left: var(--aside_width);
-    // width: calc(100% - var(--aside_width));
+    left: var();
+    // width: calc(100% - var());
     overflow: hidden;
 }
 
