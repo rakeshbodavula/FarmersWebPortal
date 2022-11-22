@@ -67,7 +67,7 @@ const Market = (props) => {
 
                 <div className="content">
                     <span>One stop For farmers!</span><br /><br />
-                    <h2>Get all the assential products For cultivating crops and make our country stay healthy</h2>
+                    <h2>Get all the Essential products For cultivating crops and make our country stay healthy</h2>
                 </div>
 
             </section>

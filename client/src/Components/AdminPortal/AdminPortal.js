@@ -29,11 +29,11 @@ const AdminPortal = (props) => {
     }, [])
 
 
-    
-    
+
+
     const onLogoutHandler = () => {
         localStorage.removeItem('email')
-        console.log('Logout')
+        // console.log('Logout')
         navigate("/login")
     }
 
@@ -45,7 +45,7 @@ const AdminPortal = (props) => {
         for (let i = 0; i < 4; i++) {
             const dataBar = document.querySelector(`.circular-progress_${i}`)
             const valContainer = document.querySelector(`.value-container_${i}`)
-            
+
             let initialData = 0;
             // const finalData = document.querySelector(`.input_${i}`).value;
             let finalData;
@@ -65,7 +65,7 @@ const AdminPortal = (props) => {
             // const maxData = document.querySelector('.input_3').value
             const maxData = data.total
             const totalDeg = (360 / maxData)
-            
+
             let progress = setInterval(() => {
                 initialData++;
                 valContainer.textContent = initialData;
@@ -78,9 +78,9 @@ const AdminPortal = (props) => {
         // }
     }
     useEffect(() => {
-        {data && products && graph()}
-    },[data])
-    
+        { data && products && graph() }
+    }, [data])
+
     // useEffect(graph, [])
 
     return (
@@ -111,10 +111,16 @@ const AdminPortal = (props) => {
                                 <span className="links_name">Account</span>
                             </AnchorLink></li>
 
-                            <li className="log_out"><Link onClick={onLogoutHandler}>
+                            {/* <li className="log_out"><> <button onClick={onLogoutHandler}></button>
                                 <i className='bx bx-log-out'></i>
                                 <span className="links_name">Log out</span>
-                            </Link></li>
+                            </></li> */}
+                            <li>
+                                <button onClick={onLogoutHandler} className="log_out">
+                                    <i className='bx bx-log-out'></i>
+                                    <span className="links_name">Log out</span>
+                                </button>
+                            </li>
 
                         </ul>
                     </aside>
@@ -275,7 +281,7 @@ aside {
     margin-top: 15px;
 }
 
-aside a {
+aside a,aside button {
     text-decoration: none;
     /* font-size: 18px; */
     font-size: calc(0.8vw + 0.8vh);
@@ -322,7 +328,7 @@ aside li a {
     transition: 0.3s ease-in-out;
 }
 
-aside li a:hover {
+aside li a:hover ,aside li button:hover{
     background-color: #e05260;
 }
 
@@ -333,10 +339,16 @@ aside li i {
     text-align: center;
 }
 
+aside li button{
+    padding : 20px 0;
+}
+
 .log_out {
     position: absolute;
     left : 0;
-    bottom : 8vh;
+    bottom : 10vh;
+    background : rgb(38,151,255);
+    border : none;
     width: 100%;
 }
 

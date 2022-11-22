@@ -24,9 +24,11 @@
 }
 
 .transaction-container {
-  margin-left:430px;
-  width: 630px;
-  height: 430px;
+  /* margin-left:430px; */
+  /* width: 630px;
+  height: 430px; */
+  width: 100%;
+  height: max-content;
   background: white;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
   font-family: 'Raleway', sans-serif;
@@ -77,9 +79,7 @@
   font-family: 'Raleway', sans-serif;
 }
 
-.transaction-container .row{
-  width: 30vw;
-}
+
 
 .input {
   padding: 5px 0;
@@ -188,3 +188,9 @@ input[type=month]::-webkit-calendar-picker-indicator {
 .transaction_btn button:hover{
   background-color: lightgreen;
 }
+/* 
+.transaction-container
+
+.transaction-container .row{
+  width: 40vw;
+} */

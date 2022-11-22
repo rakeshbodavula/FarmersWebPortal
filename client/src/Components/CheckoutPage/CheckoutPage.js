@@ -1,31 +1,50 @@
 import React from 'react';
 import './CheckoutPage.css';
-import { useState } from 'react'
-import {useNavigate} from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function CheckoutPage(props) {
   const navigate = useNavigate()
-  
-  const initialFormState = {
-    fname:"",
-    street : "",
-    phone : "",
-    credit : 0
+
+  const [cartData, setCartData] = useState([])
+
+  useEffect(() => {
+    getCartData()
+  }, [])
+  let subTotal = 0
+
+  const getCartData = () => {
+    fetch('http://localhost:9999/Cart')
+      .then(res => res.json())
+      .then(dat=>setCartData(dat))
+      .catch(err => console.log(err))
   }
-  
+
+  if(cartData){
+    cartData.forEach(item => subTotal+=item.price)
+  }
+
+  const initialFormState = {
+    fname: "",
+    street: "",
+    phone: "",
+    credit: 0
+  }
+
   const [formData, setFormData] = useState(initialFormState)
   const inputChangeHandler = (e) => {
-    setFormData((prev)=>({
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name] : e.target.value
+      [e.target.name]: e.target.value
     }));
   }
 
-  const submitHandler = (e)=>{
+  const submitHandler = (e) => {
     e.preventDefault()
     props.onBuyCheckout(formData)
     navigate('/transaction')
   }
+
 
   return (
 
@@ -39,11 +58,11 @@ function CheckoutPage(props) {
           <form action="" method="">
             <label>
               <span className="fname">First Name <span className="required">*</span></span>
-              <input type="text" name="fname" onChange={inputChangeHandler}/>
+              <input type="text" name="fname" onChange={inputChangeHandler} />
             </label>
             <label>
               <span className="lname">Last Name <span className="required">*</span></span>
-              <input type="text" name="lname"/>
+              <input type="text" name="lname" />
             </label>
             <label>
               <span>Company Name (Optional)</span>
@@ -310,11 +329,11 @@ function CheckoutPage(props) {
             </label>
             <label>
               <span>&nbsp;</span>
-              <input type="text" name="apartment"  placeholder="Apartment, suite, unit etc. (optional)" />
+              <input type="text" name="apartment" placeholder="Apartment, suite, unit etc. (optional)" />
             </label>
             <label>
               <span>Town / City <span className="required">*</span></span>
-              <input type="text" name="city"  />
+              <input type="text" name="city" />
             </label>
             <label>
               <span>State / County <span className="required">*</span></span>
@@ -322,34 +341,38 @@ function CheckoutPage(props) {
             </label>
             <label>
               <span>Postcode / ZIP <span className="required">*</span></span>
-              <input type="text" name="city"/>
+              <input type="text" name="city" />
             </label>
             <label>
               <span>Phone <span className="required">*</span></span>
-              <input type="tel" name="phone" onChange={inputChangeHandler}/>
+              <input type="tel" name="phone" onChange={inputChangeHandler} />
             </label>
             <label>
               <span>Credit Card Number <span className="required">*</span></span>
-              <input type="number" name="credit" onChange={inputChangeHandler}/>
+              <input type="number" name="credit" onChange={inputChangeHandler} />
             </label>
           </form>
           <div className="Yorder">
-            <table>
-              <tr>
-                <th colSpan="2">Your Order</th>
-              </tr>
-              <tr>
-                <td>Product Name x 2(Qty)</td>
-                <td>Rs 88.00</td>
-              </tr>
-              <tr>
-                <td>Subtotal</td>
-                <td>Rs 88.00</td>
-              </tr>
-              <tr>
-                <td>Shipping</td>
-                <td>Free shipping</td>
-              </tr>
+            <table id="Checkout_Order_Table">
+              <tbody id="Checkout_Order_Table_Body">
+                <tr>
+                  <th colSpan="2">Your Order</th>
+                </tr>
+                {cartData && cartData.map(item => (
+                  <tr key={Math.random()}>
+                    <td>{item.name}</td>
+                    <td>Rs {item.price}</td>
+                  </tr>
+                ))}
+                <tr>
+                  <td>Shipping</td>
+                  <td>Rs 0</td>
+                </tr>
+                <tr id='Subtotal'>
+                  <td>Subtotal</td>
+                  <td>Rs {subTotal}</td>
+                </tr>
+              </tbody>
             </table><br />
             <div>
               <input type="radio" name="dbt" defaultValue="dbt" defaultChecked /> Direct Bank Transfer

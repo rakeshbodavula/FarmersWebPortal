@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./TransactionStatus.css";
 
 function TransactionStatus({ data }) {
-  console.log(data)
+  const navigate = useNavigate()
+  // console.log(data)
   return (
     <>
       <div className="center-div">
@@ -23,13 +25,13 @@ function TransactionStatus({ data }) {
 
 
                   <h3> Name: {data.fname}</h3>
-                  <h3>Order ID:{Math.random()}</h3>
+                  <h3>Order ID:{Math.floor(Math.random()*10000000000000)}</h3>
                   <h3>Address:{data.street}</h3>
-                  <h3>Credit Card Number:{data.credit}</h3>
-                  <h3>Mobile Number: {data.phone}</h3><br />
+                  <h3>Credit Card Number:{Math.floor(Math.random()*100000000000)}</h3>
+                  <h3>Mobile Number: {Math.floor(Math.random()*(9999999999-6666666666)+6666666666)}</h3><br />
                   <div className="transaction_btn">
-                    <button>Print</button>
-                    <button>Close</button>
+                    {/* <button>Print</button> */}
+                    <button onClick={() => navigate('/dashboard')}>Close</button>
                   </div>
 
                   {/* <div className="row">

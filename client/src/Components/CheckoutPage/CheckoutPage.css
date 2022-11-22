@@ -3,15 +3,21 @@
 .checkout_body{
   position: relative;
   top: 7vh;
-  width: 100vw;
+  /* width: 100vw; */
   /* height: 93vh; */
   background: url('http://all4desktop.com/data_images/original/4236532-background-images.jpg');
   font-family: 'Roboto Condensed', sans-serif;
   color: #262626;
   /* margin: 5% 0; */
+  /* padding-top: 8px; */
+  /* overflow:hidden; */
+  width: 100%;
+  /* height: 93vh; */
 }
 .checkout_container{
   width: 100%;
+  /* height: auto; */
+  transform: scale(0.93);
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -28,7 +34,7 @@
   flex-direction: row;
   background: #f6f6f6;
   border-radius: 0 0 5px 5px;
-  padding: 25px;
+  padding: 10px 25px;
 }
 .checkout_body form{
   flex: 4;
@@ -92,23 +98,24 @@
   border-bottom: 1px solid #dadada;
   padding: 10px 0;
 }
-.checkout_body tr > .checkout_bodytd:nth-child(1){
+.checkout_bodytd:nth-child(1){
   text-align: left;
   color: #2d2d2a;
 }
-.checkout_body tr > .checkout_body td:nth-child(2){
+/* .checkout_body tr > .checkout_body td:nth-child(2){ */
+.checkout_body td:nth-child(2){
   text-align: right;
   color: #52ad9c;
 }
 .checkout_body td{
   border-bottom: 1px solid #dadada;
-  padding: 25px 25px 25px 0;
+  padding: 10px;
 }
 
 .checkout_body p{
   display: block;
   color: #888;
-  margin: 0;
+  margin: 10;
   padding-left: 25px;
 }
 .Yorder >.checkout_body div{
@@ -129,4 +136,23 @@
 .checkout_button:hover{
   cursor: pointer;
   background: #428a7d;
+}
+
+#Checkout_Order_Table th,#Checkout_Order_Table td{
+  border : none;
+  width: 100%;
+}
+
+#Checkout_Order_Table td{
+  border: 1px solid #000;
+  width: 45%;
+}
+
+#Checkout_Order_Table_Body td:nth-child(2){
+  width: 15%;
+}
+
+#Subtotal td:nth-child(2){
+  border: none;
+  color:red;
 }
