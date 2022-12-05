@@ -25,7 +25,7 @@ function Discussions() {
     // let isReplying = false;
     const [isReplying, setIsReplying] = useState(false);
     // let replyingTo = 0;
-    const [replyingTo, setReplyingTo] = useState(0);
+    const [replyingTo, setReplyingTo] = useState("");
 
     const handleSendMessage = () => {
         let date = new Date();
@@ -60,7 +60,7 @@ function Discussions() {
                 .then((res) => res.json())
                 .catch((err) => console.log("Error: ", err));
 
-            setReplyingTo(0);
+            setReplyingTo("");
             setIsReplying(false);
         } else {
             // setMessgData([
@@ -74,10 +74,10 @@ function Discussions() {
             //     },
             // ]);
             setMessgData(prev => {
-                return [...messgData,
+                return [...prev,
                     {
                         msg_id: msg_id,
-                        referedTo: 0,
+                        referedTo: "",
                         username: currUserName,
                         message: currMessage,
                         timestamp: timeStamp,
@@ -86,7 +86,7 @@ function Discussions() {
             fetch("http://localhost:9999/sendMessages", {
                 method: "POST",
                 headers: { 'Content-type': 'Application/json' },
-                body: JSON.stringify({ msg_id, referedTo: 0, username: currUserName, message: currMessage, timestamp: timeStamp })
+                body: JSON.stringify({ msg_id, referedTo: "", username: currUserName, message: currMessage, timestamp: timeStamp })
             })
                 .then((res) => res.json())
                 .catch((err) => console.log("Error: ", err));
@@ -158,9 +158,7 @@ function Discussions() {
                                                 setIsReplying(true);
                                                 setReplyingTo(messg.msg_id);
                                             }}
-                                        >
-                                            Reply
-                                        </Button>
+                                        >Reply</Button>
                                     </HStack>
                                 </Box>
                             );
