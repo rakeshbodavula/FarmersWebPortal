@@ -350,6 +350,7 @@ aside li button{
     background : rgb(38,151,255);
     border : none;
     width: 100%;
+    cursor : pointer;
 }
 
 

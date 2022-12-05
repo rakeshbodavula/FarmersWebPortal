@@ -1,179 +1,246 @@
-import {
-  Box,
-  Image,
-  Text,
-  Link,
-  HStack,
-  Heading,
-  Switch,
-  useColorMode,
-  VStack,
-  Input,
-  Divider,
-  ScrollView,
-  Badge,
-  Pressable,
-  Button,
-  TextArea,
-  useToast
-} from "native-base";
+import { Box, Image, Text, Link, HStack, Heading, Switch, useColorMode, VStack, Input, Divider, ScrollView, Badge, Pressable, Button, TextArea, useToast, } from "native-base";
 
-import { NativeBaseProvider, extendTheme } from 'native-base';
+import { NativeBaseProvider, extendTheme } from "native-base";
 
-import { useState } from "react";
-// import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-// const config = {
-//   useSystemColorMode: false,
-//   initialColorMode: 'dark',
-// };
-// const customTheme = extendTheme({ config });
-
-
-// const config = {
-//   dependencies: {
-//     'linear-gradient': LinearGradient
-//   }
-// };
-
-
-const messages = [
-    {
-        "username": "alex",
-        "message": "Hii there, can any one help me with finding best paddy seeds..",
-        "timestamp": "08:30"
-    },
-    {
-        "username": "mike",
-        "message": "hello @alex, I used Pioneer's pady seeds (prod id 2) they are pretty good.. try it out..",
-        "timestamp": "08:32"
-    },
-    {
-        "username": "david",
-        "message": "Can any one suggest crop for low level water resource...?",
-        "timestamp": "08:48"
-    },
-    {
-        "username": "alex",
-        "message": "Thank you @mike",
-        "timestamp": "08:52"
-    },
-    {
-        "username": "alex",
-        "message": "@david checkout crops page, where you can get details about a ton of crops..",
-        "timestamp": "08:53"
-    },
-    {
-        "username": "karen",
-        "message": "Hello everyone, nice to have this open chat....",
-        "timestamp": "09:12"
-    },
-    {
-        "username": "david",
-        "message": "thanks @alex, I got few crops added to my list and I will finalize..",
-        "timestamp": "09:32"
-    },
-    {
-        "username": "alex",
-        "message": "No mentions david, always welcome..",
-        "timestamp": "09:46"
-    },
-    {
-        "username": "alex",
-        "message": "If anyone are interested, join us https://meet.google.com/mnd-tpqm-gbb (meet about crop disasters) at 11:00",
-        "timestamp": "09:48"
-    },
-    {
-        "username": "rolex",
-        "message": "@alex, I am in........!",
-        "timestamp": "10:04"
-    },
-    {
-        "username": "alex",
-        "message": "Ready for meetup???",
-        "timestamp": "10:50"
-    }
-]
 
 function Discussions() {
+    const [messgData, setMessgData] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:9999/fetchMessages')
+            .then(res => res.json())
+            .then(data => setMessgData(data))
+            .catch(err => console.log("Error: ", err))
+    }, [])
+
     const { colorMode } = useColorMode();
     const toast = useToast();
 
-    const [messgData, setMessgData] = useState(messages);
     const [currMessage, setCurrMessage] = useState("");
 
-    const currUserName = "akhil";
+    const currUserName = "Guest";
+
+    // let isReplying = false;
+    const [isReplying, setIsReplying] = useState(false);
+    // let replyingTo = 0;
+    const [replyingTo, setReplyingTo] = useState(0);
 
     const handleSendMessage = () => {
-        let date = new Date()
-        let hours = date.getHours()
-        let minutes = date.getMinutes()
-        if (hours < 10){ hours = "0" + hours }
-        if (minutes < 10){ minutes = "0" + minutes }
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        if (hours < 10) {
+            hours = "0" + hours;
+        }
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
         let timeStamp = "";
-        timeStamp += hours + ":" + minutes
-        // if (currMessage.trim() == ""){
-        //     const toast = useToast();
-        //     toast.show({
-        //         description: "Enter message..!"
-        //     })
-        //     return
-        // }
-        setMessgData([
-            ...messgData,
-            {
-                "username": currUserName,
-                "message": currMessage,
-                "timestamp": timeStamp
-            }
-        ])
-        setCurrMessage("")
-    }
+        timeStamp += hours + ":" + minutes;
+        const messages_length = messgData.length;
+        const msg_id = Math.round(Math.random() * 100000000000000)
+        if (isReplying === true) {
+            setMessgData(prev => {
+                return [...messgData,
+                    {
+                        msg_id: msg_id,
+                        referedTo: replyingTo,
+                        username: currUserName,
+                        message: currMessage,
+                        timestamp: timeStamp,
+                    }]})
+
+            fetch("http://localhost:9999/sendMessages", {
+                method: "POST",
+                headers: { 'Content-type': 'Application/json' },
+                body: JSON.stringify({ msg_id, referedTo: replyingTo, username: currUserName, message: currMessage, timestamp: timeStamp })
+            })
+                .then((res) => res.json())
+                .catch((err) => console.log("Error: ", err));
+
+            setReplyingTo(0);
+            setIsReplying(false);
+        } else {
+            // setMessgData([
+            //     ...messgData,
+            //     {
+            //         msg_id: msg_id,
+            //         referedTo: 0,
+            //         username: currUserName,
+            //         message: currMessage,
+            //         timestamp: timeStamp,
+            //     },
+            // ]);
+            setMessgData(prev => {
+                return [...messgData,
+                    {
+                        msg_id: msg_id,
+                        referedTo: 0,
+                        username: currUserName,
+                        message: currMessage,
+                        timestamp: timeStamp,
+                    }]})
+
+            fetch("http://localhost:9999/sendMessages", {
+                method: "POST",
+                headers: { 'Content-type': 'Application/json' },
+                body: JSON.stringify({ msg_id, referedTo: 0, username: currUserName, message: currMessage, timestamp: timeStamp })
+            })
+                .then((res) => res.json())
+                .catch((err) => console.log("Error: ", err));
+        }
+        setCurrMessage("");
+    };
 
     return (
         // <NativeBaseProvider theme={customTheme}>
         <NativeBaseProvider>
-        <Box 
-          bg={colorMode === "light" ? "coolGray.50" : "coolGray.900"}
-        //   bg = "coolGray.900"
-          minHeight="100vh"
-          justifyContent="center"
-          px={4}
-        >
-          <br/>
-          <br/>
-          <br/>
-          <ScrollView 
-        //   w={["200", "250"]} 
-        //   h="20"
-          showsVerticalScrollIndicator ={false}
-          showsHorizontalScrollIndicator={false}
-          >
-             {messgData.map((messg, i) => (
-                <Box py="1">
-                <HStack key={i} space={1} justifyContent="center">
-                    <Badge variant="subtle" w="10%" justifyContent="flex-start"><Text isTruncated maxW="120">{messg.username}</Text></Badge>
-                    <Badge variant="subtle" w="75%" justifyContent="flex-start"><Text isTruncated maxW="1095">{messg.message}</Text></Badge>
-                    <Badge variant="subtle" w="5%" justifyContent="center">{messg.timestamp}</Badge>
+            {messgData.length === 0 && <h1>Loading....</h1>}
+            <Box
+                bg={colorMode === "light" ? "coolGray.5" : "coolGray.900"}
+                //   bg = "coolGray.900"
+                minHeight="100vh"
+                justifyContent="center"
+                px={4}
+            >
+                <br />
+                <br />
+                <br />
+                <ScrollView
+                    //   w={["200", "250"]}
+                    //   h="20"
+                    showsVerticalScrollIndicator={false}
+                    showsHorizontalScrollIndicator={false}
+                >
+                    {messgData && messgData.map((messg) => {
+                        if (messg.referedTo.length > 0) {
+                            const refered_mssg = messgData.find(
+                                (mssg) => mssg.msg_id === messg.referedTo
+                            );
+                            return (
+                                <Box py="1" key={Math.random()}>
+                                    {refered_mssg &&
+                                        <HStack space={1} justifyContent="center" margin="7px">
+                                            <Box w="5%">↓ ←</Box>
+                                            <Badge variant="subtle" w="10%" justifyContent="flex-start" bg="red.100" margin="7px">
+                                                <Text isTruncated maxW="120">
+                                                    {refered_mssg.username}
+                                                </Text>
+                                            </Badge>
+                                            <Badge variant="subtle" w="70%" justifyContent="flex-start" bg="blue.100" margin="7px">
+                                                <Text isTruncated maxW="1095">
+                                                    {refered_mssg.message}
+                                                </Text>
+                                            </Badge>
+                                            <Badge variant="subtle" w="5%" justifyContent="center">
+                                                {refered_mssg.timestamp}
+                                            </Badge>
+                                        </HStack>
+                                    }
+                                    <HStack space={1} justifyContent="center">
+                                        <Badge variant="subtle" w="10%" justifyContent="flex-start">
+                                            <Text isTruncated maxW="120">
+                                                {messg.username}
+                                            </Text>
+                                        </Badge>
+                                        <Badge variant="subtle" w="75%" justifyContent="flex-start">
+                                            <Text isTruncated maxW="1095">
+                                                {messg.message}
+                                            </Text>
+                                        </Badge>
+                                        <Badge variant="subtle" w="5%" justifyContent="center">
+                                            {messg.timestamp}
+                                        </Badge>
+                                        <Button
+                                            onPress={() => {
+                                                setIsReplying(true);
+                                                setReplyingTo(messg.msg_id);
+                                            }}
+                                        >
+                                            Reply
+                                        </Button>
+                                    </HStack>
+                                </Box>
+                            );
+                        }
+
+                        return (
+                            <Box py="1" key={Math.random()}>
+                                <HStack space={1} justifyContent="center">
+                                    <Badge variant="subtle" w="10%" justifyContent="flex-start">
+                                        <Text isTruncated maxW="120">
+                                            {messg.username}
+                                        </Text>
+                                    </Badge>
+                                    <Badge variant="subtle" w="75%" justifyContent="flex-start">
+                                        <Text isTruncated maxW="1095">
+                                            {messg.message}
+                                        </Text>
+                                    </Badge>
+                                    <Badge variant="subtle" w="5%" justifyContent="center">
+                                        {messg.timestamp}
+                                    </Badge>
+                                    <Button
+                                        onPress={() => {
+                                            setIsReplying(true);
+                                            setReplyingTo(messg.msg_id);
+                                        }}
+                                    >
+                                        Reply
+                                    </Button>
+                                </HStack>
+                            </Box>
+                        );
+                    })}
+                </ScrollView>
+                {isReplying === true && (
+                    <HStack space={1} justifyContent="center">
+                        <Badge w="50%">Replying to {replyingTo} message</Badge>
+                        <Button
+                            onPress={() => {
+                                setIsReplying(false);
+                                setReplyingTo(0);
+                            }}
+                        >
+                            cancel
+                        </Button>
+                    </HStack>
+                )}
+                <HStack space={1} justifyContent="center">
+                    {/* {isReplying === true &&
+                <Box><Badge w="10%">Replying to {replyingTo} message</Badge><br/></Box>
+              } */}
+                    <Input
+                        value={currMessage}
+                        onChange={(e) => {
+                            setCurrMessage(e.target.value);
+                        }}
+                        size="md"
+                        variant="outline"
+                        placeholder="message"
+                        w="70%"
+                    />
+                    <Button
+                        w="10%"
+                        onPress={() => {
+                            if (currMessage.trim() == "") {
+                                toast.show({
+                                    description: "Enter message..!",
+                                });
+                                console.log("Toast show executed......................");
+                            } else {
+                                handleSendMessage();
+                            }
+                        }}
+                    >
+                        send
+                    </Button>
                 </HStack>
-                </Box>
-             ))}
-          </ScrollView>
-          <HStack space={1} justifyContent="center">
-            <Input value={currMessage} onChange={(e) => {setCurrMessage(e.target.value)}} size="md" variant="outline" placeholder="message" w="70%"/>
-            <Button w="10%" onPress={() => {
-                if (currMessage.trim() == ""){
-                    toast.show({
-                      description: "Enter message..!"
-                    })
-                    console.log("Toast show executed......................")
-                } else {
-                    handleSendMessage()
-                }
-            }}>send</Button>
-          </HStack>
-          <br/>
-        </Box>
+                <br />
+            </Box>
+            {/* } */}
         </NativeBaseProvider>
     );
 }
@@ -195,19 +262,14 @@ function Discussions() {
 //   );
 // }
 
-export default Discussions
-
-
-
-
-
+export default Discussions;
 
 // not working code ................. important for us as a developerrrrrrrrrrrr
 
 //   <HStack space={1} justifyContent="center">
-//             <Box bg={"primary.800"} 
-//             p="2" 
-//             rounded="xl" 
+//             <Box bg={"primary.800"}
+//             p="2"
+//             rounded="xl"
 //             _text={{
 //                 fontSize: 'md',
 //                 fontWeight: 'medium',
@@ -216,9 +278,9 @@ export default Discussions
 //             }}>
 //                 akhil
 //             </Box>
-//             <Box bg={"primary.800"} 
-//             p="2" 
-//             rounded="xl" 
+//             <Box bg={"primary.800"}
+//             p="2"
+//             rounded="xl"
 //             _text={{
 //                 fontSize: 'md',
 //                 fontWeight: 'medium',
@@ -229,9 +291,9 @@ export default Discussions
 //               sntohu
 //               tnshounesth
 //             </Box>
-//             <Box bg={"primary.800"} 
-//             p="2" 
-//             rounded="xl" 
+//             <Box bg={"primary.800"}
+//             p="2"
+//             rounded="xl"
 //             _text={{
 //                 fontSize: 'md',
 //                 fontWeight: 'medium',
@@ -242,9 +304,9 @@ export default Discussions
 //             </Box>
 //             </HStack>
 //             <HStack space={1} justifyContent="center">
-//             <Box bg={"primary.800"} 
-//             p="2" 
-//             rounded="xl" 
+//             <Box bg={"primary.800"}
+//             p="2"
+//             rounded="xl"
 //             _text={{
 //                 fontSize: 'md',
 //                 fontWeight: 'medium',
@@ -253,9 +315,9 @@ export default Discussions
 //             }}>
 //                 akhil
 //             </Box>
-//             <Box bg={"primary.800"} 
-//             p="2" 
-//             rounded="xl" 
+//             <Box bg={"primary.800"}
+//             p="2"
+//             rounded="xl"
 //             _text={{
 //                 fontSize: 'md',
 //                 fontWeight: 'medium',
@@ -265,13 +327,13 @@ export default Discussions
 //             <TextArea>
 //               This is a Box with Linear Gradienthsnttt
 //               sntohu
-//               tnshounesth 
+//               tnshounesth
 //               nthoeuntheonut goes with the tight happens with the look of the loove an rest in peace in some how jutsified
 //             </TextArea>
 //             </Box>
-//             <Box bg={"primary.800"} 
-//             p="2" 
-//             rounded="xl" 
+//             <Box bg={"primary.800"}
+//             p="2"
+//             rounded="xl"
 //             _text={{
 //                 fontSize: 'md',
 //                 fontWeight: 'medium',

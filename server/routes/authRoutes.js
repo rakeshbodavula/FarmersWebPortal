@@ -2,6 +2,7 @@ const {Router} = require('express')
 const viewController = require('../controllers/viewController')
 const UserController = require('../controllers/UserController')
 const cartController = require('../controllers/cartController')
+const messageController = require('../controllers/messageController')
 
 const router = Router()
 
@@ -40,5 +41,10 @@ router.post('/addToCart',cartController.addToCart_post)
 router.post('/delete-item',cartController.deleteItem_post)
 router.post('/cropResults',viewController.cropResults_post)
 // router.post('/enterdata',viewController.enter_data)
+
+
+// Message Routes
+router.get('/fetchMessages',messageController.fetch_messages)
+router.post('/sendMessages',messageController.send_messages)
 
 module.exports = router;
