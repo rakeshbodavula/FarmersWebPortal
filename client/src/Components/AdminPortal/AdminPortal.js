@@ -34,7 +34,8 @@ const AdminPortal = (props) => {
     const onLogoutHandler = () => {
         localStorage.removeItem('email')
         // console.log('Logout')
-        navigate("/login")
+        window.location.pathname='/login'
+        // navigate("/login")
     }
 
     const graph = () => {

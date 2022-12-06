@@ -20,10 +20,12 @@ import Discussions from './Components/Discussions/Discussions';
 import ChatBot from './Components/ChatBot/ChatBot';
 import SearchResults from './Components/Market/SearchResults';
 import AdminPortal from './Components/AdminPortal/AdminPortal';
+import Dashboard from './Components/Dashboard/Dashboard';
 
 function App() {
   // const [navbarUsername, setNavbarUsername] = useState(null)
   const [buyDetails, setBuyDetails] = useState(null)
+  const [username, setUsername] = useState(null)
   const [history, setHistory] = useState([])
   const [prod_data, setProdData] = useState([])
   const [crop_data, setCropData] = useState([])
@@ -37,6 +39,10 @@ function App() {
 
   const onBuyCheckoutHandler = (obj) => {
     setBuyDetails(obj)
+  }
+
+  const onUserLogin = (username) =>{
+    setUsername(username)
   }
 
   // const { data, isPending: prod_isPending, error: prod_error } = useFetch('http://localhost:2020/products')
@@ -80,7 +86,7 @@ function App() {
     <Router>
       <div className="App">
         {/* <NavBar username={navbarUsername}></NavBar> */}
-        <NavBar></NavBar>
+        <NavBar username={username}></NavBar>
         <Routes>
           <Route exact path='/' element={<Homepage />}></Route>
           <Route exact path='/ChatBot' element={<ChatBot />}></Route>
@@ -96,11 +102,12 @@ function App() {
           <Route exact path='/search/pesticides/' element={prod_data && <Market data={prod_data.filter(x => x.category === "pesticides")} />}></Route>
           <Route exact path='/Market' element={<Market data={prod_data.sort(() => Math.random() - 0.5).slice(0, 11)} />}></Route>
           <Route exact path='/CropSuggestion' element={<CropSuggestion onSearch={CropSuggestionHistoryHandler} />}></Route>
-          <Route exact path='/discussions' element={<Discussions />}></Route>
+          <Route exact path='/discussions' element={localStorage.getItem('email') ? <Discussions /> : <h1 style={{position:"relative",top:"10vh"}}>Please log in</h1>}></Route>
           {/* <Route exact path='/login' element={<Loginpage onUserLogin={onUserLogin}/>}></Route> */}
-          <Route exact path='/login' element={<Loginpage />}></Route>
-          <Route exact path='/signup' element={<Signuppage />}></Route>
+          <Route exact path='/login' element={<Loginpage onUserLogin={onUserLogin}/>}></Route>
+          <Route exact path='/signup' element={<Signuppage onUserLogin={onUserLogin}/>}></Route>
           <Route exact path='/adminportal' element={<AdminPortal data={prod_data} products={prod_data}/>}></Route>
+          <Route exact path='/dashboard' element={<Dashboard/>}></Route>
           {/* <Route exact path='/signup' element={<Signuppage onUserLogin={onUserLogin}/>}></Route> */}
           <Route exact path='/Loginpage' element={<Loginpage />}></Route>
           <Route exact path='/croppage/:id' element={<CropPage data={crop_data}/>}></Route>

@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 import styled from "styled-components";
-import { Link, redirect } from "react-router-dom"
+import { Link} from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 
 const SignUp = (props) => {
@@ -9,7 +9,7 @@ const SignUp = (props) => {
 
   useEffect(()=>{
     if(localStorage.getItem('email')){
-      navigate('/adminportal')
+      navigate('/dashboard')
     }
   },[])
 
@@ -29,14 +29,18 @@ const SignUp = (props) => {
         if (result.msg === 'seller') {
           // props.onUserLogin(details.email.slice(0,details.email.indexOf('@')))
           localStorage.setItem('email', details.email)
-          navigate('/adminportal')
+          props.onUserLogin(details.email)
+          window.location.href="/adminportal"
+          // navigate('/adminportal')
         }
         else if (result.msg === 'user') {
           localStorage.setItem('email', details.email)
+          props.onUserLogin(details.email)
           // console.log(details)
           // props.onUserLogin(details.email.slice(0,details.email.indexOf('@')))
           // props.onUserLogin(details.name)
-          navigate('/')
+          // navigate('/dashboard')
+          window.location.href='/dashboard'
         }
         else {
           navigate('/login')

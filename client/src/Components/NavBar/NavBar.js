@@ -8,8 +8,8 @@ import { useState } from 'react'
 {/* <FontAwesomeIcon icon={solid('user-secret')} /> */ }
 
 
-const NavBar = () => {
-    const [username,setUsername] = useState(null)
+const NavBar = (props) => {
+    const [username,setUsername] = useState(props.username)
     useEffect(() => {
         setUsername(localStorage.getItem('email'))
         // sticky nav bar
@@ -45,6 +45,7 @@ const NavBar = () => {
                     <li><Link to="/ChatBot" className="nav-element ChatBot">Chat Bot</Link></li>
                     <li><Link to="/Market" className="nav-element Market">Market</Link></li>
                     <li><Link to="/Aboutus" className="nav-element Aboutuss">About Us</Link></li>
+                    {/* <li><Link to="/login" id="loginUser" className="nav-element">{props.username}</Link></li> */}
                     {username === null &&
                         <li><Link to="/login" id="loginUser" className="nav-element">Guest</Link></li>
                     }

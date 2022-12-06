@@ -86,7 +86,7 @@ const ChatBot1 = () => {
         { value: "Yellow Mottle worm", label: "Yellow Mottle worm", trigger: "Yellow Mottle worm" },
         { value: "Wire worm", label: "Wire worm", trigger: "Wire worm" },
       ],
-      trigger:'thanks'
+      // trigger:'thanks'
       // end: true,
     },
     {

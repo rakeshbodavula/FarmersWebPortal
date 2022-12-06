@@ -27,11 +27,14 @@ const Signuppage = (props) => {
         // props.onUserLogin(details.name)
         // localStorage.setItem('username',details.email.slice(0,details.email.indexOf('@')))
         localStorage.setItem('email', details.email)
-        navigate('/adminportal')
+        props.onUserLogin(details.email)
+        // navigate('/adminportal')
+        window.location.href='/adminportal'
       }
     })
       .catch(err => {
-        navigate('/signup')
+        // navigate('/signup')
+        window.location.href='/signup'
         console.log(err)  
       })
   }
