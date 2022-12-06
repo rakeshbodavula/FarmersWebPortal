@@ -1,87 +1,90 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
-
 .dashboard_card {
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  font-size: 16px;
-  font-family: "Red Hat Display", sans-serif;
-  width: 145vh;
-  background-color: white;
-  color: var(--desaturated-blue);
-  border-radius: 20px;
-  margin: 50px auto;
-  overflow: hidden;
-  padding: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  height: 70vh;
-  position: relative;
-  left: 2vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 16px;
+    font-family: "Red Hat Display", sans-serif;
+    width: 145vh;
+    background-color: white;
+    color: var(--desaturated-blue);
+    border-radius: 20px;
+    margin: 50px auto;
+    overflow: hidden;
+    padding: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 1000vh;
+    position: relative;
+    left: 2vh;
 }
 
 .dashboard_title {
-  color: black;
-  font-weight: 900;
-  font-size: 32px;
+    color: black;
+    font-weight: 900;
+    font-size: 32px;
 }
 
 .dashboard_container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding: 30px;
-  font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    font-size: 18px;
 }
 
-.dashboard_container > * {
-  margin: 13px 0;
+.dashboard_container>* {
+    margin: 13px 0;
 }
 
 .dashboard_card button {
-  width: 100%;
-  border: none;
-  font-weight: 700;
-  font-size: 0.9rem;
-  border-radius: 12px;
-  cursor: pointer;
+    width: 100%;
+    border: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 12px;
+    cursor: pointer;
 }
 
 .dashboard_proceed-button {
-  background-color: #27ae60;
-  padding: 1rem 0;
-  color: white;
-  box-shadow: 0 20px 30px -8px rgb(197 189 245);
+    background-color: #27ae60;
+    padding: 1rem 0;
+    color: white;
+    box-shadow: 0 20px 30px -8px rgb(197 189 245);
 }
 
 .dashboard_proceed-button:hover {
-  background-color:  blue;
+    background-color: blue;
 }
-.dashboard_card a{
-  text-decoration: none;
-  color: #000;
+
+.dashboard_card a {
+    text-decoration: none;
+    color: #000;
 }
+
 .dashboard_card-2 {
-  background-color: whitesmoke;
-  border-radius: 5px;
-  margin-top: 1rem;
-  padding: 20px;
-  display: flex;
-  width: 70vw;
-  justify-content: space-evenly;
-  align-items: center;
-  text-decoration: none;
-  margin-left: 25px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    margin-top: 1rem;
+    padding: 20px;
+    display: flex;
+    width: 70vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-decoration: none;
+    margin-left: 25px;
 }
-.dashboard_card-2 img{
-  width:80px;
-  height:80px;
+
+.dashboard_card-2 img {
+    width: 80px;
+    height: 80px;
 }
+
 .dashboard_card-2 h3 {
-  margin-left: 2.5rem;
+    margin-left: 2.5rem;
 }
+
 .dashboard_card-2 a {
-  position: absolute;
-  margin-left: 50rem;
+    position: absolute;
+    margin-left: 50rem;
 }
