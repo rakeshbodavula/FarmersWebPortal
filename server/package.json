@@ -1,0 +1,33 @@
+{
+  "name": "fwwp",
+  "version": "1.0.0",
+  "description": "```node server.js``` or ``` npm start ```",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.4",
+    "nodemon": "^2.0.18",
+    "validator": "^13.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rakeshbodavula/Farmers-Web-Portal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rakeshbodavula/Farmers-Web-Portal/issues"
+  },
+  "homepage": "https://github.com/rakeshbodavula/Farmers-Web-Portal#readme"
+}
