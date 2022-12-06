@@ -75,6 +75,11 @@
 #click {
   display: none;
 }
+.chatbot_ul{
+  font-family: 'Courier New', Courier, monospace;
+  color: #ee4e34;
+  font-size: large;
+}
 
 .chat_label {
   position: absolute;

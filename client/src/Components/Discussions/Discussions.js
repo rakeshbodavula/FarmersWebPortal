@@ -20,7 +20,7 @@ function Discussions() {
 
     const [currMessage, setCurrMessage] = useState("");
 
-    const currUserName = "Guest";
+    const currUserName = localStorage.getItem('email') ? localStorage.getItem('email').slice(0,6) : "Guest";
 
     // let isReplying = false;
     const [isReplying, setIsReplying] = useState(false);

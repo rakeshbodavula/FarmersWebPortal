@@ -115,12 +115,16 @@ const ChatBot1 = () => {
         <div className="bot">
 
           <div className="chatbot_box">
-            <ul id="chatbot_ul">
+            {/* <ul id="chatbot_ul">
               <li><span>Welcome Farmer! </span></li>
               <li><span>I am EarthWorm!</span></li>
               <li><span>I am Coming Soon!</span></li>
               <li><span>So, stay tuned :) . . . . . . .</span></li>
-            </ul>
+            </ul> */}
+            <div className="chatbot_ul">
+            <h2>Welcome To ChatBot Farmer:)</h2><br /><br />
+            <h2>I'm EarthWorm!</h2>
+            </div>
           </div>
           <div className="chatbot_image">
             <img src="/earthworm.png" alt="earthworm" className="earthworm-img" />

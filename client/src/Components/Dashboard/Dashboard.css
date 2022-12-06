@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
 
-.card {
+.dashboard_card {
   background-repeat: no-repeat;
   background-size: cover;
 
   font-size: 16px;
   font-family: "Red Hat Display", sans-serif;
-  width: 1000px;
+  width: 145vh;
   background-color: white;
   color: var(--desaturated-blue);
   border-radius: 20px;
@@ -15,15 +15,18 @@
   padding: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  height: 70vh;
+  position: relative;
+  left: 2vh;
 }
 
-.title {
+.dashboard_title {
   color: black;
   font-weight: 900;
   font-size: 32px;
 }
 
-.container {
+.dashboard_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,11 +35,11 @@
   font-size: 18px;
 }
 
-.container > * {
+.dashboard_container > * {
   margin: 13px 0;
 }
 
-.card button {
+.dashboard_card button {
   width: 100%;
   border: none;
   font-weight: 700;
@@ -45,28 +48,40 @@
   cursor: pointer;
 }
 
-.proceed-button {
+.dashboard_proceed-button {
   background-color: #27ae60;
   padding: 1rem 0;
   color: white;
   box-shadow: 0 20px 30px -8px rgb(197 189 245);
 }
 
-.proceed-button:hover {
+.dashboard_proceed-button:hover {
   background-color:  blue;
 }
-
-.card-2 {
+.dashboard_card a{
+  text-decoration: none;
+  color: #000;
+}
+.dashboard_card-2 {
   background-color: whitesmoke;
   border-radius: 5px;
   margin-top: 1rem;
   padding: 20px;
   display: flex;
+  width: 70vw;
+  justify-content: space-evenly;
+  align-items: center;
+  text-decoration: none;
+  margin-left: 25px;
 }
-.card-2 h3 {
+.dashboard_card-2 img{
+  width:80px;
+  height:80px;
+}
+.dashboard_card-2 h3 {
   margin-left: 2.5rem;
 }
-.card-2 a {
+.dashboard_card-2 a {
   position: absolute;
   margin-left: 50rem;
 }
