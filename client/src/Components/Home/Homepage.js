@@ -8,8 +8,30 @@ import Footer from './Footer';
 import styled from 'styled-components';
 // import { Container, Row, Col } from 'react-bootstrap';
 // import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect } from 'react';
+
+import {createStore} from 'redux'
 
 const Homepage = () => {
+
+    if (!localStorage.getItem('count')) localStorage.setItem('count', 1)
+    const val = localStorage.getItem('count');
+
+    function counterReducer(state = { value: val }, action) {
+        switch (action.type) {
+            case 'counter/incremented':
+                localStorage.setItem('count', parseInt(state.value) + 1)
+                return { value: parseInt(state.value) + 1 }
+            default:
+                return state
+        }
+    }
+    useEffect(() => {
+        let store = createStore(counterReducer)
+        store.subscribe(() => console.log("Visitors Count: ",store.getState().value))
+        store.dispatch({ type: 'counter/incremented' })
+    },[])
+
     return (
         <HomeWrapper>
             <Container1 />
