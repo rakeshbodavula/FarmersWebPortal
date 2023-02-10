@@ -20,7 +20,7 @@ const Market = (props) => {
         // console.log(prod)
 
         try {
-            const res = await fetch('http://localhost:9999/addToCart', {
+            const res = await fetch('https://fwp.onrender.com/addToCart', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(prod),
