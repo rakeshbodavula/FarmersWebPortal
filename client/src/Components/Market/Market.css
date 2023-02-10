@@ -89,12 +89,6 @@
     color: #fff;
 }
 
-/* html {
-    font-size: 62%;
-    overflow-x: hidden;
-    scroll-padding-top: 6.5rem;
-    scroll-behavior: smooth;
-} */
 
 .market_body {
     font-family: "Nunito", sans-serif;
@@ -441,62 +435,6 @@
     font-size: 1.3rem;
 }
 
-/* 
-.deal {
-  background: url(../images/deal-bg.jpg) no-repeat;
-  background-position: center;
-  background-size: cover;
-  padding-top: 7rem;
-  background-color: red;
-  padding-bottom: 7rem;
-}
-
-.deal .content {
-  max-width: 50rem;
-}
-
-.deal .content .title {
-  font-size: 4rem;
-  color: var(--black);
-}
-
-.deal .content p {
-  font-size: 1.7rem;
-  padding: 1rem 0;
-  color: #333;
-}
-
-.deal .content .count-down {
-  display: flex;
-  gap: 1rem;
-  padding: 0.5rem 0;
-}
-
-.deal .content .count-down .box {
-  width: 9rem;
-  text-align: center;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  border: 0.1rem solid rgba(0, 0, 0, 0.3);
-}
-
-.deal .content .count-down .box h3 {
-  color: var(--black);
-  background: #fff;
-  height: 7rem;
-  line-height: 7rem;
-  width: 100%;
-  font-size: 5rem;
-}
-
-.deal .content .count-down .box span {
-  display: block;
-  background: var(--black);
-  color: #fff;
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 2rem;
-} */
-
 .contact form {
     text-align: center;
     padding: 2rem;
@@ -526,39 +464,6 @@
     width: 100%;
 }
 
-/* .newsletter{
-  background:url(../images/newsletter-bg.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  padding:5rem 2rem;
-} */
-
-/* .newsletter h3{
-  font-size: 3rem;
-  color:var(--black);
-} */
-
-/* .newsletter form{
-  max-width: 55rem;
-  display: flex;
-  align-items: center;
-  margin:1rem auto;
-  padding:1.5rem;
-  background:rgba(0,0,0,.1);
-} */
-
-/* .newsletter form .box{
-  width:100%;
-  padding:.7rem 1.5rem;
-  font-size: 1.7rem;
-  color:#333;
-  text-transform: none;
-} */
-
-/* .newsletter form .shop_btn{
-  margin-top: 0;
-} */
 
 .market_footer .box-container {
     display: flex;
@@ -620,13 +525,6 @@
     color: var(--green);
 }
 
-/* media queries  */
-
-/* @media (max-width: 1200px) {
-    html {
-        font-size: 55%;
-    }
-} */
 
 @media (max-width: 991px) {
 
@@ -701,10 +599,7 @@
 }
 
 @media (max-width: 450px) {
-    /* html {
-        font-size: 50%;
-    } */
-
+    
     .heading {
         font-size: 3rem;
     }
@@ -731,13 +626,11 @@
     }
 }
 
-/* //////////////////////////////////////////////////////////////////////////////// */
 
 .content p {
     font-size: 400;
 }
 
-/* //////////////////////////////////////////////////////////////////////////////// */
 
 .market_footer-container {
     max-width: 1170px;
@@ -852,7 +745,6 @@
     width: 150px;
 }
 
-/* input[type="submit"]{ */
 .addToCart_btn {
     background-color: #27ae60;
     margin-top: 1rem;

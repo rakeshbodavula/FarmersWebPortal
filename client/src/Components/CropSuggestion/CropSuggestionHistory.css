@@ -1,11 +1,9 @@
 .CropSuggestionHistory_body .hist {
 
-/* background-color: whitesmoke; */
 display: inline-block;
 border-radius: 10px;
 text-align: center;
 padding: 2vh 2vw;
-/* border: 1px solid #000; */
 margin: 25px;
 width: 350px;
 height: 200px;
@@ -17,7 +15,6 @@ font-family: "Courier New", Courier, monospace;
   font-size: x-large;
 }
 .background_image{
-  /* -webkit-filter: blur(30px); */
   filter:blur(5px);
 }
 

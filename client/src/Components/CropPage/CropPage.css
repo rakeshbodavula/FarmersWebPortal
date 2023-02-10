@@ -1,7 +1,6 @@
 .cropimage{
     width: 400px;
     height: 400px;
-    /* padding: 20px 20px 20px 20px; */
     display: inline-block;
     border-radius: 10px;
     border: 2px  solid #fff;
@@ -20,10 +19,6 @@
     
 }
 .croppageheading{
-    /* align-items: center;
-    justify-content: center; */
-    /* display: inline-block; */
-    /* padding: 0 0 20px 230px  ; */
     text-align: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

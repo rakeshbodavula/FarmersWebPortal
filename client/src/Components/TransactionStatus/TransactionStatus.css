@@ -1,15 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700');
 
-/* body {
-  background: whitesmoke;
-  width: 100%;
-  font-family: 'Raleway', sans-serif;
-  letter-spacing: 2px;
-} */
-/* .transaction .transaction1-container .heading-3{
-  font-family: 'Raleway', sans-serif;
 
-} */
 
 .no-gutters {
   padding-left: 0;
@@ -24,9 +15,7 @@
 }
 
 .transaction-container {
-  /* margin-left:430px; */
-  /* width: 630px;
-  height: 430px; */
+
   width: 100%;
   height: max-content;
   background: white;
@@ -45,7 +34,6 @@
   z-index: 1;
   width:430px;
   height:100px;
-  /* box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5); */
   
 }
 
@@ -62,17 +50,7 @@
   text-transform: uppercase;
 }
 
-/* .item-price {
-  font-size: 25px;
-  font-weight: 700;
-  color: #0b8a6d;
-} */
 
-/* .checkout {
-  height: 430px;
-  background: #2f2c33;
-  color: white;
-} */
 
 .transaction1-container {
   padding: 35px 25px;
@@ -108,9 +86,6 @@
 }
 
 
-/* .input input:focus {
-  outline: 0;
-} */
 
 .input-field {
   border: 1px solid #78757c;
@@ -120,16 +95,7 @@
   
 }
 
-/* .input-field img {
-  width: 25px;
-  height: auto;
-  position: absolute;
-  right: 0;
-  top: 5px;
-  
-} */
 
-/* Removes form Controls  */
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
     -webkit-appearance: none;
@@ -168,18 +134,8 @@ input[type=month]::-webkit-calendar-picker-indicator {
   justify-content: center;
   margin:150px   ;
   width: 70vw;
-  /* box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5); */
 }
-/* .transaction_btn{
-  
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-} */
+
 .transaction_btn button{
   font-size: 20px;
   margin: 0 20px;
@@ -188,9 +144,3 @@ input[type=month]::-webkit-calendar-picker-indicator {
 .transaction_btn button:hover{
   background-color: lightgreen;
 }
-/* 
-.transaction-container
-
-.transaction-container .row{
-  width: 40vw;
-} */

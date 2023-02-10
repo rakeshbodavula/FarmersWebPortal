@@ -1,10 +1,5 @@
- /* body {
-     background-image: url(/public/images/login1.png)
- } */
- 
+
  .container1 {
-     /* border: 1px solid black; */
-     /* display: flex; */
      height: 80vh;
      background: #00d68b;
      z-index: 2;
@@ -31,7 +26,6 @@
      padding: 200px 200px 200px 200px;
      justify-content: center;
      text-align: center;
-     /* border: 1px solid black; */
      height: 70vh;
      background: #00d68b
  }
@@ -65,13 +59,10 @@
  
  @keyframes animation2 {
      from {
-         /* transform: rotate(-10deg); */
          transform: rotate(10deg) scale(1.05);
      }
      to {
-         /* right: 300px; */
          right: 230px;
-         /* transform: rotate(10deg); */
          transform: rotate(-10deg) scale(0.85);
      }
  }
@@ -128,33 +119,7 @@
          right: 350px;
      }
  }
- /* @media (max-width: 767px) {
-     .header-images {
-         display: flex;
-         justify-content: center;
-     }
-     .header-images img {
-         position: absolute;
-         height: 100px;
-         width: 100px;
-     }
-     .header-images img:nth-of-type(1) {
-         top: 500px;
-         animation: none;
-         right: 50px;
-     }
-     .header-images img:nth-of-type(2) {
-         top: 450px;
-         animation: none;
-         right: 160px;
-     }
-     .header-images img:nth-of-type(3) {
-         top: 400px;
-         animation: none;
-         right: 270px;
-     }
- } */
- /* ========================== */
+ 
  
  .shaped-border {
      height: 70px;
@@ -162,9 +127,7 @@
      clip-path: polygon(100% 0, -12% 5%, 100% 100%);
      position: relative;
      top: -1.3vh;
-     /* bottom: -65px;
-     right: 0;
-     left: 0; */
+     
      width: 100%;
      background: #00d68b
  }
@@ -180,9 +143,7 @@
          clip-path: polygon(100% 0, -12% 4%, 100% 100%);
          position: relative;
          top: 69.5vh;
-         /* bottom: -65px;
-         right: 0;
-         left: 0; */
+         
          width: 100%;
          background: #00d68b
      }
@@ -211,7 +172,6 @@
  }
  
  #image1 {
-     /* background-image: url(/FWP_V2/public/HomePage_Images/1.png); */
      background-image: url(/public/HomePage_Images/1.png);
  }
  
@@ -278,7 +238,6 @@
          grid-template-columns: 1fr 1fr
      }
  }
- /* =========================== */
  
  .about-wesite {
      position: relative;
@@ -288,7 +247,6 @@
      padding-top: 10px;
      padding: bottom 50px;
      background-color: #fff;
-     /* border: 1px solid black; */
  }
  
  .heading {
@@ -304,9 +262,6 @@
      height: 65vh;
      display: flex;
      flex-direction: row;
-     /* padding: 40px 20px 40px 20px; */
-     /* display: grid;
-     grid-template-columns: 1fr 1fr; */
      justify-content: space-around;
      align-items: center;
      text-align: center;
@@ -321,15 +276,10 @@
      margin-left: 20vh;
      margin-top: 20vh;
      padding-left: 5vh
-     /* position: relative;
-     left: 45vh;
-     top: 9vh; */
+
  }
  
  .row-fluid-wrapper-content-1 {
-     /* position: relative;
-     left: 65vh;
-     top: 0vh; */
      width: 500px;
      height: 200px;
      padding-right: 5vh;
@@ -344,9 +294,6 @@
  }
  
  .row-fluid-wrapper-content-2 {
-     /* position: relative;
-     left: 9vh;
-     top: 5vh; */
      margin-left: 20vh;
      padding-left: 5vh;
      width: 500px;
@@ -357,9 +304,6 @@
  .row-fluid-wrapper-image-2 {
      padding-right: 5vh;
      margin-top: 5vh;
-     /* position: relative;
-     left: -10vh;
-     top: 8vh; */
  }
  
  .row-fluid-wrapper-content-1,
@@ -431,7 +375,6 @@
          font-size: 14px;
      }
  }
- /* ============================================================ */
  
  .customer-review {
      height: 600px;
@@ -440,7 +383,6 @@
      background: white;
      top: 28vh;
      padding: 0px 100px 20px 100px;
-     /* border: 1px solid black; */
  }
  
  .quote-background-image {
@@ -522,7 +464,6 @@
          content: " ";
          display: BLOCK;
          background-image: url(/public/HomePage_Images/quotes1.svg);
-         /* background-image: url(../Images/HomePage_Images/quotes1.svg); */
          height: 100px;
          width: 100px;
          background-repeat: no-repeat;
@@ -534,7 +475,6 @@
          content: " ";
          display: BLOCK;
          background-image: url(/public/HomePage_Images/quotes1.svg);
-         /* background-image: url(../Images/HomePage_Images/quotes1.svg); */
          height: 100px;
          width: 100px;
          background-repeat: no-repeat;
@@ -550,7 +490,6 @@
          position: relative
      }
  }
- /* ====================================== */
  
  .home_footer-container {
      max-width: 1170px;
@@ -645,7 +584,6 @@
      color: #24262b;
      background-color: #ffffff;
  }
- /*responsive*/
  
  @media(max-width: 767px) {
      .home_footer-col {
