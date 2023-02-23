@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const {checkUser} = require('./middlewares/authMiddleware')
 const authRoutes = require('./routes/authRoutes')
 const cors = require('cors')
+const dotenv = require('dotenv')
 
 const app = express()
 
@@ -19,9 +20,7 @@ app.use(cors())
 
 // database connectivitycls
 // const dbURI = 'mongodb://localhost:27017/ffsd1'
-// const dbURI = 'mongodb+srv://fsd2:fsd2@project@cluster0.17k41mn.mongodb.net/test'
-const dbURI = 'mongodb+srv://fsd2:fsd2%40project@cluster0.17k41mn.mongodb.net/?retryWrites=true&w=majority'
-// const dbURI = process.env.dbURI
+const dbURI = process.env.dbURI
 
 const port = process.env.PORT || 9999
 mongoose.connect(dbURI)
