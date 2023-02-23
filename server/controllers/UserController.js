@@ -4,8 +4,7 @@ const Seller = require('../model/seller')
 const bcrypt = require('bcryptjs')
 // import JWT_Secret from './viewController'
 require('dotenv').config()
-// const JWT_Secret = process.env.JWT_Secret
-const JWT_Secret = 'FSD2'
+const JWT_Secret = process.env.JWT_Secret
 
 const maxAge = 60 * 60 * 1000
 

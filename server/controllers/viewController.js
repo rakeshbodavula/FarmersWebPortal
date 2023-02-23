@@ -5,8 +5,7 @@ const Crop = require('../model/crop')
 const mongodb = require('mongodb')
 const ObjectID = mongodb.ObjectId
 require('dotenv').config()
-// const JWT_Secret = process.env.JWT_Secret
-const JWT_Secret = 'FSD2'
+const JWT_Secret = process.env.JWT_Secret
 
 
 
