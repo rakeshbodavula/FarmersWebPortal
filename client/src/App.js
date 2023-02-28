@@ -52,20 +52,20 @@ function App() {
     // }
 
   useEffect(() => {
-    fetch('https://fwp.onrender.com/Market')
+    fetch('http://localhost:9999/Market')
       .then(res => res.json())
       .then(data => setProdData(data))
       .catch(err => console.log("Error: ", err))
 
 
-    fetch('https://fwp.onrender.com/crops')
+    fetch('http://localhost:9999/crops')
       .then(res => res.json())
       .then(crops => setCropData(crops))
       .catch(err => console.log("Error: ", err))
   },[])
 
   // const searchProducts = (name) => {
-  //   fetch('https://fwp.onrender.com/crops')
+  //   fetch('http://localhost:9999/crops')
   //     .then(res => res.json())
   //     .then(crops => setCropData(crops))
   //     .catch(err => console.log("Error: ", err))
@@ -73,7 +73,7 @@ function App() {
 
 
   // const findCrop = (body) => {
-  // fetch('https://fwp.onrender.com/cropResults',{
+  // fetch('http://localhost:9999/cropResults',{
   //   method:'POST',
   //   headers: { 'Content-Type': 'application/json' },
   //   body:body

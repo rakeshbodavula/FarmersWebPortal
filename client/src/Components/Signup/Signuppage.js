@@ -13,7 +13,7 @@ const Signuppage = (props) => {
   }
 
   const onRegisterHandler = () => {
-    fetch('https://fwp.onrender.com/signup', {
+    fetch('http://localhost:9999/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(details),
