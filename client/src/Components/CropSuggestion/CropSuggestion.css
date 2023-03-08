@@ -37,7 +37,7 @@
     color: #FFFFFF;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(/public/cropSuggestion_bg.jpg);
+    background-image: url("/public/cropSuggestion_bg.jpg");
     overflow: hidden;
     width: 60%;
 }
