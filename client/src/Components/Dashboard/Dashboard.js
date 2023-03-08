@@ -12,7 +12,7 @@ const Dashboard = () => {
     getCartData()
   }, [])
   const getCartData = () => {
-    fetch('http://localhost:9999/Cart')
+    fetch('https://fwp.onrender.com/Cart')
       .then(res => res.json())
       .then(dat => setData(dat))
       .catch(err => console.log(err))
