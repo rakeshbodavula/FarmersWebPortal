@@ -1,27 +1,31 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import useFetch from '../../Hooks/useFetch'
 import './CropPage.css'
 import Aos from 'aos'
 import "aos/dist/aos.css"
-export default function CropPage({data}) {
+
+export default function CropPage({ data }) {
+    const { id } = useParams()
+
+    const [prod,setProd] = useState(null)
+
     useEffect(() => {
         Aos.init({ duration: 1000 });
-    },[])
 
-    // const { data, isPending, error } = useFetch('http://localhost:2020/crops')
-    const { id } = useParams()
-    let prod = null
-    if (data) {
-        prod = data.filter(x => x._id == id)
-        prod = prod[0]
-    }
+        try {
+            fetch('http://localhost:9999/croppage/'+id)
+            .then(res=>res.json())
+            .then(results => setProd(results))
+            .catch(err => console.log(err)) 
+        } catch (err) {
+            console.log(err)
+        }
+    }, [])
+
 
 
     return (
         <>
-            {/* {isPending && <h1>Loading .....</h1>} */}
-            {/* {error && <h2>{error}</h2>} */}
             {prod &&
                 <div className='croppage'>
                     <img id='croppagegradient' src="/croppagebackground.webp" alt=''></img>

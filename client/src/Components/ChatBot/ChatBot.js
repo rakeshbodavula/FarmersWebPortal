@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import "./ChatBot.css"
 import ChatBot from "react-simple-chatbot"
-import { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
 
 const ChatBot1 = () => {
 

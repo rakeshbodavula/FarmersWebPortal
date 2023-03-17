@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import { useParams } from 'react-router-dom'
-import useFetch from '../../Hooks/useFetch'
 import './ProductPage.css'
 import Aos from 'aos'
 import "aos/dist/aos.css"
@@ -8,25 +7,30 @@ import "aos/dist/aos.css"
 
 
 export default function ProductPage({data}) {
-    useEffect(() => {
-        Aos.init({ duration: 1000 });
-    },[])
-
-    // const { data, isPending, error } = useFetch('http://localhost:2020/products')
-
 
     const { id } = useParams()
-    let prod = null
-    if (data) {
-        prod = data.filter(x => x._id == id)
-        prod = prod[0]
-    }
+    const [prod,setProd] = useState(null)
+
+
+    useEffect(() => {
+        Aos.init({ duration: 1000 });
+
+        try {
+            fetch('http://localhost:9999/productpage/'+id)
+            .then(res=>res.json())
+            .then(results => setProd(results))
+            .catch(err => console.log(err)) 
+        } catch (err) {
+            console.log(err)
+        }
+
+    },[])
+
+
 
 
     return (
         <>
-            {/* {isPending && <h1>Loading ......</h1>} */}
-            {/* {error && <h2>{error}</h2>} */}
             {prod &&
                 <div className='productpage'>
                     <img id='productpagegradient' src="/productpagebackground.jpg" alt=''></img>

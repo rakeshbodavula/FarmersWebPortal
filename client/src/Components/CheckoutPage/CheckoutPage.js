@@ -14,7 +14,7 @@ function CheckoutPage(props) {
   let subTotal = 0
 
   const getCartData = () => {
-    fetch('https://fwp.onrender.com/Cart')
+    fetch('http://localhost:9999/Cart')
       .then(res => res.json())
       .then(dat=>setCartData(dat))
       .catch(err => console.log(err))

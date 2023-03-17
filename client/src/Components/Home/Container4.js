@@ -1,11 +1,11 @@
 import React from 'react';
-import svg1 from '../assets/Images/svg.svg'
-import svg2 from '../assets/Images/14.png'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
 
 function Container4() {
+    const svg1 = './HomePage_Images/svg.svg'
+    const svg2 = './HomePage_Images/14.png'
     return (
         <>
             <div className="about-wesite ">

@@ -6,7 +6,6 @@ import CropSuggestion from './Components/CropSuggestion/CropSuggestion';
 import Market from './Components/Market/Market';
 import Homepage from './Components/Home/Homepage'
 import ProductPage from './Components/ProductPage/ProductPage';
-// import useFetch from './Hooks/useFetch';
 import Cart from './Components/Cart/Cart'
 import CropSuggestionHistory from './Components/CropSuggestion/CropSuggestionHistory';
 import CropResults from './Components/CropResults/CropResults';
@@ -23,7 +22,6 @@ import AdminPortal from './Components/AdminPortal/AdminPortal';
 import Dashboard from './Components/Dashboard/Dashboard';
 
 function App() {
-  // const [navbarUsername, setNavbarUsername] = useState(null)
   const [buyDetails, setBuyDetails] = useState(null)
   const [username, setUsername] = useState(null)
   const [history, setHistory] = useState([])
@@ -45,47 +43,24 @@ function App() {
     setUsername(username)
   }
 
-  // const { data, isPending: prod_isPending, error: prod_error } = useFetch('http://localhost:2020/products')
-
-    // const onUserLogin = (username) =>{
-    //   setNavbarUsername(username)
-    // }
 
   useEffect(() => {
-    fetch('https://fwp.onrender.com/Market')
+    fetch('http://localhost:9999/Market')
       .then(res => res.json())
       .then(data => setProdData(data))
       .catch(err => console.log("Error: ", err))
 
 
-    fetch('https://fwp.onrender.com/crops')
+    fetch('http://localhost:9999/crops')
       .then(res => res.json())
       .then(crops => setCropData(crops))
       .catch(err => console.log("Error: ", err))
   },[])
 
-  // const searchProducts = (name) => {
-  //   fetch('https://fwp.onrender.com/crops')
-  //     .then(res => res.json())
-  //     .then(crops => setCropData(crops))
-  //     .catch(err => console.log("Error: ", err))
-  // }
-
-
-  // const findCrop = (body) => {
-  // fetch('https://fwp.onrender.com/cropResults',{
-  //   method:'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body:body
-  // })
-  // }
-
-  // const { data: crop_data, isPending: crop_isPending, error: crop_error } = useFetch('http://localhost:2020/crops')
 
   return (
     <Router>
       <div className="App">
-        {/* <NavBar username={navbarUsername}></NavBar> */}
         <NavBar username={username}></NavBar>
         <Routes>
           <Route exact path='/' element={<Homepage />}></Route>
@@ -96,19 +71,17 @@ function App() {
           <Route exact path='/checkoutpage' element={<CheckoutPage onBuyCheckout={onBuyCheckoutHandler} />}></Route>
           <Route exact path='/cropResults' element={<CropResults crop_data={crop_data} />}></Route>
           <Route exact path='/CropSuggestionHistory' element={<CropSuggestionHistory history={history} />}></Route>
-          <Route exact path='/SearchByName/:name' element={prod_data && <SearchResults data={prod_data} />}></Route>
+          <Route exact path='/SearchByName/:query' element={<SearchResults />}></Route>
           <Route exact path='/search/fertilizers/' element={prod_data && <Market data={prod_data.filter(x => x.category === "fertilizers")} />}></Route>
           <Route exact path='/search/seeds/' element={prod_data && <Market data={prod_data.filter(x => x.category === "seeds")} />}></Route>
           <Route exact path='/search/pesticides/' element={prod_data && <Market data={prod_data.filter(x => x.category === "pesticides")} />}></Route>
           <Route exact path='/Market' element={<Market data={prod_data.sort(() => Math.random() - 0.5).slice(0, 11)} />}></Route>
           <Route exact path='/CropSuggestion' element={<CropSuggestion onSearch={CropSuggestionHistoryHandler} />}></Route>
           <Route exact path='/discussions' element={localStorage.getItem('email') ? <Discussions /> : <h1 style={{position:"relative",top:"10vh"}}>Please log in</h1>}></Route>
-          {/* <Route exact path='/login' element={<Loginpage onUserLogin={onUserLogin}/>}></Route> */}
           <Route exact path='/login' element={<Loginpage onUserLogin={onUserLogin}/>}></Route>
           <Route exact path='/signup' element={<Signuppage onUserLogin={onUserLogin}/>}></Route>
           <Route exact path='/adminportal' element={<AdminPortal data={prod_data} products={prod_data}/>}></Route>
           <Route exact path='/dashboard' element={<Dashboard/>}></Route>
-          {/* <Route exact path='/signup' element={<Signuppage onUserLogin={onUserLogin}/>}></Route> */}
           <Route exact path='/Loginpage' element={<Loginpage />}></Route>
           <Route exact path='/croppage/:id' element={<CropPage data={crop_data}/>}></Route>
           <Route exact path='/productpage/:id' element={<ProductPage data={prod_data}/>}></Route>
@@ -118,8 +91,5 @@ function App() {
   );
 }
 
-// if (data) {
-//   data.sort(() => Math.random() - 0.5)
-//   prod_data = data.slice(0, 8)
-// }
+
 export default App;

@@ -11,9 +11,9 @@ function Container1() {
                 </div>
                 <div className="con1-col2" id="con1">
                     <div className="header-images ">
-                        <img src={require('../assets/Images/11.png')} alt="" />
-                        <img src={require('../assets/Images/8.png')} alt="" />
-                        <img src={require('../assets/Images/9.png')} alt="" />
+                        <img src="./HomePage_Images/11.png" alt="" />
+                        <img src="./HomePage_Images/8.png" alt="" />
+                        <img src="./HomePage_Images/9.png" alt="" />
                     </div>
                 </div>
             </div>

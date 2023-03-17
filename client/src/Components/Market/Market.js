@@ -12,15 +12,15 @@ const Market = (props) => {
 
     // const { data, isPending, error } = props
 
-    const onSearchHandler = (name) => {
-        navigate(`/SearchByName/${name}`)
+    const onSearchHandler = (query) => {
+        navigate(`/SearchByName/${query}`)
     }
 
     const addToCartHandler = async (prod) => {
         // console.log(prod)
 
         try {
-            const res = await fetch('https://fwp.onrender.com/addToCart', {
+            const res = await fetch('http://localhost:9999/addToCart', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(prod),

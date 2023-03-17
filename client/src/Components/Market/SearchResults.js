@@ -1,25 +1,43 @@
 import { Link, useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import styled from "styled-components";
 import Aos from 'aos'
 import "aos/dist/aos.css"
-const SearchResults = ({ data }) => {
+const SearchResults = () => {
 
-
-    const { name } = useParams()
+    const [data,setData] = useState(null)
+    const { query } = useParams()
     // const { data, isPending, error } = props
 
-    data = data.filter(x => x.name.toLowerCase().trim().includes(name.toLowerCase().trim()))
+    // data = data.filter(x => x.name.toLowerCase().trim().includes(name.toLowerCase().trim()))
+
+
+
     useEffect(() => {
         Aos.init({ duration: 1500 });
-    },[])
+
+        try {
+            fetch('http://localhost:9999/search', {
+                method: 'POST',
+                mode:'cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({query}),
+            })
+            .then(res=>res.json())
+            .then(results => setData(results))
+            .catch(err => console.log(err)) 
+        } catch (err) {
+            console.log(err)
+        }
+
+    }, [])
 
 
     const addToCartHandler = async (prod) => {
         // console.log(prod)
 
         try {
-            const res = await fetch('https://fwp.onrender.com/addToCart', {
+            const res = await fetch('http://localhost:9999/addToCart', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(prod),

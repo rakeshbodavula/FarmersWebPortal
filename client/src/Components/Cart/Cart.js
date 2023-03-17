@@ -10,7 +10,7 @@ const Cart = () => {
     },[])
 
     const getCartData = () => {
-        fetch('https://fwp.onrender.com/Cart')
+        fetch('http://localhost:9999/Cart')
             .then(res => res.json())
             .then(dat => setData(dat))
             .catch(err => console.log(err))
@@ -18,7 +18,7 @@ const Cart = () => {
 
     const onDeleteHandler = (id) => {
         // console.log(id)
-        fetch('https://fwp.onrender.com/delete-item', {
+        fetch('http://localhost:9999/delete-item', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id }),

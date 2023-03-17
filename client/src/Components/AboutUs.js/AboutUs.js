@@ -68,7 +68,7 @@ function AboutUs() {
                         <span>P.SATYA KARTHIK,S20200010158</span><br />
                         <span>K.VENKAT SUBHASH,S20200010081</span><br />
                         <span>P.Sai Sharan,S20200010174</span><br />
-                        <span>DHANUSH ARIVAboutUsAGIRI,S2020001022</span><br />
+                        <span>DHANUSH ARIVAPPAGARI,S2020001022</span><br />
                         <span>RAKESH BODAVULA,S20200010039</span><br />
                     </div>
                 </div>
