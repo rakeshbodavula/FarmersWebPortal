@@ -20,21 +20,24 @@ const Market = (props) => {
         // console.log(prod)
 
         try {
+            const email = localStorage.getItem('email')
             const res = await fetch('http://localhost:9999/addToCart', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(prod),
+                body: JSON.stringify({prod,email}),
             })
             if (res) {
-                // alert('Item Added to cart')
+                if(res.message ==='exist'){
+                    document.getElementById('prompt').innerText = "Item already in Cart!";
+                }
                 document.getElementById('prompt').style.display = "block";
                 setTimeout(() => {
                     document.getElementById('prompt').style.display = "none";
-                }, 2000)
+                }, 1200)
                 // navigate('/Cart')
             }
         } catch (err) {
-            console.log(err)
+            console.log(err.message)
         }
 
     }

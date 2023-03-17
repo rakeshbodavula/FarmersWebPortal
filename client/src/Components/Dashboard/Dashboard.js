@@ -6,13 +6,14 @@ import styled from 'styled-components'
 import './Dashboard.css';
 
 const Dashboard = () => {
-  const [data, setData] = useState([])
+  const [data, setData] = useState(null)
 
   useEffect(() => {
     getCartData()
   }, [])
   const getCartData = () => {
-    fetch('http://localhost:9999/Cart')
+    const email = localStorage.getItem('email')
+    fetch('http://localhost:9999/Cart/'+email)
       .then(res => res.json())
       .then(dat => setData(dat))
       .catch(err => console.log(err))
@@ -33,8 +34,8 @@ const Dashboard = () => {
       <div className="dashboard_container">
         <h2 className="dashboard_title"><u>Your Orders</u></h2>
         <div className='complete-container'>
-          {data && data.map(item=>(
-            <Link to={"/productpage/" + item.prod_id}>
+          {data && data.items.map(item=>(
+            <Link to={"/productpage/" + item.prod_id} key={item._id}>
             <div className="dashboard_card-2" key={Math.random()}>
               <img src={item.img} alt="" />
               <h3>{item.name}</h3>

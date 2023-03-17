@@ -3,25 +3,27 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-    const [data, setData] = useState([])
+    const [data, setData] = useState(null)
 
     useEffect(() => {
         getCartData()
-    },[])
+    }, [])
 
     const getCartData = () => {
-        fetch('http://localhost:9999/Cart')
+        const email = localStorage.getItem('email')
+        fetch('http://localhost:9999/Cart/' + email)
             .then(res => res.json())
             .then(dat => setData(dat))
             .catch(err => console.log(err))
     }
 
-    const onDeleteHandler = (id) => {
-        // console.log(id)
+    const onDeleteHandler = (item_id) => {
+
+        const email = localStorage.getItem('email')
         fetch('http://localhost:9999/delete-item', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ id }),
+            body: JSON.stringify({ item_id, email }),
         })
             .then(res => res.json())
             .then(dat => setData(dat))
@@ -38,7 +40,7 @@ const Cart = () => {
                 <h1>Shopping Cart</h1>
                 <div className="cart">
                     <div className="products">
-                        {data.length > 0 && data.map(item => (
+                        {data !== null && data.items.length>0 && data.items.map(item => (
                             <div className="product" key={Math.random()}>
                                 <Link to={"/productpage/" + item.prod_id} >
                                     <img src={item.img} />
@@ -49,16 +51,16 @@ const Cart = () => {
                                     </h4>
                                     <p className="product-quantity">Qnt: <input defaultValue={item.quantity} name="quantity" /></p>
                                     {/* <form className="product-remove" onSubmit={(e) => e.preventDefault()}> */}
-                                        <input type="text" name="id" defaultValue={item.prod_id} hidden />
-                                        <button className="delete_item product-remove" onClick={() => onDeleteHandler(item._id)}><i className="fa fa-trash"
-                                            aria-hidden="true"></i></button>
+                                    <input type="text" name="id" defaultValue={item.prod_id} hidden />
+                                    <button className="delete_item product-remove" onClick={() => onDeleteHandler(item._id)}><i className="fa fa-trash"
+                                        aria-hidden="true"></i></button>
                                     {/* </form> */}
                                 </div>
                             </div>
                         ))}
 
 
-                        {data.length === 0 && <div className="else_div">
+                        {(data === null || data.items.length===0) && <div className="else_div">
                             <h1>No items in the cart</h1>
                             <h3>
                                 Please visit
@@ -72,7 +74,7 @@ const Cart = () => {
 
 
                     <div className="cart-total">
-                        {data.length > 0 && data.map(item => {
+                        {data !== null && data.items.map(item => {
                             total_price += item.price
                             total_mrp += item.mrp
                         })}
@@ -82,7 +84,10 @@ const Cart = () => {
                         </p>
                         <p>
                             <span>Number of Items</span>
-                            <span>{data.length}</span>
+                            {data != null &&
+                                <span>{data.items.length}</span>
+                            }
+                            {data===null && <span>0</span>}
                         </p>
                         <p>
                             <span>You Save</span>

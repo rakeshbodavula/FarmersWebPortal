@@ -75,7 +75,7 @@ function App() {
           <Route exact path='/search/fertilizers/' element={prod_data && <Market data={prod_data.filter(x => x.category === "fertilizers")} />}></Route>
           <Route exact path='/search/seeds/' element={prod_data && <Market data={prod_data.filter(x => x.category === "seeds")} />}></Route>
           <Route exact path='/search/pesticides/' element={prod_data && <Market data={prod_data.filter(x => x.category === "pesticides")} />}></Route>
-          <Route exact path='/Market' element={<Market data={prod_data.sort(() => Math.random() - 0.5).slice(0, 11)} />}></Route>
+          <Route exact path='/Market' element={localStorage.getItem('email') ? <Market data={prod_data.sort(() => Math.random() - 0.5).slice(0, 11)} /> :  <h1 style={{position:"relative",top:"10vh"}}>Please log in</h1>}></Route>
           <Route exact path='/CropSuggestion' element={<CropSuggestion onSearch={CropSuggestionHistoryHandler} />}></Route>
           <Route exact path='/discussions' element={localStorage.getItem('email') ? <Discussions /> : <h1 style={{position:"relative",top:"10vh"}}>Please log in</h1>}></Route>
           <Route exact path='/login' element={<Loginpage onUserLogin={onUserLogin}/>}></Route>
