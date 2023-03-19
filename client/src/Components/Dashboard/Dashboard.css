@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+.dashboard_main_container{
+    position: relative;
+    top:8vh;
+}
+
 .dashboard_card {
     background-repeat: no-repeat;
     background-size: cover;
@@ -13,7 +19,7 @@
     padding: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    height: 1000vh;
+    height: auto;
     position: relative;
     left: 2vh;
 }

@@ -26,6 +26,9 @@ const userSchema = new mongoose.Schema({
         type: String, 
         required: [true,'Enter Password'],
         minlength : [8,'Password should have atleast 8 characters']
+    },
+    profilepic:{
+        type:String
     }
 
 },{ collection: 'users', timestamps: true})
