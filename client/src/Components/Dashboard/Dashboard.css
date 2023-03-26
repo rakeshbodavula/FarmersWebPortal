@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
 
-.dashboard_main_container{
+.dashboard_main_container {
     position: relative;
-    top:8vh;
+    top: 8vh;
 }
 
 .dashboard_card {
@@ -93,4 +93,33 @@
 .dashboard_card-2 a {
     position: absolute;
     margin-left: 50rem;
+}
+
+
+.dashboard_main_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard_main_container form {
+    margin-bottom: 1rem;
+}
+
+.dashboard_main_container input[type="file"] {
+    margin-right: 1rem;
+}
+
+.dashboard_main_container button {
+    background-color: #0077cc;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.dashboard_main_container button:hover {
+    background-color: #005fa3;
 }

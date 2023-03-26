@@ -26,6 +26,7 @@ app.use(express.json()) // Built-in middleware
 app.use(bodyParser.json()) // Third Party middleware
 app.use(cors())
 app.use(helmet())
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
 // database connectivity
