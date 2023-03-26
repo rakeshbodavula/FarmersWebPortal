@@ -49,9 +49,9 @@ const options = {
         definition: {
                 openapi : "3.0.0",
                 info:{
-                title: "Farmers Web Portal API",
+                title: "Farmers Web Portal API's",
                 version: "2.0.0",
-                description: "Simple API"
+                description: "All API's"
                 },
                 servers:[
                         { 
