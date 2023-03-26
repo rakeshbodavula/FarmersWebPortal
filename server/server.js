@@ -8,8 +8,12 @@ const helmet = require("helmet")
 const morgan = require("morgan")
 const path = require("path")
 const rfs = require("rotating-file-stream")
-
+const swaggerUI =  require('swagger-ui-express')
+const swaggerJsDoc = require("swagger-jsdoc")
 const app = express()
+
+
+
 
 
 let accessLogStream = rfs.createStream('access.log',{
@@ -40,7 +44,25 @@ mongoose.connect(dbURI)
         .catch((err)=> console.log(err))
 
 
-
+//swagger
+const options = {
+        definition: {
+                openapi : "3.0.0",
+                info:{
+                title: "Farmers Web Portal API",
+                version: "2.0.0",
+                description: "Simple API"
+                },
+                servers:[
+                        { 
+                                url:"http://localhost:9999"
+                        }
+                ],
+        },
+        apis: ["./routes/*.js"]
+}
+const specs = swaggerJsDoc(options)
 // routes
+app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(specs))
 
 app.use(authRoutes)
