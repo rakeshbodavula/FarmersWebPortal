@@ -53,7 +53,7 @@ const router = Router()
 * @swagger
 * components:
 *     schemas:
-*        Sellar:
+*        Seller:
 *           type: object
 *           required:
 *             - email
