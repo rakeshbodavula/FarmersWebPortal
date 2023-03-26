@@ -6,14 +6,14 @@ const Crop = require('../model/crop')
 
 
 
-module.exports.cropResults_post = async (req, res) => {
-    const data = await Crop.find({
-        soil: req.body.soilType,
-        season: req.body.season,
-        investment: { $lt: parseInt(req.body.investment) }
-    })
-    res.render('cropResults', { data: data })
-}
+// module.exports.cropResults_post = async (req, res) => {
+//     const data = await Crop.find({
+//         soil: req.body.soilType,
+//         season: req.body.season,
+//         investment: { $lt: parseInt(req.body.investment) }
+//     })  
+//     res.render('cropResults', { data: data })
+// }
 
 module.exports.getCrops_get = async (req, res) => {
     const data = await Crop.find({}).lean()
@@ -38,6 +38,7 @@ module.exports.croppage_id_get = (req, res) => {
             res.json(result)
         })
         .catch(err => {
+            res.sendStatus(404)
             console.log(err)
         })
 }
@@ -49,6 +50,7 @@ module.exports.productpage_id_get = (req, res) => {
             res.json(result)
         })
         .catch(err => {
+            res.sendStatus(404)
             console.log(err)
         })
 }
