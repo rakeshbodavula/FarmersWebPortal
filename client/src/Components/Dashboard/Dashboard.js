@@ -9,15 +9,22 @@ import './Dashboard.css';
 const Dashboard = () => {
   const [data, setData] = useState(null)
   const [image, setImage] = useState(null)
-  const [url, setUrl] = useState(".jpg")
+  const [url, setUrl] = useState(null)
+  const email = localStorage.getItem('email')
 
   useEffect(() => {
     getCartData()
-  }, [])
-  
+    getImageName()
+  }, [url, image])
+
+  const getImageName = () => {
+    fetch(`http://localhost:9999/getImageName/${email}`)
+      .then(res => res.json())
+      .then(imgurl => setUrl(imgurl.url))
+      .catch(err => console.log(err))
+  }
 
   const getCartData = () => {
-    const email = localStorage.getItem('email')
     fetch('http://localhost:9999/Cart/' + email)
       .then(res => res.json())
       .then(dat => setData(dat))
@@ -43,13 +50,9 @@ const Dashboard = () => {
     let formData = new FormData();
     // formData.append('image', image)
 
-    console.log("update profile pic form handler --- function")
-    console.log(image)
+    // console.log("update profile pic form handler --- function")
+    // console.log(image)
     formData.append("image", image)
-    // console.log(formData["image"])
-    for (var key of formData.entries()) {
-      console.log(key[0] + ', ' + key[1]);
-    }
 
     try {
       // await axios.post("http://localhost:9999/uploadprofilepic", formData, {
@@ -59,11 +62,7 @@ const Dashboard = () => {
           "Content-type": "multipart/form-data",
         }
       })
-        .then(res => res.data)
-        .then(ext => {  
-          setUrl(ext.ext)
-          console.log(ext)
-        })
+        .then(res => window.location.pathname = '/dashboard')
     }
     catch (error) {
       console.log(error)
@@ -77,12 +76,11 @@ const Dashboard = () => {
         <form onSubmit={updateProfilePicFormHandler} style={{ height: "5vh" }}>
           <input type="file" name="profilepic" accept='image/*' onChange={fileChangeHandler} />
           <button type="submit">Upload Profile Picture</button>
-          {/* <img src="http://localhost:9999/uploads/63fd84474bc6d8b8181d7610.jpg"></img> */}
         </form>
         {url &&
-          <img src={"/uploads/" + localStorage.getItem('email') + url} style={{ height: "250px", width: "200px" }}alt="No Photo"></img>
+          <img src={"/uploads/" + url} style={{ height: "200px", width: "200px", borderRadius: "50%" }} alt="No Photo"></img>
         }
-        {/* <img src="/uploads/test@gmail.com.png" style={{height:"100px",width:"100px"}}></img> */}
+        {!url && <img src='/user.png' style={{ height: "200px", width: "200px", borderRadius: "50%" }} ></img>}
       </div>
       <div className="dashboard_card">
         <div className="dashboard_container">

@@ -1,4 +1,3 @@
-const jwt = require('jsonwebtoken')
 const User = require('../model/user')
 const Seller = require('../model/seller')
 const bcrypt = require('bcryptjs')
