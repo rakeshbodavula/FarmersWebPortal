@@ -17,7 +17,7 @@ var storage = multer.diskStorage({
         console.log(req.params.email)
 
         /*Appending extension with original name*/
-        curr_file_path = Date.now() + '-' +Math.round(Math.random()*10000) + path.extname(file.originalname)
+        curr_file_path = Date.now() + '-' + Math.round(Math.random() * 10000) + path.extname(file.originalname)
         cb(null, curr_file_path)
     }
 })
@@ -49,16 +49,27 @@ module.exports.ProfilePicUpload_post = async (req, res) => {
             // req.no_error = true
             const updateUserDetails = async () => {
                 let final_file_name = curr_file_path
-                const user = await User.findOne({email:req.params.email}).lean();
+                let user = await User.findOne({ email: req.params.email }).lean();
+                if (!user) {
+                    user = await Seller.findOne({ email: req.params.email }).lean()
+                }
                 const oldFileName = `uploads/${user.profilepic}`;
                 console.log(oldFileName)
 
-                if(fs.existsSync(oldFileName)){
+                if (fs.existsSync(oldFileName)) {
                     fs.unlinkSync(oldFileName)
                 }
 
 
                 await User.updateOne({ email: req.params.email }, { profilepic: final_file_name }, function (err, docs) {
+                    if (err) {
+                        console.log(err)
+                    } else {
+                        console.log("updated docs: ", docs)
+                    }
+                }).clone().catch(function (err) { console.log(err) })
+
+                await Seller.updateOne({ email: req.params.email }, { profilepic: final_file_name }, function (err, docs) {
                     if (err) {
                         console.log(err)
                     } else {

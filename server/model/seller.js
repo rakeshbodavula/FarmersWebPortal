@@ -6,6 +6,7 @@ const sellerSchema = new mongoose.Schema({
     email: {type: String, required: true, unique:  true},
     name: {type: String, required: true},
     password: {type: String, required: true},
+    profilepic:{type:String}
     // products: {type: Array}
     },
     { collection: 'sellers'}
