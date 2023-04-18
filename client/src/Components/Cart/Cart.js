@@ -11,7 +11,7 @@ const Cart = () => {
 
     const getCartData = () => {
         const email = localStorage.getItem('email')
-        fetch('http://localhost:9999/Cart/' + email)
+        fetch('https://fwp.onrender.com/Cart/' + email)
             .then(res => res.json())
             .then(dat => setData(dat))
             .catch(err => console.log(err))
@@ -20,7 +20,7 @@ const Cart = () => {
     const onDeleteHandler = (item_id) => {
 
         const email = localStorage.getItem('email')
-        fetch('http://localhost:9999/delete-item', {
+        fetch('https://fwp.onrender.com/delete-item', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ item_id, email }),

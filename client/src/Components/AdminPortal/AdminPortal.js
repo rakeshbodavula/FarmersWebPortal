@@ -11,7 +11,7 @@ const AdminPortal = (props) => {
     const seller = localStorage.getItem('email')
 
     useEffect(() => {
-        fetch('http://localhost:9999/adminportal', {
+        fetch('https://fwp.onrender.com/adminportal', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: seller }),

@@ -13,7 +13,7 @@ const Dashboard = () => {
   }, [])
   const getCartData = () => {
     const email = localStorage.getItem('email')
-    fetch('http://localhost:9999/Cart/'+email)
+    fetch('https://fwp.onrender.com/Cart/'+email)
       .then(res => res.json())
       .then(dat => setData(dat))
       .catch(err => console.log(err))
