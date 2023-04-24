@@ -53,7 +53,7 @@ const router = Router()
 * @swagger
 * components:
 *     schemas:
-*        Sellar:
+*        Seller:
 *           type: object
 *           required:
 *             - email
@@ -725,5 +725,6 @@ router.post('/sendMessages',messageController.send_messages);
 
 // Image Routes
 router.post('/uploadprofilepic/:email', imageController.ProfilePicUpload_post);
+router.get('/getImageName/:email',imageController.getImageName)
 
 module.exports = router;

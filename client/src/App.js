@@ -66,7 +66,7 @@ function App() {
           <Route exact path='/' element={<Homepage />}></Route>
           <Route exact path='/ChatBot' element={<ChatBot />}></Route>
           <Route exact path='/Aboutus' element={<AboutUs />}></Route>
-          <Route exact path='/Cart' element={<Cart />}></Route>
+          <Route exact path='/Cart' element={localStorage.getItem('email') ? <Cart/> :  <h1 style={{position:"relative",top:"10vh"}}>Please log in</h1>}></Route>
           <Route exact path='/transaction' element={buyDetails && <TransactionStatus data={buyDetails} />}></Route>
           <Route exact path='/checkoutpage' element={<CheckoutPage onBuyCheckout={onBuyCheckoutHandler} />}></Route>
           <Route exact path='/cropResults' element={<CropResults crop_data={crop_data} />}></Route>
@@ -81,7 +81,7 @@ function App() {
           <Route exact path='/login' element={<Loginpage onUserLogin={onUserLogin}/>}></Route>
           <Route exact path='/signup' element={<Signuppage onUserLogin={onUserLogin}/>}></Route>
           <Route exact path='/adminportal' element={<AdminPortal data={prod_data} products={prod_data}/>}></Route>
-          <Route exact path='/dashboard' element={<Dashboard/>}></Route>
+          <Route exact path='/dashboard' element={localStorage.getItem('email') ? <Dashboard/> :  <h1 style={{position:"relative",top:"10vh"}}>Please log in</h1>}></Route>
           <Route exact path='/Loginpage' element={<Loginpage />}></Route>
           <Route exact path='/croppage/:id' element={<CropPage data={crop_data}/>}></Route>
           <Route exact path='/productpage/:id' element={<ProductPage data={prod_data}/>}></Route>

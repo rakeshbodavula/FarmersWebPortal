@@ -115,7 +115,7 @@ function Discussions() {
                     showsHorizontalScrollIndicator={false}
                 >
                     {messgData && messgData.map((messg) => {
-                        if (messg.referedTo.length > 0) {
+                        if (messg.referedTo && messg.referedTo.length > 0) {
                             const refered_mssg = messgData.find(
                                 (mssg) => mssg.msg_id === messg.referedTo
                             );

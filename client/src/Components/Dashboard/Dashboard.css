@@ -3,6 +3,7 @@
 .dashboard_main_container {
     position: relative;
     top: 8vh;
+    height: 34vh;
 }
 
 .dashboard_card {
