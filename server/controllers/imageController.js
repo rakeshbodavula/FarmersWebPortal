@@ -3,6 +3,7 @@ const Seller = require('../model/seller')
 const fs = require('fs')
 require('dotenv').config()
 
+
 const multer = require('multer')
 var path = require('path')
 

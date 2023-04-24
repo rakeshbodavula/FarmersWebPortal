@@ -1,7 +1,7 @@
 const Seller = require('../model/seller')
 const Product = require('../model/product')
 const Crop = require('../model/crop')
-
+const redisClient = require('./redisClient')
 
 
 
@@ -31,42 +31,81 @@ module.exports.market_get = async (req, res) => {
 
 
 
-module.exports.croppage_id_get = (req, res) => {
+module.exports.croppage_id_get = async (req, res) => {
+    let cropDetails = {};
     const id = req.params.id;
-    Crop.findById(id)
-        .then(result => {
-            res.json(result)
-        })
-        .catch(err => {
-            res.sendStatus(404)
-            console.log(err)
-        })
+    const key = `cropDetails - ${id}`;
+    let clients = await redisClient.get(key);
+    if (!clients) {
+        console.log("Cache Miss");
+        cropDetails = await Crop.findById(id);
+
+        await redisClient.set(key , JSON.stringify(cropDetails));
+    } else {
+        // already there
+        cropDetails = clients;
+        cropDetails = JSON.parse(cropDetails);
+        console.log("Cache Hit");
+    }
+
+    res.json(cropDetails);
+
 }
 
-module.exports.productpage_id_get = (req, res) => {
-    const id = req.params.id
-    Product.findById(id)
-        .then(result => {
-            res.json(result)
-        })
-        .catch(err => {
-            res.sendStatus(404)
-            console.log(err)
-        })
+module.exports.productpage_id_get = async (req, res) => {
+
+    let productDetails = {};
+    const id = req.params.id;
+    const key = `productDetails - ${id}`;
+    let clients = await redisClient.get(key);
+    if (!clients) {
+        console.log("Cache Miss");
+        productDetails = await Product.findById(id);
+
+        await redisClient.set(key , JSON.stringify(productDetails));
+    } else {
+        // already there
+        productDetails = clients;
+        productDetails = JSON.parse(productDetails);
+        console.log("Cache Hit");
+    }
+
+    res.json(productDetails);
 }
 
 
 module.exports.search_post = async (req, res) => {
+    let searchDetails = [];
     const query = req.body.query.toLowerCase().trim()
-    try {
+    const key = `searchDetails - ${query}`;
+    let clients = await redisClient.get(key);
+    if (!clients) {
+        console.log("Cache Miss");
         let data = await Product.find({ name: { $regex: `${query}`, $options: 'i' } }).lean()
         if (!data.length > 0) {
             data = await Product.find({ category: { $regex: `${query}`, $options: 'i' } })
         }
-        return res.json(data)
-    } catch (error) {
-        console.log(error)
+        searchDetails = data;
+
+        await redisClient.set(key , JSON.stringify(searchDetails));
+    } else {
+        // already there
+        searchDetails = clients;
+        searchDetails = JSON.parse(searchDetails);
+        console.log("Cache Hit");
     }
+
+    res.json(searchDetails);
+    // const query = req.body.query.toLowerCase().trim()
+    // try {
+    //     let data = await Product.find({ name: { $regex: `${query}`, $options: 'i' } }).lean()
+    //     if (!data.length > 0) {
+    //         data = await Product.find({ category: { $regex: `${query}`, $options: 'i' } })
+    //     }
+    //     return res.json(data)
+    // } catch (error) {
+    //     console.log(error)
+    // }
 }
 
 
