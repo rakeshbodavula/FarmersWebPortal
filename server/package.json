@@ -4,21 +4,25 @@
   "description": "```node server.js``` or ``` npm start ```",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server"
+    "start": "nodemon server",
+    "test": "mocha --timelimit 10000 --exit"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@apidevtools/swagger-parser": "^10.1.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "helmet": "^6.0.1",
     "jsonwebtoken": "^8.5.1",
+    "mocha": "^10.2.0",
     "mongoose": "^6.3.4",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.18",

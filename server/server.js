@@ -68,3 +68,5 @@ const specs = swaggerJsDoc(options)
 app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(specs))
 
 app.use(authRoutes)
+
+module.exports = app
