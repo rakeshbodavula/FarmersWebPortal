@@ -2,7 +2,7 @@ const Cart = require('../model/cart')
 const User = require('../model/user')
 const Seller = require('../model/seller')
 require('dotenv').config()
-
+const redisClient = require('./redisClient')
 
 
 // Fetches all the items in the Cart Database and returns them
@@ -12,18 +12,37 @@ module.exports.Cart_get = async (req, res) => {
         user = await Seller.findOne({ email: req.params.email }).lean()
     }
     const user_id = user._id
-    const cartItem = await Cart.findOne({ user_id })
-    res.json(cartItem)
+    // const cartItem = await Cart.findOne({ user_id })
+    // res.json(cartItem)
+
+    let cartItems = [];
+    const email = req.params.email;
+    const key = `cartItems - ${email}`;
+    let clients = await redisClient.get(key);
+    if (!clients) {
+        console.log("Cache Miss");
+        cartItems = await Cart.findOne({ user_id })
+        await redisClient.set(key, JSON.stringify(cartItems));
+    } else {
+        // already there
+        cartItems = clients;
+        cartItems = JSON.parse(cartItems);
+        console.log("Cache Hit");
+    }
+
+    res.json(cartItems);
 }
 
 
 
 // Creates a new item in the Cart.
 module.exports.addToCart_post = async (req, res) => {
+    const email = req.body.email;
+    const key = `cartItems - ${email}`;
     const results = req.body.prod;
-    let user = await User.findOne({ email: req.body.email }).lean()
+    let user = await User.findOne({ email: email }).lean()
     if (!user) {
-        user = await Seller.findOne({ email: req.body.email }).lean()
+        user = await Seller.findOne({ email: email }).lean()
     }
     const user_id = user._id
     const cartItem = await Cart.findOne({ user_id })
@@ -41,6 +60,9 @@ module.exports.addToCart_post = async (req, res) => {
                 }
                 await Cart.findByIdAndUpdate(cartItem._id, { items: [...cartItem.items, item] })
                 console.log("Item added to Cart!")
+                let cartItems = [];
+                cartItems = await Cart.findOne({ user_id })
+                await redisClient.set(key, JSON.stringify(cartItems));
             } else {
                 console.log("Item already in Cart!")
             }
@@ -59,6 +81,9 @@ module.exports.addToCart_post = async (req, res) => {
                     }
                 ]
             }).catch(err => console.log(err))
+            let cartItems = [];
+            cartItems = await Cart.findOne({ user_id })
+            await redisClient.set(key, JSON.stringify(cartItems));
         }
     } catch (error) {
         console.log(error)
@@ -71,6 +96,7 @@ module.exports.addToCart_post = async (req, res) => {
 // Deletes an item in the Cart using the item id
 module.exports.deleteItem_post = async (req, res) => {
     const { item_id, email } = req.body
+    const key = `cartItems - ${email}`;
     try {
 
         let user = await User.findOne({ email }).lean()
@@ -82,6 +108,9 @@ module.exports.deleteItem_post = async (req, res) => {
         cartItem.items = cartItem.items.filter(x => x._id.toString() !== item_id)
         const result = await Cart.findByIdAndUpdate(cartItem._id, { items: cartItem.items }, { new: true })
         console.log("Item removed from Cart!")
+        let cartItems = [];
+        cartItems = await Cart.findOne({ user_id })
+        await redisClient.set(key, JSON.stringify(cartItems));
         res.json(result)
     } catch (error) {
         console.log(error)

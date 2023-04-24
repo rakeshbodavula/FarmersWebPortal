@@ -2,6 +2,7 @@ const User = require('../model/user')
 const Seller = require('../model/seller')
 require('dotenv').config()
 
+
 const multer = require('multer')
 var path = require('path')
 
