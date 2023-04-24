@@ -50,7 +50,7 @@ describe('admin details', () => {
   describe('/POST for getting admin details', () => {
     // assuming rakesh.b20@iiits.in admin is present always //
     admin_mail = { email: "rakesh.b20@iiits.in"}
-    it ('it should return object of data and object attibutes', (done) => {
+    it ('it should return object of data and products attibutes', (done) => {
       chai.request(server)
           .post('/adminportal')
           .send(admin_mail)
@@ -62,5 +62,36 @@ describe('admin details', () => {
             done();
           })
     })
+  })
+})
+
+
+describe('/POST login details for login', () => {
+  user_details = {
+    email: "test@gmail.com",
+    password: "12345678"
+  }
+  it ('user login', (done) => {
+    chai.request(server)
+      .post('/login')
+      .send(user_details)
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('object');
+        res.body.should.have.property('msg', 'user');
+        done();
+      })
+  })
+})
+
+describe('/Get messages for discussions tab', () => {
+  it ('it should return an array', (done) => {
+    chai.request(server)
+        .get('/fetchMessages')
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.body.should.be.a('array');
+          done();
+        })
   })
 })
