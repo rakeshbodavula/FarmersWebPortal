@@ -2,6 +2,8 @@ const Seller = require('../model/seller')
 const Product = require('../model/product')
 const Crop = require('../model/crop')
 const redisClient = require('./redisClient')
+const solr = require('solr-client');
+const ProductClient = solr.createClient({ host: 'localhost', port: 8983, core: 'product', protocol: 'http' });
 
 
 
@@ -40,7 +42,7 @@ module.exports.croppage_id_get = async (req, res) => {
         console.log("Cache Miss");
         cropDetails = await Crop.findById(id);
 
-        await redisClient.set(key , JSON.stringify(cropDetails));
+        await redisClient.set(key, JSON.stringify(cropDetails));
     } else {
         // already there
         cropDetails = clients;
@@ -62,7 +64,7 @@ module.exports.productpage_id_get = async (req, res) => {
         console.log("Cache Miss");
         productDetails = await Product.findById(id);
 
-        await redisClient.set(key , JSON.stringify(productDetails));
+        await redisClient.set(key, JSON.stringify(productDetails));
     } else {
         // already there
         productDetails = clients;
@@ -74,38 +76,64 @@ module.exports.productpage_id_get = async (req, res) => {
 }
 
 
+// module.exports.search_post = async (req, res) => {
+//     let searchDetails = [];
+//     const value = req.body.query.toLowerCase().trim()
+//     const key = `searchDetails - ${value}`;
+//     let clients = await redisClient.get(key);
+//     if (!clients) {
+//         console.log("Cache Miss");
+//         try {
+//             let query = ProductClient.query()
+//                 .q(`name:*${value}* OR category:*${value}*`)
+//                 .start(0)
+//                 .rows(100)
+//             // console.log(query)
+//             ProductClient.search(query)
+//                 .then(function (result) {
+//                     console.log('Response:', result.response.docs.length);
+//                     // return res.json({ data: result.response.docs })
+//                     let data = result.response.docs;
+//                 })
+//                 .catch(function (err) {
+//                     console.error(err);
+//                 });
+
+
+//         } catch (error) {
+//             console.log("Error", error)
+//         }
+//         searchDetails = data;
+
+//         await redisClient.set(key, JSON.stringify(searchDetails));
+//     } else {
+//         searchDetails = clients;
+//         searchDetails = JSON.parse(searchDetails);
+//         console.log("Cache Hit");
+//     }
+//     res.json({ searchDetails });
+// }
 module.exports.search_post = async (req, res) => {
-    let searchDetails = [];
-    const query = req.body.query.toLowerCase().trim()
-    const key = `searchDetails - ${query}`;
-    let clients = await redisClient.get(key);
-    if (!clients) {
-        console.log("Cache Miss");
-        let data = await Product.find({ name: { $regex: `${query}`, $options: 'i' } }).lean()
-        if (!data.length > 0) {
-            data = await Product.find({ category: { $regex: `${query}`, $options: 'i' } })
-        }
-        searchDetails = data;
+    const value = req.body.query.toLowerCase().trim()
+    try {
+        let query = ProductClient.query()
+            .q(`name:*${value}* OR category:*${value}*`)
+            .start(0)
+            .rows(100)
+        // console.log(query)
+        ProductClient.search(query)
+            .then(function (result) {
+                console.log('Response:', result.response.docs.length);
+                return res.json({ data: result.response.docs })
+            })
+            .catch(function (err) {
+                console.error(err);
+            });
 
-        await redisClient.set(key , JSON.stringify(searchDetails));
-    } else {
-        // already there
-        searchDetails = clients;
-        searchDetails = JSON.parse(searchDetails);
-        console.log("Cache Hit");
+
+    } catch (error) {
+        console.log("Error", error)
     }
-
-    res.json(searchDetails);
-    // const query = req.body.query.toLowerCase().trim()
-    // try {
-    //     let data = await Product.find({ name: { $regex: `${query}`, $options: 'i' } }).lean()
-    //     if (!data.length > 0) {
-    //         data = await Product.find({ category: { $regex: `${query}`, $options: 'i' } })
-    //     }
-    //     return res.json(data)
-    // } catch (error) {
-    //     console.log(error)
-    // }
 }
 
 

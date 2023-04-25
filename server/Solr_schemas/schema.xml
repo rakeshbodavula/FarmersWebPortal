@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema name="cart" version="1.6">
+    <types>
+        <fieldType name="string" class="solr.StrField"/>
+        <fieldType name="text_general" class="solr.TextField"/>
+        <fieldType name="int" class="solr.IntPointField"/>
+        <fieldType name="long" class="solr.LongPointField"/>
+    </types>
+    <fields>
+        <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
+        <field name="user_id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
+        <field name="prod_id" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
+        <field name="name" type="text_general" indexed="true" stored="true" required="true" multiValued="false"/>
+        <field name="quantity" type="int" indexed="true" stored="true" required="true" multiValued="false"/>
+        <field name="price" type="long" indexed="true" stored="true" required="true" multiValued="false"/>
+        <field name="mrp" type="long" indexed="true" stored="true" required="true" multiValued="false"/>
+        <field name="img" type="text_general" indexed="true" stored="true" required="true" multiValued="false"/>
+    </fields>
+    <uniqueKey>id</uniqueKey>
+</schema>
