@@ -13,7 +13,7 @@ const Signuppage = (props) => {
   }
 
   const onRegisterHandler = () => {
-    fetch('http://localhost:9999/signup', {
+    fetch('https://fwpserver.azurewebsites.net/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(details),

@@ -17,7 +17,7 @@ const SearchResults = () => {
         Aos.init({ duration: 1500 });
 
         try {
-            fetch('http://localhost:9999/search', {
+            fetch('https://fwpserver.azurewebsites.net/search', {
                 method: 'POST',
                 mode:'cors',
                 headers: { 'Content-Type': 'application/json' },
@@ -37,7 +37,7 @@ const SearchResults = () => {
         // console.log(prod)
 
         try {
-            const res = await fetch('http://localhost:9999/addToCart', {
+            const res = await fetch('https://fwpserver.azurewebsites.net/addToCart', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(prod),

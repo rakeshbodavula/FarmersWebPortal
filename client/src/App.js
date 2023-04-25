@@ -45,13 +45,13 @@ function App() {
 
 
   useEffect(() => {
-    fetch('http://localhost:9999/Market')
+    fetch('https://fwpserver.azurewebsites.net/Market')
       .then(res => res.json())
       .then(data => setProdData(data))
       .catch(err => console.log("Error: ", err))
 
 
-    fetch('http://localhost:9999/crops')
+    fetch('https://fwpserver.azurewebsites.net/crops')
       .then(res => res.json())
       .then(crops => setCropData(crops))
       .catch(err => console.log("Error: ", err))

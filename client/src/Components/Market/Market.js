@@ -21,7 +21,7 @@ const Market = (props) => {
 
         try {
             const email = localStorage.getItem('email')
-            const res = await fetch('http://localhost:9999/addToCart', {
+            const res = await fetch('https://fwpserver.azurewebsites.net/addToCart', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({prod,email}),

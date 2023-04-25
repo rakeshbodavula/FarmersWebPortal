@@ -18,14 +18,14 @@ const Dashboard = () => {
   }, [url, image])
 
   const getImageName = () => {
-    fetch(`http://localhost:9999/getImageName/${email}`)
+    fetch(`https://fwpserver.azurewebsites.net/getImageName/${email}`)
       .then(res => res.json())
       .then(imgurl => setUrl(imgurl.url))
       .catch(err => console.log(err))
   }
 
   const getCartData = () => {
-    fetch('http://localhost:9999/Cart/' + email)
+    fetch('https://fwpserver.azurewebsites.net/Cart/' + email)
       .then(res => res.json())
       .then(dat => setData(dat))
       .catch(err => console.log(err))
@@ -55,9 +55,9 @@ const Dashboard = () => {
     formData.append("image", image)
 
     try {
-      // await axios.post("http://localhost:9999/uploadprofilepic", formData, {
+      // await axios.post("https://fwpserver.azurewebsites.net/uploadprofilepic", formData, {
       const email = localStorage.getItem('email')
-      axios.post("http://localhost:9999/uploadprofilepic/" + email, formData, {
+      axios.post("https://fwpserver.azurewebsites.net/uploadprofilepic/" + email, formData, {
         headers: {
           "Content-type": "multipart/form-data",
         }

@@ -16,7 +16,7 @@ export default function ProductPage({data}) {
         Aos.init({ duration: 1000 });
 
         try {
-            fetch('http://localhost:9999/productpage/'+id)
+            fetch('https://fwpserver.azurewebsites.net/productpage/'+id)
             .then(res=>res.json())
             .then(results => setProd(results))
             .catch(err => console.log(err)) 

@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  client:
+    build: ./client
+    container_name: fwp_client_container
+    # Mapping the port 3000 on the host machine to the port 3000 on the container.
+    ports:
+      - "3000:3000"
+    # Mapping the client directory on the host machine to the /app directory on the container.
+    volumes:
+      - ./client:/app
+      - ./app/node_modules
+    # Allows you to run container in detached mode.
+    stdin_open: true
+    tty: true
+  server:
+    # Telling docker-compose to build the client image using the Dockerfile in the server directory.
+    build: ./server
+    container_name: fwp_server_container
+    ports:
+      - "9999:9999"
+    volumes:
+      - ./server:/app
+      - ./app/node_modules
