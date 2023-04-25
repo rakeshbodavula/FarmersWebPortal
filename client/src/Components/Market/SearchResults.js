@@ -1,11 +1,11 @@
 import { Link, useParams } from "react-router-dom";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Aos from 'aos'
 import "aos/dist/aos.css"
 const SearchResults = () => {
 
-    const [data,setData] = useState(null)
+    const [data, setData] = useState(null)
     const { query } = useParams()
     // const { data, isPending, error } = props
 
@@ -19,13 +19,16 @@ const SearchResults = () => {
         try {
             fetch('http://localhost:9999/search', {
                 method: 'POST',
-                mode:'cors',
+                mode: 'cors',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({query}),
+                body: JSON.stringify({ query }),
             })
-            .then(res=>res.json())
-            .then(results => setData(results))
-            .catch(err => console.log(err)) 
+                .then(res => res.json())
+                .then(results => {
+                    console.log(results.data.length)
+                    setData(results.data)
+                })
+                .catch(err => console.log(err))
         } catch (err) {
             console.log(err)
         }

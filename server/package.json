@@ -28,6 +28,7 @@
     "nodemon": "^2.0.18",
     "redis": "^4.6.5",
     "rotating-file-stream": "^3.1.0",
+    "solr-client": "^0.10.0-rc10",
     "swagger": "^0.7.5",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui": "^4.18.1",
