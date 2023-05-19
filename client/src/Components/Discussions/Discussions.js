@@ -9,7 +9,7 @@ function Discussions() {
     const [messgData, setMessgData] = useState([]);
 
     useEffect(() => {
-        fetch('https://fwpserver.azurewebsites.net/fetchMessages')
+        fetch('https://fwp.onrender.com/fetchMessages')
             .then(res => res.json())
             .then(data => setMessgData(data))
             .catch(err => console.log("Error: ", err))
@@ -52,7 +52,7 @@ function Discussions() {
                         timestamp: timeStamp,
                     }]})
 
-            fetch("https://fwpserver.azurewebsites.net/sendMessages", {
+            fetch("https://fwp.onrender.com/sendMessages", {
                 method: "POST",
                 headers: { 'Content-type': 'Application/json' },
                 body: JSON.stringify({ msg_id, referedTo: replyingTo, username: currUserName, message: currMessage, timestamp: timeStamp })
@@ -83,7 +83,7 @@ function Discussions() {
                         timestamp: timeStamp,
                     }]})
 
-            fetch("https://fwpserver.azurewebsites.net/sendMessages", {
+            fetch("https://fwp.onrender.com/sendMessages", {
                 method: "POST",
                 headers: { 'Content-type': 'Application/json' },
                 body: JSON.stringify({ msg_id, referedTo: "", username: currUserName, message: currMessage, timestamp: timeStamp })

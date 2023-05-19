@@ -14,7 +14,7 @@ function CheckoutPage(props) {
   let subTotal = 0
 
   const getCartData = () => {
-    fetch('https://fwpserver.azurewebsites.net/Cart')
+    fetch('https://fwp.onrender.com/Cart')
       .then(res => res.json())
       .then(dat=>setCartData(dat))
       .catch(err => console.log(err))
